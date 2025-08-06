@@ -1,0 +1,49 @@
+name: Update Generated GitHub Preview
+
+on:
+  # scheduled
+  schedule:
+    # every day at 5:30 and 17:30 UTC
+    - cron:  "30 5,17 * * *"
+  # triggered manually
+  workflow_dispatch:
+
+jobs:
+  sync_lecture:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout our semester-repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Checkout external lecture-repo (_gfm branch)
+        uses: actions/checkout@v4
+        with:
+          repository: Compiler-CampusMinden/CB-Vorlesung-Bachelor    ## TODO (org/repo)
+          fetch-depth: 0
+          ref: _w25                                                  ## TODO (branch)
+          path: _gfm
+      - name: Retrieve last commit message from lecture-repo
+        id: message
+        run: |
+          cd _gfm/
+          echo "COMMIT_MESSAGE=$(git log -1 --format=%s)" >> "$GITHUB_OUTPUT"
+          cd ..
+      - name: Copy files over
+        run: |
+          rm -rf admin/ lecture/ homework/
+          cp -r _gfm/* .
+          rm -rf _gfm/
+      - name: Commit and push
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "cagix"
+            git config user.email "cagix@users.noreply.github.com"
+            git add -f .
+            git commit -m '${{ steps.message.outputs.COMMIT_MESSAGE }}'
+            git push
+          else
+            echo "no changes to push"
+          fi
