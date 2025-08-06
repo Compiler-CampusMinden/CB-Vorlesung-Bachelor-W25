@@ -1,0 +1,95 @@
+# IDE generated files #
+######################
+.vscode/
+.idea/
+*.iml
+.project
+.metadata
+.settings/
+.externalToolBuilders/
+.classpath
+
+
+# Temporary files #
+###################
+*~
+*.swp
+*.tmp
+*.bak
+.DS_Store
+._*
+
+
+# Temporary directory #
+#######################
+tmp/
+temp/
+resources/
+docs/
+pdf/
+
+
+# Hugo / Pandoc related files #
+###############################
+.hugo_build.lock
+local.yaml
+/data/readings.yaml
+.pandoc
+make.deps
+_gfm
+_docsify
+_pdf
+_beamer
+
+
+# C/C++ #
+#########
+*.d
+*.o
+*.so
+*.a
+*.out
+
+
+# JAVA, Scala #
+###############
+*.class
+*.log
+*.jar
+hs_err_pid*
+replay_pid*
+*.hprof
+**/build/
+**/bin/
+**/out/
+**/target/
+.gradle/
+# don't ignore any gradle wrapper files
+!gradle/
+
+
+# Python/Jython #
+#################
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+build/
+dist/
+pip-log.txt
+.tox/
+.cache
+.pytest_cache/
+*.log
+.python-version
+.pyre/
+
+
+# Packages #
+############
+*.dmg
+*.iso
+*.rar
+*.zip
+*.tgz
+*.tar.gz
