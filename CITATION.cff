@@ -1,0 +1,33 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Lecture "Compilerbau" (B.Sc.) (Winter 2025/26)
+message: >-
+  If you use this lecture material, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Carsten
+    family-names: Gips
+    email: cagix@hsbi.de
+    affiliation: HSBI
+    orcid: 'https://orcid.org/0000-0002-4230-9060'
+  - family-names: George
+    given-names: Birgit Christina
+    affiliation: HSBI
+    orcid: 'https://orcid.org/0009-0001-6148-9677'
+repository-code: >-
+  https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor-W25
+abstract: >-
+  This represents the winter 2025/26 edition of the lecture
+  material for the lecture "Compilerbau" (B.Sc.), a course
+  developed and taught at Bielefeld University of Applied
+  Sciences.
+keywords:
+  - compiler construction
+  - antlr
+  - interpreter
+  - oer
+license: CC-BY-SA-4.0
+date-released: '2025-08-06'

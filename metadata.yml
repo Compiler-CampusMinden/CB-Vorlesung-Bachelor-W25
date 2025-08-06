@@ -1,0 +1,44 @@
+'@context': https://schema.org/
+creativeWorkStatus: Published
+type: LearningResource
+name: Lecture "Compilerbau" (B.Sc.) (Winter 2025/26)
+description: >-
+  This represents the winter 2025/26 edition of the lecture material for the
+  lecture "Compilerbau" (B.Sc.), a course developed and taught at Bielefeld
+  University of Applied Sciences.
+license: https://creativecommons.org/licenses/by-sa/4.0/deed.de
+id: https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor-W25
+creator:
+  - givenName: Carsten
+    familyName: Gips
+    id: https://orcid.org/0000-0002-4230-9060
+    type: Person
+    affiliation:
+      name: Hochschule Bielefeld
+      type: Organization
+  - givenName: Birgit Christina
+    familyName: George
+    id: https://orcid.org/0009-0001-6148-9677
+    type: Person
+    affiliation:
+      name: Hochschule Bielefeld
+      type: Organization
+keywords:
+  - compiler construction
+  - antlr
+  - interpreter
+  - oer
+inLanguage:
+  - de
+about:
+  - https://w3id.org/kim/hochschulfaechersystematik/n079
+learningResourceType:
+  - https://w3id.org/kim/hcrt/course
+  - https://w3id.org/kim/hcrt/drill_and_practice
+  - https://w3id.org/kim/hcrt/script
+  - https://w3id.org/kim/hcrt/video
+  - https://w3id.org/kim/hcrt/web_page
+educationalLevel:
+  - https://w3id.org/kim/educationalLevel/level_A
+  - https://w3id.org/kim/educationalLevel/level_6
+datePublished: '2025-08-06'
