@@ -307,7 +307,8 @@ symbolischen Debugger noch gebraucht werden.
 >
 > <summary><strong>✅ Lernziele</strong></summary>
 >
-> - k3: Aufbau von Symboltabellen für Nested Scopes inkl. Strukturen/Klassen mit einem Listener
+> - k3: Aufbau von Symboltabellen für Nested Scopes inkl.
+>   Strukturen/Klassen mit einem Listener
 > - k3: Auflösen von Symbolen über die Scopes
 > - k3: Einfache statische Prüfungen anhand der Symboltabellen
 >
@@ -358,9 +359,9 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
 **Exceptions:**
 
-- Eigene Implementierung nach einer Idee in ([Parr 2010](#ref-Parr2010),
-  p. 169)
 - Eigene Modellierung nach einer Idee in ([Parr 2010](#ref-Parr2010),
   p. 142)
+- Eigene Implementierung nach einer Idee in ([Parr 2010](#ref-Parr2010),
+  p. 169)
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> a10718a (Remove Hugo: tooling: shift headings (use h1 as top-level headings), 2025-07-25)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>

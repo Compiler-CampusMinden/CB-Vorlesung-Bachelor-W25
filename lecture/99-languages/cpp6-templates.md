@@ -706,7 +706,8 @@ void Array<T,n>::copy_from(const C &c) { ... }
 >
 > - k2: Unterschied zu Java bei der Nutzung von Templates
 > - k3: Erstellen und spezialisieren von Funktions-Templates
-> - k3: Unterschied zwischen überladenen Funktionen und Funktions-Templates
+> - k3: Unterschied zwischen überladenen Funktionen und
+>   Funktions-Templates
 > - k3: Aufruf (Nutzung) von Funktions-Templates
 > - k2: Unterschied zu Java bei der Nutzung von Templates
 > - k3: Erstellen und spezialisieren von Klassen-Templates
@@ -867,4 +868,4 @@ void Array<T,n>::copy_from(const C &c) { ... }
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> a10718a (Remove Hugo: tooling: shift headings (use h1 as top-level headings), 2025-07-25)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>

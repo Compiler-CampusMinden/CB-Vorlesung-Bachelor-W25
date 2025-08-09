@@ -309,9 +309,11 @@ Sprachen**.
 > - k1: DFAs
 > - k1: Reguläre Ausdrücke
 > - k1: Reguläre Grammatiken
-> - k2: Zusammenhänge und Gesetzmäßigkeiten bzgl. der oben genannten Konstrukte
+> - k2: Zusammenhänge und Gesetzmäßigkeiten bzgl. der oben genannten
+>   Konstrukte
 > - k3: DFAs, reguläre Ausdrücke, reguläre Grammatiken entwickeln
-> - k3: Einen DFA entwickeln, der alle Schlüsselwörter, Namen und weitere Symbole einer Programmiersprache akzeptiert
+> - k3: Einen DFA entwickeln, der alle Schlüsselwörter, Namen und
+>   weitere Symbole einer Programmiersprache akzeptiert
 >
 > </details>
 
@@ -361,4 +363,4 @@ Sprachen**.
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 671f955 (lecture: add slide numbering to bc's slides, 2025-07-25)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>

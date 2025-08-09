@@ -1093,11 +1093,14 @@ zwischen den beiden Signaturen `bar foo(wuppie&,  bar)` und
 >
 > - k1: Virtueller Speicher, Segmente: Text, Data, Stack
 > - k2: Pointer sind Variablen, Wert wird als Adresse interpretiert
-> - k2: Pointer als spezielle Variablen: Wert des Pointers als Adresse interpretieren
+> - k2: Pointer als spezielle Variablen: Wert des Pointers als Adresse
+>   interpretieren
 > - k2: Initialisierung und Scopes bei Pointern
 > - k3: Zuweisen einer Adresse an einen Pointer
-> - k3: Dereferenzierung eines Pointers und Zugriff auf das referenzierte Element
-> - k3: Pointer als Funktionsparameter: Call-by-Reference mit Hilfe von Pointern
+> - k3: Dereferenzierung eines Pointers und Zugriff auf das
+>   referenzierte Element
+> - k3: Pointer als Funktionsparameter: Call-by-Reference mit Hilfe von
+>   Pointern
 > - k2: Memory Leaks und Stale Pointer und deren Vermeidung
 > - k3: C++-Operatoren new und delete, Unterschied zu malloc(), free()
 > - k3: Referenzen in C++ (Deklaration, Initialisierung, Nutzung)
@@ -1370,4 +1373,4 @@ zwischen den beiden Signaturen `bar foo(wuppie&,  bar)` und
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> a8b3642 (Remove Hugo: remove showme, 2025-07-25)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>

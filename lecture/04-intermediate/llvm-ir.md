@@ -76,31 +76,31 @@ statt *n x m* Compiler zu schreiben.
 
 ### Wer setzt LLVM ein?
 
-Adobe      AMD      Apple      ARM      Google
+    Adobe   AMD     Apple       ARM     Google
 
-IBM        Intel        Mozilla      Nvidia      Qualcomm
+    IBM     Intel   Mozilla     Nvidia  Qualcomm
 
-Samsung       …
+    Samsung ...
 
 ### Externe LLVM-Projekte
 
 Für folgende Sprachen gibt es Compiler oder Anbindungen an LLVM (neben
 Clang):
 
-Crack      Go     Haskell      Java      Julia      Kotlin
+    Crack   Go      Haskell     Java    Julia   Kotlin
 
-Lua      Numba      Python     Ruby      Rust      Swift      …
+    Lua     Numba   Python      Ruby    Rust    Swift   ...
 
 Für weitere Projekte siehe [Projects built with
 LLVM](https://llvm.org/ProjectsWithLLVM/)
 
 ### Unterstützte Prozessorarchitekturen
 
-x86      AMD64      PowerPC      PowerPC 64Bit      Thumb
+    x86   AMD64   PowerPC   PowerPC   64Bit   Thumb
 
-SPARC      Alpha      CellSPU      PIC16      MIPS
+    SPARC   Alpha   CellSPU   PIC16   MIPS
 
-MSP430     System z      XMOS      Xcore      …
+    MSP430   System z   XMOS   Xcore   ...
 
 ## Einige Komponenten von LLVM
 
@@ -241,4 +241,4 @@ Die wichtigsten Bestandteile:
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 671f955 (lecture: add slide numbering to bc's slides, 2025-07-25)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>

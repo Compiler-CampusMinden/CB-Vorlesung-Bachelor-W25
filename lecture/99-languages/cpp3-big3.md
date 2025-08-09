@@ -516,4 +516,4 @@ Hier darf der Rückgabewert nicht als L-Wert benutzt werden:
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 0e0711b (lecture: replace remaining hugo shortcodes (CPP), 2025-07-25)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>

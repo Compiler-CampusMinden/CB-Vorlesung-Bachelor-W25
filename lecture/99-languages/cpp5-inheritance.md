@@ -453,12 +453,14 @@ Attribute (Zustand) ist in Java-Interfaces (noch) nicht erlaubt.
 > - k2: Unterschied zwischen public- und private-Vererbung
 > - k2: Unterschied Überladen und Überschreiben
 > - k2: Slicing in C++
-> - k2: Probleme bei Mehrfachvererbung und Einsatz virtueller Basisklassen
+> - k2: Probleme bei Mehrfachvererbung und Einsatz virtueller
+>   Basisklassen
 > - k3: public-Vererbung in C++
 > - k3: Verkettung von Operatoren und \*struktoren
 > - k3: Statische und dynamische Polymorphie in C++
 > - k3: Abstrakte Klassen in C++
-> - k2: Probleme bei Mehrfachvererbung und Einsatz virtueller Basisklassen
+> - k2: Probleme bei Mehrfachvererbung und Einsatz virtueller
+>   Basisklassen
 > - k3: Praktischer Umgang mit Mehrfachvererbung
 >
 > </details>
@@ -549,4 +551,4 @@ Attribute (Zustand) ist in Java-Interfaces (noch) nicht erlaubt.
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> a10718a (Remove Hugo: tooling: shift headings (use h1 as top-level headings), 2025-07-25)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>

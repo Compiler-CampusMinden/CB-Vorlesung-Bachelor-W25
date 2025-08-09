@@ -374,9 +374,12 @@ werden (`finally`-Block).
 >
 > <summary><strong>✅ Lernziele</strong></summary>
 >
-> - k3: Traversierung von Parse-Trees und Implementierung von Aktionen mit Hilfe des Visitor-Patterns
-> - k3: Interpreter müssen Namen und Werte speichern: Environment-Strukturen analog zu den Symboltabellen
-> - k3: Code-Ausführung im Interpreter durch eine Read-Eval-Schleife: Implementierung mit einem Visitor
+> - k3: Traversierung von Parse-Trees und Implementierung von Aktionen
+>   mit Hilfe des Visitor-Patterns
+> - k3: Interpreter müssen Namen und Werte speichern:
+>   Environment-Strukturen analog zu den Symboltabellen
+> - k3: Code-Ausführung im Interpreter durch eine Read-Eval-Schleife:
+>   Implementierung mit einem Visitor
 >
 > </details>
 
@@ -433,4 +436,4 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
   by [Bob Nystrom](https://github.com/munificent) on Github.com
   ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> a10718a (Remove Hugo: tooling: shift headings (use h1 as top-level headings), 2025-07-25)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>

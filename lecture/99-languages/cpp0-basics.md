@@ -681,8 +681,7 @@ sein!
 
 - Funktionen “ohne” Parameter:
 
-  Leere Parameter-Liste^Achtung: C-Compiler akzeptiert \[**alle**
-  Parameter!\] oder Schlüsselwort `void`
+  Leere Parameter-Liste[^1] oder Schlüsselwort `void`
 
   ``` c
   void fkt();
@@ -1211,15 +1210,20 @@ Datei `tollesProgramm` zu erzeugen: `g++ main.o -o tollesProgramm`.
 > - k1: Wichtigste Unterschiede und Gemeinsamkeiten zu Java
 > - k1: Wichtigste Aufgaben des Präprozessors
 > - k3: Aufbau, Übersetzen und Starten von einfachen C++-Programmen
-> - k3: Standard-Ein-/Ausgabe-Kanäle in C++ sowie die Operatoren \>\> und \<\<
+> - k3: Standard-Ein-/Ausgabe-Kanäle in C++ sowie die Operatoren \>\>
+>   und \<\<
 > - k3: Nutzung der Basisdatentypen einschließlich der Modifikatoren
-> - k3: Deklaration von Variablen, Nutzung von Kontrollstrukturen und Operatoren
+> - k3: Deklaration von Variablen, Nutzung von Kontrollstrukturen und
+>   Operatoren
 > - k3: Interpretation von Integers im booleschen Kontext
 > - k3: Nutzung des Scope-Operators ::, Namensräume
 > - k3: Benutzung von sizeof zur Bestimmung des Speicherbedarfs
-> - k3: Benutzung von typedef zur Definition neuer Typen (Aliase bestehender Typen)
-> - k3: Erinnerung: Automatisiertes Übersetzen mit Hilfe von GNU Make und einfachsten Makefiles
-> - k2: Unterschied zwischen Deklaration und Definition, One Definition Rule
+> - k3: Benutzung von typedef zur Definition neuer Typen (Aliase
+>   bestehender Typen)
+> - k3: Erinnerung: Automatisiertes Übersetzen mit Hilfe von GNU Make
+>   und einfachsten Makefiles
+> - k2: Unterschied zwischen Deklaration und Definition, One Definition
+>   Rule
 > - k2: Problematik bei der Deklaration parameterloser Funktionen
 > - k2: Call-by-Value-Semantik bei der Parameterübergabe
 > - k2: Sichtbarkeit und Initialisierung von Variablen
@@ -1348,4 +1352,6 @@ Datei `tollesProgramm` zu erzeugen: `g++ main.o -o tollesProgramm`.
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 0e0711b (lecture: replace remaining hugo shortcodes (CPP), 2025-07-25)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>
+
+[^1]: Achtung: C-Compiler akzeptiert **alle** Parameter!
