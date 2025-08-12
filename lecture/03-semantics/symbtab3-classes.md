@@ -310,10 +310,10 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
 **Exceptions:**
 
-- Eigene Modellierung nach einer Idee in ([Parr 2010](#ref-Parr2010),
-  p. 162)
 - Eigene Implementierung nach einer Idee in ([Parr 2010](#ref-Parr2010),
   p. 172)
+- Eigene Modellierung nach einer Idee in ([Parr 2010](#ref-Parr2010),
+  p. 162)
 - Eigene Modellierung nach einer Idee in ([Parr 2010](#ref-Parr2010),
   p. 167)
 

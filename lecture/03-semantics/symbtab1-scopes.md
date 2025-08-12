@@ -359,9 +359,9 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
 **Exceptions:**
 
-- Eigene Modellierung nach einer Idee in ([Parr 2010](#ref-Parr2010),
-  p. 142)
 - Eigene Implementierung nach einer Idee in ([Parr 2010](#ref-Parr2010),
   p. 169)
+- Eigene Modellierung nach einer Idee in ([Parr 2010](#ref-Parr2010),
+  p. 142)
 
 <blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>
