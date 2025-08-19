@@ -1,6 +1,6 @@
 # Einführung in C++ (Erinnerungen an C)
 
-> [!NOTE]
+> [!IMPORTANT]
 >
 > <details open>
 >
@@ -116,6 +116,8 @@
 > durch den Compiler.
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >
@@ -1198,9 +1200,7 @@ Datei `tollesProgramm` zu erzeugen: `g++ main.o -o tollesProgramm`.
 - „C and C++ Reference“ ([o. J.](#ref-cppreference.com))
 - Allain und Hoffer ([o. J.](#ref-cprogramming.com))
 
-------------------------------------------------------------------------
-
-> [!TIP]
+> [!NOTE]
 >
 > <details>
 >
@@ -1231,6 +1231,8 @@ Datei `tollesProgramm` zu erzeugen: `g++ main.o -o tollesProgramm`.
 > - k3: Nutzung lokaler und globaler und lokaler statischer Variablen
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >

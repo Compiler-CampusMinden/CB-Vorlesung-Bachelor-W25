@@ -1,6 +1,6 @@
 # C++: Operatoren
 
-> [!NOTE]
+> [!IMPORTANT]
 >
 > <details open>
 >
@@ -29,6 +29,8 @@
 > beim Aufruf aber nicht genutzt.
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >
@@ -248,9 +250,7 @@ s != "123";     // ???
 - „C and C++ Reference“ ([o. J.](#ref-cppreference.com))
 - Allain und Hoffer ([o. J.](#ref-cprogramming.com))
 
-------------------------------------------------------------------------
-
-> [!TIP]
+> [!NOTE]
 >
 > <details>
 >
@@ -262,6 +262,8 @@ s != "123";     // ???
 > - k3: Implementierung von Post- und Präfix-Operatoren
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >

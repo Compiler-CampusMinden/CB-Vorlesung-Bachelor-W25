@@ -1,6 +1,6 @@
 # SymbTab3: Strukturen und Klassen
 
-> [!NOTE]
+> [!IMPORTANT]
 >
 > <details open>
 >
@@ -15,6 +15,8 @@
 > der Symboltabelle berücksichtigt werden.
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >
@@ -206,9 +208,7 @@ die Klasse auflöst und `x` als Attribut darin.
 - Parr ([2014](#ref-Parr2014)): Kapitel 6.4 und 8.4
 - Parr ([2010](#ref-Parr2010)): Kapitel 6, 7 und 8
 
-------------------------------------------------------------------------
-
-> [!TIP]
+> [!NOTE]
 >
 > <details>
 >
@@ -219,6 +219,8 @@ die Klasse auflöst und `x` als Attribut darin.
 > - k3: Attribute von Klassen und Strukturen auflösen
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >
@@ -310,11 +312,11 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
 **Exceptions:**
 
+- Eigene Modellierung nach einer Idee in ([Parr 2010](#ref-Parr2010),
+  p. 162)
 - Eigene Implementierung nach einer Idee in ([Parr 2010](#ref-Parr2010),
   p. 172)
 - Eigene Modellierung nach einer Idee in ([Parr 2010](#ref-Parr2010),
   p. 167)
-- Eigene Modellierung nach einer Idee in ([Parr 2010](#ref-Parr2010),
-  p. 162)
 
 <blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>

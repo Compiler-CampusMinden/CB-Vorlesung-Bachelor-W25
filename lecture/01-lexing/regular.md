@@ -4,7 +4,7 @@
 >
 > <details>
 >
-> <summary><strong>🖇 Unterlagen</strong></summary>
+> <summary><strong>🖇 Weitere Unterlagen</strong></summary>
 >
 > - [Annotierte Folien: Reguläre Sprachen,
 >   Ausdrucksstärke](https://github.com/Compiler-CampusMinden/AnnotatedSlides/blob/master/lexing_regular.ann.ba.pdf)
@@ -298,22 +298,21 @@ Sprachen**.
 - Torczon und Cooper ([2012](#ref-Torczon2012)): Kapitel 2
 - Parr ([2014](#ref-Parr2014))
 
-------------------------------------------------------------------------
-
-> [!TIP]
+> [!NOTE]
 >
 > <details>
 >
 > <summary><strong>✅ Lernziele</strong></summary>
 >
-> - k1: DFAs
-> - k1: Reguläre Ausdrücke
-> - k1: Reguläre Grammatiken
-> - k2: Zusammenhänge und Gesetzmäßigkeiten bzgl. der oben genannten
->   Konstrukte
-> - k3: DFAs, reguläre Ausdrücke, reguläre Grammatiken entwickeln
-> - k3: Einen DFA entwickeln, der alle Schlüsselwörter, Namen und
->   weitere Symbole einer Programmiersprache akzeptiert
+> - k1: Ich kenne DFAs
+> - k1: Ich kenne reguläre Ausdrücke
+> - k1: Ich kenne reguläre Grammatiken
+> - k2: Ich kann die Zusammenhänge und Gesetzmäßigkeiten bzgl. der oben
+>   genannten Konstrukte an einem Beispiel erklären
+> - k3: Ich kann für eine Fragestellung DFAs, reguläre Ausdrücke,
+>   reguläre Grammatiken entwickeln
+> - k3: Ich kann einen DFA entwickeln, der alle Schlüsselwörter, Namen
+>   und weitere Symbole einer Programmiersprache akzeptiert
 >
 > </details>
 
@@ -363,4 +362,4 @@ Sprachen**.
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 9bc15ce (lecture: rework outcomes (01_Regular), 2025-08-19)<br></sub></sup></p></blockquote>

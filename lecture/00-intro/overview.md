@@ -1,6 +1,6 @@
 # Struktur eines Compilers
 
-> [!NOTE]
+> [!IMPORTANT]
 >
 > <details open>
 >
@@ -23,6 +23,8 @@
 > gar nicht auftreten.
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >
@@ -57,7 +59,7 @@ Wir können hier (mit steigender Abstraktionsstufe) unterscheiden:
 
 ## Compiler: Big Picture
 
-<img src="https://github.com/munificent/craftinginterpreters/blob/master/site/image/a-map-of-the-territory/mountain.png?raw=true">
+<img src="https://github.com/munificent/craftinginterpreters/blob/master/site/image/a-map-of-the-territory/mountain.png?raw=true" width="80%">
 
 Quelle: [A Map of the Territory
 (mountain.png)](https://github.com/munificent/craftinginterpreters/blob/master/site/image/a-map-of-the-territory/mountain.png)
@@ -70,7 +72,7 @@ Die obige Bergsteige-Metapher kann man in ein nüchternes Ablaufdiagramm
 mit verschiedenen Stufen und den zwischen den Stufen ausgetauschten
 Artefakten übersetzen:
 
-<img src="images/architektur_cb.png" width="80%">
+<img src="images/architektur_cb.png" width="70%">
 
 ### Frontend, Analyse
 
@@ -385,15 +387,14 @@ expr : ID '(' ')'
 - Aho u. a. ([2023](#ref-Aho2023)): Kapitel 1 Introduction
 - Grune u. a. ([2012](#ref-Grune2012)): Kapitel 1 Introduction
 
-------------------------------------------------------------------------
-
-> [!TIP]
+> [!NOTE]
 >
 > <details>
 >
 > <summary><strong>✅ Lernziele</strong></summary>
 >
-> - k2: Struktur eines Compilers: Phasen und deren Aufgaben
+> - k2: Ich kann die Struktur eines Compilers und die verschiedenen
+>   Phasen und deren Aufgaben erklären
 >
 > </details>
 
@@ -441,4 +442,4 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
   by [Bob Nystrom](https://github.com/munificent) on Github.com
   ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> dac3e7e (lecture: rework outcomes (Intro/Overview), 2025-08-19)<br></sub></sup></p></blockquote>

@@ -1,6 +1,6 @@
 # Anwendungen
 
-> [!NOTE]
+> [!IMPORTANT]
 >
 > <details open>
 >
@@ -19,6 +19,8 @@
 > - Analysetools: Parsen den Sourcecode, werten die Strukturen aus
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >
@@ -66,7 +68,7 @@ Beispiel: Java mit seiner JVM
 
 ## Anwendung: C-Toolchain
 
-<img src="images/c-toolchain.png" width="80%">
+<img src="images/c-toolchain.png" width="70%">
 
 Erinnern Sie sich an die LV “Systemprogrammierung” im dritten Semester
 :-)
@@ -82,7 +84,7 @@ Beispiele: gcc, clang, …
 
 ## Anwendung: C++-Compiler
 
-<img src="images/cpp-toolchain.png" width="80%">
+<img src="images/cpp-toolchain.png" width="60%">
 
 C++ hat meist keinen eigenen (vollständigen) Compiler :-)
 
@@ -96,7 +98,7 @@ Beispiel: g++
 
 ## Anwendung: Bugfinder
 
-<img src="images/findbugs.png" width="80%">
+<img src="images/findbugs.png" width="60%">
 
 Tools wie FindBugs analysieren den (Java-) Quellcode und suchen nach
 bekannten Fehlermustern. Dazu benötigen sie nur den Analyse-Teil eines
@@ -333,16 +335,14 @@ ist:
 - Aho u. a. ([2023](#ref-Aho2023)): Kapitel 1 Introduction
 - Grune u. a. ([2012](#ref-Grune2012)): Kapitel 1 Introduction
 
-------------------------------------------------------------------------
-
-> [!TIP]
+> [!NOTE]
 >
 > <details>
 >
 > <summary><strong>✅ Lernziele</strong></summary>
 >
-> - k1: Verschiedene Anwendungen für Compiler durch Einsatz bestimmter
->   Stufen der Compiler-Pipeline
+> - k1: Ich kenne verschiedene Anwendungen für Compiler durch Einsatz
+>   bestimmter Stufen der Compiler-Pipeline
 >
 > </details>
 
@@ -383,4 +383,4 @@ ist:
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> bf9967e (lecture: rework outcomes (Intro/Applications), 2025-08-19)<br></sub></sup></p></blockquote>

@@ -1,6 +1,6 @@
 # C++: Pointer und Referenzen
 
-> [!NOTE]
+> [!IMPORTANT]
 >
 > <details open>
 >
@@ -82,6 +82,8 @@
 > nächsten Objekt und nicht notwendigerweise zum nächsten Byte.
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >
@@ -1083,9 +1085,7 @@ zwischen den beiden Signaturen `bar foo(wuppie&,  bar)` und
 - „C and C++ Reference“ ([o. J.](#ref-cppreference.com))
 - Allain und Hoffer ([o. J.](#ref-cprogramming.com))
 
-------------------------------------------------------------------------
-
-> [!TIP]
+> [!NOTE]
 >
 > <details>
 >
@@ -1108,6 +1108,8 @@ zwischen den beiden Signaturen `bar foo(wuppie&,  bar)` und
 > - k3: Rechnen mit Pointern, Berücksichtigung des Typs
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >

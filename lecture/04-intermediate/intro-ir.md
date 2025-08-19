@@ -1,6 +1,6 @@
 # Überblick Zwischencode
 
-> [!NOTE]
+> [!IMPORTANT]
 >
 > <details open>
 >
@@ -16,6 +16,8 @@
 > Assemblercode.
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >
@@ -415,9 +417,7 @@ und
 - Grune u. a. ([2012](#ref-Grune2012)): Kapitel 7
 - Parr ([2010](#ref-Parr2010)): Kapitel 11
 
-------------------------------------------------------------------------
-
-> [!TIP]
+> [!NOTE]
 >
 > <details>
 >

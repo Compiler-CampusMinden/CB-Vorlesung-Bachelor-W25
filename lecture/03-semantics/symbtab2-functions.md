@@ -1,6 +1,6 @@
 # SymbTab2: Funktionen
 
-> [!NOTE]
+> [!IMPORTANT]
 >
 > <details open>
 >
@@ -15,6 +15,8 @@
 > Eintragen und das Auflösen von Symbolen erweitert werden.
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >
@@ -173,9 +175,7 @@ Funktionsdefinition gespeichert werden (weiteres Feld/Attribut in
 - Parr ([2014](#ref-Parr2014)): Kapitel 6.4 und 8.4
 - Parr ([2010](#ref-Parr2010)): Kapitel 6, 7 und 8
 
-------------------------------------------------------------------------
-
-> [!TIP]
+> [!NOTE]
 >
 > <details>
 >
@@ -186,6 +186,8 @@ Funktionsdefinition gespeichert werden (weiteres Feld/Attribut in
 > - k3: Attribute von Klassen und Strukturen auflösen
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >

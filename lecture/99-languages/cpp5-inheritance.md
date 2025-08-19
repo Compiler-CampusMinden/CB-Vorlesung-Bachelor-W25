@@ -1,6 +1,6 @@
 # C++: Vererbung und Polymorphie
 
-> [!NOTE]
+> [!IMPORTANT]
 >
 > <details open>
 >
@@ -58,6 +58,8 @@
 > Basisklasse am “oberen Ende der Raute” aufrufen.
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >
@@ -442,9 +444,7 @@ Attribute (Zustand) ist in Java-Interfaces (noch) nicht erlaubt.
 - „C and C++ Reference“ ([o. J.](#ref-cppreference.com))
 - Allain und Hoffer ([o. J.](#ref-cprogramming.com))
 
-------------------------------------------------------------------------
-
-> [!TIP]
+> [!NOTE]
 >
 > <details>
 >
@@ -464,6 +464,8 @@ Attribute (Zustand) ist in Java-Interfaces (noch) nicht erlaubt.
 > - k3: Praktischer Umgang mit Mehrfachvererbung
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >

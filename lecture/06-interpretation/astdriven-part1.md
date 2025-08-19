@@ -1,6 +1,6 @@
 # AST-basierte Interpreter: Basics
 
-> [!NOTE]
+> [!IMPORTANT]
 >
 > <details open>
 >
@@ -38,6 +38,8 @@
 > Verhalten entsprechend anpassen.
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >
@@ -366,9 +368,7 @@ werden (`finally`-Block).
 - Grune u. a. ([2012](#ref-Grune2012)): Kapitel 6
 - Mogensen ([2017](#ref-Mogensen2017)): Kapitel 4
 
-------------------------------------------------------------------------
-
-> [!TIP]
+> [!NOTE]
 >
 > <details>
 >

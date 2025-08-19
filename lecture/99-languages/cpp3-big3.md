@@ -1,6 +1,6 @@
 # C++: Big 3
 
-> [!NOTE]
+> [!IMPORTANT]
 >
 > <details open>
 >
@@ -35,6 +35,8 @@
 > aufgerufen werden.
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >
@@ -369,9 +371,7 @@ Hier darf der Rückgabewert nicht als L-Wert benutzt werden:
 - „C and C++ Reference“ ([o. J.](#ref-cppreference.com))
 - Allain und Hoffer ([o. J.](#ref-cprogramming.com))
 
-------------------------------------------------------------------------
-
-> [!TIP]
+> [!NOTE]
 >
 > <details>
 >
@@ -382,6 +382,8 @@ Hier darf der Rückgabewert nicht als L-Wert benutzt werden:
 > - k3: ‘Big Three’: Destruktor, Copy-Konstruktor, Zuweisungsoperator
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >

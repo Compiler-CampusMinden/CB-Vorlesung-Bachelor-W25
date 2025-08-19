@@ -4,7 +4,7 @@
 >
 > <details>
 >
-> <summary><strong>🖇 Unterlagen</strong></summary>
+> <summary><strong>🖇 Weitere Unterlagen</strong></summary>
 >
 > - [Annotierte Folien:
 >   LLVM-IR](https://github.com/Compiler-CampusMinden/AnnotatedSlides/blob/master/llvm-ir.ann.ba.pdf)
@@ -192,9 +192,7 @@ Die wichtigsten Bestandteile:
 - LLVM-Project ([2022a](#ref-LLVM-org))
 - LLVM-Project ([2022b](#ref-LLVM-doc))
 
-------------------------------------------------------------------------
-
-> [!TIP]
+> [!NOTE]
 >
 > <details>
 >

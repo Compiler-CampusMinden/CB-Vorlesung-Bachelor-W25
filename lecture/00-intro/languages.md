@@ -1,6 +1,6 @@
 # Bandbreite der Programmiersprachen
 
-> [!NOTE]
+> [!IMPORTANT]
 >
 > <details open>
 >
@@ -17,6 +17,8 @@
 > “verstehen” müssen.
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >
@@ -45,8 +47,8 @@
 > No more bottles of beer on the wall, no more bottles of beer. Go to
 > the store and buy some more, 99 bottles of beer on the wall.
 
-Quelle: nach [“Lyrics of the song 99 Bottles of
-Beer”](https://www.99-bottles-of-beer.net/lyrics.html) on
+Quelle: Abzählreim “99 Bottles of Beer” nach [“Lyrics of the song 99
+Bottles of Beer”](https://www.99-bottles-of-beer.net/lyrics.html) on
 99-bottles-of-beer.net
 
 ## Imperativ, Hardwarenah: C
@@ -266,16 +268,14 @@ Code und VM zu studieren :)
 - Aho u. a. ([2023](#ref-Aho2023)): Kapitel 1 Introduction
 - Grune u. a. ([2012](#ref-Grune2012)): Kapitel 1 Introduction
 
-------------------------------------------------------------------------
-
-> [!TIP]
+> [!NOTE]
 >
 > <details>
 >
 > <summary><strong>✅ Lernziele</strong></summary>
 >
-> - k1: Verschiedene Beispiele für verschiedene Programmiersprachen und
->   Paradigmen
+> - k1: Ich kenne verschiedene Beispiele für verschiedene
+>   Programmiersprachen und Paradigmen
 >
 > </details>
 
@@ -319,21 +319,21 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 **Exceptions:**
 
 - [“Language
+  Haskell”](https://www.99-bottles-of-beer.net/language-haskell-1070.html)
+  by Iavor on 99-bottles-of-beer.net
+- [“Language C”](https://www.99-bottles-of-beer.net/language-c-116.html)
+  by Bill Wein on 99-bottles-of-beer.net
+- [“Language
   Prolog”](https://www.99-bottles-of-beer.net/language-prolog-965.html)
   by M@ on 99-bottles-of-beer.net
+- Abzählreim “99 Bottles of Beer” nach [“Lyrics of the song 99 Bottles
+  of Beer”](https://www.99-bottles-of-beer.net/lyrics.html) on
+  99-bottles-of-beer.net
 - Screenshot of [“Language
   Brainfuck”](https://99-bottles-of-beer.net/language-brainfuck-2542.html)
   by Michal Wojciech Tarnowski on 99-bottles-of-beer.net
 - [“Language
   Java”](https://www.99-bottles-of-beer.net/language-java-4.html) by
   Sean Russell on 99-bottles-of-beer.net
-- [“Language C”](https://www.99-bottles-of-beer.net/language-c-116.html)
-  by Bill Wein on 99-bottles-of-beer.net
-- [“Language
-  Haskell”](https://www.99-bottles-of-beer.net/language-haskell-1070.html)
-  by Iavor on 99-bottles-of-beer.net
-- nach [“Lyrics of the song 99 Bottles of
-  Beer”](https://www.99-bottles-of-beer.net/lyrics.html) on
-  99-bottles-of-beer.net
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 1dd8f65 (lecture: rework outcomes (Intro/Languages), 2025-08-19)<br></sub></sup></p></blockquote>

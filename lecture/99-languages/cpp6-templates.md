@@ -1,6 +1,6 @@
 # C++: Templates
 
-> [!NOTE]
+> [!IMPORTANT]
 >
 > <details open>
 >
@@ -69,6 +69,8 @@
 > beiden Konzepte etwas “quer liegen”.
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >
@@ -696,9 +698,7 @@ void Array<T,n>::copy_from(const C &c) { ... }
 - „C and C++ Reference“ ([o. J.](#ref-cppreference.com))
 - Allain und Hoffer ([o. J.](#ref-cprogramming.com))
 
-------------------------------------------------------------------------
-
-> [!TIP]
+> [!NOTE]
 >
 > <details>
 >
@@ -715,6 +715,8 @@ void Array<T,n>::copy_from(const C &c) { ... }
 > - k3: Aufruf (Nutzung) von Klassen-Templates
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >

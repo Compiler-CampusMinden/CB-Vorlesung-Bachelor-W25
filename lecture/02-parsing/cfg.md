@@ -4,7 +4,7 @@
 >
 > <details>
 >
-> <summary><strong>🖇 Unterlagen</strong></summary>
+> <summary><strong>🖇 Weitere Unterlagen</strong></summary>
 >
 > - [Annotierte Folien: CFG,
 >   LL-Parser](https://github.com/Compiler-CampusMinden/AnnotatedSlides/blob/master/frontend_parsing_cfg.ann.ba.pdf)
@@ -355,21 +355,20 @@ Hier entsteht ein Tafelbild.
 - Aho u. a. ([2023](#ref-Aho2023))
 - Hopcroft, Motwani, und Ullman ([2003](#ref-hopcroft2003))
 
-------------------------------------------------------------------------
-
-> [!TIP]
+> [!NOTE]
 >
 > <details>
 >
 > <summary><strong>✅ Lernziele</strong></summary>
 >
-> - k1: PDAs
-> - k1: Deterministische PDAs
-> - k1: Kontextfreie Grammatiken
-> - k1: Deterministisch kontextfreie Grammatiken
-> - k1: Top-Down-Analyse
-> - k1: LL-Parser
-> - k2: Zusammenhang zwischen PDAs und kontextfreien Grammatiken
+> - k1: Ich kenne PDAs
+> - k1: Ich kenne deterministische PDAs
+> - k1: Ich kenne kontextfreie Grammatiken
+> - k1: Ich kenne deterministisch kontextfreie Grammatiken
+> - k2: Ich kann den Zusammenhang zwischen PDAs und kontextfreien
+>   Grammatiken an einem Beispiel erklären
+> - k1: Ich kenne die Top-Down-Analyse
+> - k1: Ich kenne die Arbeitsweise von LL-Parsern
 >
 > </details>
 
@@ -411,4 +410,4 @@ Hier entsteht ein Tafelbild.
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 3500ec4 (lecture: rework outcomes (02/CFG), 2025-08-19)<br></sub></sup></p></blockquote>

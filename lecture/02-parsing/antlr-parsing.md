@@ -1,6 +1,6 @@
 # Parser mit ANTLR generieren
 
-> [!NOTE]
+> [!IMPORTANT]
 >
 > <details open>
 >
@@ -56,6 +56,8 @@
 > Kontextobjekt angelegt, welches `public` sichtbar ist.
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >
@@ -178,7 +180,7 @@ Betrachten wir erneut die obige Grammatik.
 
 Die Eingabe von “`a = 42;`” führt zu folgendem Parse-Tree:
 
-<img src="images/hello_ex1.png" width="60%">
+<img src="images/hello_ex1.png" width="30%">
 
 Diese Eingabe führt zur Erkennung der Token `[ID, WS, =, WS, NUM, ;]`,
 wobei die `WS`-Token verworfen werden und der Parser den Tokenstream
@@ -211,7 +213,7 @@ zu `stmt - 42` vereinfachen.
 Betrachten wir nun die Eingabe `foo = 2+3*4; bar = 3*4+2;`. Diese führt
 zu folgendem Parse-Tree:
 
-<img src="images/hello_ex2.png" width="60%">
+<img src="images/hello_ex2.png" width="35%">
 
 Wie man sehen kann, sind in der Grammatik die üblichen Vorrangregeln für
 die Operationen `+` und `*` berücksichtigt - die Multiplikation wird in
@@ -443,7 +445,7 @@ ANTLR kann zu dieser Grammatik `calc.g4` einen passenden Listener
 von `antlr`). Weiterhin generiert ANTLR eine leere Basisimplementierung
 (Klasse `calcBaseListener`):
 
-<img src="images/ParseTreeListener.png" width="80%">
+<img src="images/ParseTreeListener.png" width="70%">
 
 (Nur “interessante” Methoden gezeigt.)
 
@@ -511,7 +513,7 @@ ANTLR kann zu dieser Grammatik einen passenden Visitor (Interface
 `antlr`). Weiterhin generiert ANTLR eine leere Basisimplementierung
 (Klasse `calcBaseVisitor<T>`):
 
-<img src="images/ParseTreeVisitor.png" width="80%">
+<img src="images/ParseTreeVisitor.png" width="60%">
 
 (Nur “interessante” Methoden gezeigt.)
 
@@ -607,24 +609,27 @@ Parser mit ANTLR generieren: Parser-Regeln werden mit
 
 - @Parr ([2014](#ref-Parr2014))
 
-------------------------------------------------------------------------
-
-> [!TIP]
+> [!NOTE]
 >
 > <details>
 >
 > <summary><strong>✅ Lernziele</strong></summary>
 >
-> - k2: Aufbau der Parser-Regeln
-> - k3: Alternativen und optionale/mehrfache Regelteile in Parser-Regeln
-> - k3: Vorrang von Alternativen (bei Mehrdeutigkeiten)
-> - k3: Benannte Alternativen und Regel-Elemente
-> - k2: Aufbau des Parse-Tree
-> - k3: Umgang mit Kontext-Objekten
-> - k3: Traversierung des Parse-Tree mit den generierten Listenern oder
->   Visitors
+> - k2: Ich kann den Aufbau der Parser-Regeln an einem Beispiel erklären
+> - k3: Ich kann Alternativen und optionale/mehrfache Regelteile in
+>   Parser-Regeln umsetzen
+> - k3: Ich kann den Vorrang von Alternativen (bei Mehrdeutigkeiten)
+>   definieren
+> - k3: Ich kann Benannte Alternativen und Regel-Elemente zielgerichtet
+>   einsetzen
+> - k2: Ich kann den Aufbau des Parse-Tree von ANTLR erklären
+> - k3: Ich kann mit den Kontext-Objekten von ANTLR umgehen
+> - k3: Ich kann den Parse-Tree mit den generierten Listenern oder
+>   Visitors traversieren und bearbeiten
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >
@@ -687,4 +692,4 @@ Parser mit ANTLR generieren: Parser-Regeln werden mit
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 0239b83 (lecture: rework outcomes (02/ANTLR), 2025-08-19)<br></sub></sup></p></blockquote>

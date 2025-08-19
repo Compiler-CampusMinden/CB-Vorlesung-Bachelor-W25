@@ -1,6 +1,6 @@
 # AST-basierte Interpreter: Funktionen und Klassen
 
-> [!NOTE]
+> [!IMPORTANT]
 >
 > <details open>
 >
@@ -47,6 +47,8 @@
 > das Instanzobjekt mit den Attributen verweisen.
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >
@@ -395,9 +397,7 @@ werden soll …
 - Grune u. a. ([2012](#ref-Grune2012)): Kapitel 6
 - Mogensen ([2017](#ref-Mogensen2017)): Kapitel 4
 
-------------------------------------------------------------------------
-
-> [!TIP]
+> [!NOTE]
 >
 > <details>
 >
@@ -411,6 +411,8 @@ werden soll …
 >   Implementierung mit einem Visitor
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >
@@ -499,12 +501,6 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
   by [Bob Nystrom](https://github.com/munificent) on Github.com
   ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
 - Eigener Code basierend auf einer Idee nach
-  [LoxClass.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxClass.java#L11)
-  und
-  [LoxInstance.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxInstance.java#L7)
-  by [Bob Nystrom](https://github.com/munificent) on Github.com
-  ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
-- Eigener Code basierend auf einer Idee nach
   [Return.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/Return.java#L4)
   und
   [LoxFunction.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxFunction.java#L74)
@@ -518,6 +514,12 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
   ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
 - Eigener Code basierend auf einer Idee nach
   [LoxFunction.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxFunction.java#L31)
+  by [Bob Nystrom](https://github.com/munificent) on Github.com
+  ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
+- Eigener Code basierend auf einer Idee nach
+  [LoxClass.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxClass.java#L11)
+  und
+  [LoxInstance.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxInstance.java#L7)
   by [Bob Nystrom](https://github.com/munificent) on Github.com
   ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
 

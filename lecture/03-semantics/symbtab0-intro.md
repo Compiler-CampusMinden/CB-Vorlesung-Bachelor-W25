@@ -1,6 +1,6 @@
 # SymbTab0: Überblick Symboltabellen
 
-> [!NOTE]
+> [!IMPORTANT]
 >
 > <details open>
 >
@@ -22,6 +22,8 @@
 > Compiler generiert und benutzt.
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >
@@ -342,9 +344,7 @@ dereferenziert wird.
 - Parr ([2014](#ref-Parr2014)): Kapitel 6.4 und 8.4
 - Parr ([2010](#ref-Parr2010)): Kapitel 6, 7 und 8
 
-------------------------------------------------------------------------
-
-> [!TIP]
+> [!NOTE]
 >
 > <details>
 >

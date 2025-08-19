@@ -1,6 +1,6 @@
 # Lexer mit ANTLR generieren
 
-> [!NOTE]
+> [!IMPORTANT]
 >
 > <details open>
 >
@@ -22,6 +22,8 @@
 > generierte Lexerklasse in die jeweiligen Methoden eingebettet werden.
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >
@@ -512,19 +514,20 @@ geschrieben
 
 - Parr ([2014](#ref-Parr2014))
 
-------------------------------------------------------------------------
-
-> [!TIP]
+> [!NOTE]
 >
 > <details>
 >
 > <summary><strong>✅ Lernziele</strong></summary>
 >
-> - k3: Lexer-Regeln in ANTLR formulieren und einsetzen
-> - k2: Verhalten des Lexers: längste Matches, Reihenfolge
-> - k3: Nutzung von Lexer-Aktionen
+> - k3: Ich kann Lexer-Regeln in ANTLR formulieren und einsetzen
+> - k2: Ich kann das Verhalten des Lexers erklären, insbesondere längste
+>   Matches und der Einfluss der Reihenfolge der Regeln
+> - k3: Ich kann Lexer-Aktionen einsetzen
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >
@@ -653,4 +656,4 @@ geschrieben
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> b142d79 (lecture: rework outcomes (01_ANTLR), 2025-08-19)<br></sub></sup></p></blockquote>

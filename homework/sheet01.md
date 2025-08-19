@@ -46,10 +46,8 @@ Recherchieren Sie zunächst den Aufbau von Gleitkommazahlen in Python und
 Java.
 
 Erstellen Sie für jede der beiden Programmiersprachen reguläre
-Ausdrücke, DFAs und reguläre Grammatiken wie in Aufgabe 1. Verifizieren
-Sie Ihre Lösungen wie in Aufgabe
-
-1.  
+Ausdrücke, DFAs und reguläre Grammatiken wie in Aufgabe A1.2.
+Verifizieren Sie Ihre Lösungen wie in Aufgabe A1.2.
 
 ## A1.4: Mailadressen? (1P)
 
@@ -93,4 +91,4 @@ C &\rightarrow& \epsilon                 \nonumber
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 01cfd34 (homework: fix markdown (Sheet01), 2025-08-19)<br></sub></sup></p></blockquote>

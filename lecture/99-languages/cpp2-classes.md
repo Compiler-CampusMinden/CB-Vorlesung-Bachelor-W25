@@ -1,6 +1,6 @@
 # C++: Klassen
 
-> [!NOTE]
+> [!IMPORTANT]
 >
 > <details open>
 >
@@ -42,6 +42,8 @@
 > Möglichkeit Initialisierungslisten.)
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >
@@ -359,9 +361,7 @@ Delegierende Konstruktoren gibt es ab C++11:
 - „C and C++ Reference“ ([o. J.](#ref-cppreference.com))
 - Allain und Hoffer ([o. J.](#ref-cprogramming.com))
 
-------------------------------------------------------------------------
-
-> [!TIP]
+> [!NOTE]
 >
 > <details>
 >
@@ -374,6 +374,8 @@ Delegierende Konstruktoren gibt es ab C++11:
 > - k3: Unterschied Initialisierungslisten vs. Initialisierung im Body
 >
 > </details>
+
+> [!TIP]
 >
 > <details>
 >
