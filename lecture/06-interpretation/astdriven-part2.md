@@ -106,7 +106,7 @@ def funcDecl(self, AST t):
 
 <img src="images/fun.png">
 
-Quelle: Eigener Code basierend auf einer Idee nach
+Quelle: Funktionsdeklaration: Eigener Code basierend auf einer Idee nach
 [LoxFunction.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxFunction.java#L6)
 by [Bob Nystrom](https://github.com/munificent) on Github.com
 ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
@@ -143,7 +143,7 @@ def funcCall(self, AST t):
     self.env = prev
 ```
 
-Quelle: Eigener Code basierend auf einer Idee nach
+Quelle: Funktionsaufruf: Eigener Code basierend auf einer Idee nach
 [LoxFunction.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxFunction.java#L57)
 by [Bob Nystrom](https://github.com/munificent) on Github.com
 ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
@@ -192,7 +192,7 @@ def funcCall(self, AST t):
     return erg;
 ```
 
-Quelle: Eigener Code basierend auf einer Idee nach
+Quelle: Rückgabewerte: Eigener Code basierend auf einer Idee nach
 [Return.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/Return.java#L4)
 und
 [LoxFunction.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxFunction.java#L74)
@@ -234,7 +234,7 @@ def funcCall(self, AST t):
     ...
 ```
 
-Quelle: Eigener Code basierend auf einer Idee nach
+Quelle: Native Funktionen: Eigener Code basierend auf einer Idee nach
 [LoxCallable.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxCallable.java#L6)
 und
 [LoxFunction.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxFunction.java#L6)
@@ -282,7 +282,7 @@ def classDef(self, AST t):
     self.env.define(t.ID().getText(), clazz)
 ```
 
-Quelle: Eigener Code basierend auf einer Idee nach
+Quelle: Klassen: Eigener Code basierend auf einer Idee nach
 [Interpreter.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/Interpreter.java#L115)
 by [Bob Nystrom](https://github.com/munificent) on Github.com
 ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
@@ -314,7 +314,7 @@ class Instance:
         raise RuntimeError(name, "undefined method")
 ```
 
-Quelle: Eigener Code basierend auf einer Idee nach
+Quelle: Instanzen: Eigener Code basierend auf einer Idee nach
 [LoxClass.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxClass.java#L11)
 und
 [LoxInstance.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxInstance.java#L7)
@@ -357,7 +357,7 @@ class Fun(Callable):
         return Fun(self.decl, e)
 ```
 
-Quelle: Eigener Code basierend auf einer Idee nach
+Quelle: Methodenaufruf: Eigener Code basierend auf einer Idee nach
 [LoxFunction.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxFunction.java#L31)
 by [Bob Nystrom](https://github.com/munificent) on Github.com
 ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
@@ -403,12 +403,13 @@ werden soll …
 >
 > <summary><strong>✅ Lernziele</strong></summary>
 >
-> - k3: Traversierung von Parse-Trees und Implementierung von Aktionen
->   mit Hilfe des Visitor-Patterns
-> - k3: Interpreter müssen Namen und Werte speichern:
->   Environment-Strukturen analog zu den Symboltabellen
-> - k3: Code-Ausführung im Interpreter durch eine Read-Eval-Schleife:
->   Implementierung mit einem Visitor
+> - k3: Ich kann die Traversierung von Parse-Trees implementieren und
+>   dabei mit Hilfe des Visitor-Patterns Aktionen ausführen
+> - k3: Ich kann Environment-Strukturen analog zu den Symboltabellen
+>   aufbauen, um Namen und Werte dynamisch zu speichern
+> - k3: Ich kann eine Read-Eval-Schleife implementieren und dabei durch
+>   Traversierung des AST die dort abgelegten Klassendefinitionen und
+>   Methodenaufrufe ausführen
 >
 > </details>
 
@@ -496,31 +497,39 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
 **Exceptions:**
 
-- Eigener Code basierend auf einer Idee nach
-  [LoxClass.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxClass.java#L11)
-  und
-  [LoxInstance.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxInstance.java#L7)
-  by [Bob Nystrom](https://github.com/munificent) on Github.com
-  ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
-- Eigener Code basierend auf einer Idee nach
-  [Interpreter.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/Interpreter.java#L115)
-  by [Bob Nystrom](https://github.com/munificent) on Github.com
-  ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
-- Eigener Code basierend auf einer Idee nach
+- Native Funktionen: Eigener Code basierend auf einer Idee nach
   [LoxCallable.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxCallable.java#L6)
   und
   [LoxFunction.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxFunction.java#L6)
   by [Bob Nystrom](https://github.com/munificent) on Github.com
   ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
-- Eigener Code basierend auf einer Idee nach
-  [LoxFunction.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxFunction.java#L31)
+- Klassen: Eigener Code basierend auf einer Idee nach
+  [Interpreter.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/Interpreter.java#L115)
   by [Bob Nystrom](https://github.com/munificent) on Github.com
   ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
-- Eigener Code basierend auf einer Idee nach
+- Rückgabewerte: Eigener Code basierend auf einer Idee nach
   [Return.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/Return.java#L4)
   und
   [LoxFunction.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxFunction.java#L74)
   by [Bob Nystrom](https://github.com/munificent) on Github.com
   ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
+- Methodenaufruf: Eigener Code basierend auf einer Idee nach
+  [LoxFunction.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxFunction.java#L31)
+  by [Bob Nystrom](https://github.com/munificent) on Github.com
+  ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
+- Funktionsaufruf: Eigener Code basierend auf einer Idee nach
+  [LoxFunction.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxFunction.java#L57)
+  by [Bob Nystrom](https://github.com/munificent) on Github.com
+  ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
+- Instanzen: Eigener Code basierend auf einer Idee nach
+  [LoxClass.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxClass.java#L11)
+  und
+  [LoxInstance.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxInstance.java#L7)
+  by [Bob Nystrom](https://github.com/munificent) on Github.com
+  ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
+- Funktionsdeklaration: Eigener Code basierend auf einer Idee nach
+  [LoxFunction.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxFunction.java#L6)
+  by [Bob Nystrom](https://github.com/munificent) on Github.com
+  ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 2c52759 (lecture: rework outcomes (06/AST2), 2025-08-21)<br></sub></sup></p></blockquote>

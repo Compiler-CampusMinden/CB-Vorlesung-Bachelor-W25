@@ -143,9 +143,9 @@ und Typ gespeichert wird. Variablensymbole leiten direkt von dieser
 Klasse ab. Für die eingebauten Typen wird ein “Marker-Interface” `Type`
 erstellt, um Variablen- und Typ-Symbole unterscheiden zu können.
 
-<img src="images/nestedscopesuml.png" width="80%">
+<img src="images/nestedscopesuml.png" width="60%">
 
-Quelle: Eigene Modellierung nach einer Idee in ([Parr
+Quelle: Nested Scopes: Eigene Modellierung nach einer Idee in ([Parr
 2010](#ref-Parr2010), p. 142)
 
 ### Alternative Implementierung über einen Stack
@@ -180,7 +180,7 @@ class Scope:
         symbol.scope = self     # track the scope in each symbol
 ```
 
-Quelle: Eigene Implementierung nach einer Idee in ([Parr
+Quelle: Nested Scopes: Eigene Implementierung nach einer Idee in ([Parr
 2010](#ref-Parr2010), p. 169)
 
 **Anmerkung**: In der Klasse `Symbol` kann man ein Feld `scope` vom Typ
@@ -307,10 +307,11 @@ symbolischen Debugger noch gebraucht werden.
 >
 > <summary><strong>✅ Lernziele</strong></summary>
 >
-> - k3: Aufbau von Symboltabellen für Nested Scopes inkl.
->   Strukturen/Klassen mit einem Listener
-> - k3: Auflösen von Symbolen über die Scopes
-> - k3: Einfache statische Prüfungen anhand der Symboltabellen
+> - k3: Ich kann Symboltabellen für Nested Scopes implementieren unter
+>   Nutzung von passenden Strukturen/Klassen und einem Listener
+> - k3: Ich kann Symbole über die Scopes auflösen
+> - k3: Ich kann einfache statische Prüfungen anhand der Symboltabellen
+>   durchführen
 >
 > </details>
 
@@ -359,9 +360,9 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
 **Exceptions:**
 
-- Eigene Implementierung nach einer Idee in ([Parr 2010](#ref-Parr2010),
-  p. 169)
-- Eigene Modellierung nach einer Idee in ([Parr 2010](#ref-Parr2010),
-  p. 142)
+- Nested Scopes: Eigene Implementierung nach einer Idee in ([Parr
+  2010](#ref-Parr2010), p. 169)
+- Nested Scopes: Eigene Modellierung nach einer Idee in ([Parr
+  2010](#ref-Parr2010), p. 142)
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> d2b8792 (lecture: fix origin (03/SymbTab1), 2025-08-21)<br></sub></sup></p></blockquote>

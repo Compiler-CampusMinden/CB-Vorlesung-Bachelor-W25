@@ -48,7 +48,7 @@ void f() {
 
 <img src="images/structscopesuml.png" width="80%">
 
-Quelle: Eigene Modellierung nach einer Idee in ([Parr
+Quelle: Structs: Eigene Modellierung nach einer Idee in ([Parr
 2010](#ref-Parr2010), p. 162)
 
 Strukturen stellen wie Funktionen sowohl einen Scope als auch ein Symbol
@@ -103,7 +103,7 @@ public
 
 <img src="images/classscopesuml.png" width="80%">
 
-Quelle: Eigene Modellierung nach einer Idee in ([Parr
+Quelle: Klassen: Eigene Modellierung nach einer Idee in ([Parr
 2010](#ref-Parr2010), p. 167)
 
 Bei Klassen kommt in den Tabellen ein weiterer Pointer `parentClazz` auf
@@ -132,7 +132,7 @@ class Clazz(Struct):
         else: return None
 ```
 
-Quelle: Eigene Implementierung nach einer Idee in ([Parr
+Quelle: Klassen: Eigene Implementierung nach einer Idee in ([Parr
 2010](#ref-Parr2010), p. 172)
 
 **Hinweis**: Die obige Implementierungsskizze soll vor allem das Prinzip
@@ -214,9 +214,9 @@ die Klasse auflöst und `x` als Attribut darin.
 >
 > <summary><strong>✅ Lernziele</strong></summary>
 >
-> - k3: Aufbau von Symboltabellen für Nested Scopes inkl.
->   Strukturen/Klassen mit einem Listener
-> - k3: Attribute von Klassen und Strukturen auflösen
+> - k3: Ich kann Symboltabellen für Nested Scopes implementieren unter
+>   Nutzung von passenden Strukturen/Klassen und einem Listener
+> - k3: Ich kann Attribute von Klassen und Strukturen auflösen
 >
 > </details>
 
@@ -312,11 +312,11 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
 **Exceptions:**
 
-- Eigene Modellierung nach einer Idee in ([Parr 2010](#ref-Parr2010),
-  p. 167)
-- Eigene Implementierung nach einer Idee in ([Parr 2010](#ref-Parr2010),
-  p. 172)
-- Eigene Modellierung nach einer Idee in ([Parr 2010](#ref-Parr2010),
-  p. 162)
+- Klassen: Eigene Modellierung nach einer Idee in ([Parr
+  2010](#ref-Parr2010), p. 167)
+- Klassen: Eigene Implementierung nach einer Idee in ([Parr
+  2010](#ref-Parr2010), p. 172)
+- Structs: Eigene Modellierung nach einer Idee in ([Parr
+  2010](#ref-Parr2010), p. 162)
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 306830c (lecture: rework outcomes (03/SymbTab3), 2025-08-21)<br></sub></sup></p></blockquote>

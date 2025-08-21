@@ -1206,29 +1206,37 @@ Datei `tollesProgramm` zu erzeugen: `g++ main.o -o tollesProgramm`.
 >
 > <summary><strong>✅ Lernziele</strong></summary>
 >
-> - k1: Wie hängen C und C++ zusammen?
-> - k1: Wichtigste Unterschiede und Gemeinsamkeiten zu Java
-> - k1: Wichtigste Aufgaben des Präprozessors
-> - k3: Aufbau, Übersetzen und Starten von einfachen C++-Programmen
-> - k3: Standard-Ein-/Ausgabe-Kanäle in C++ sowie die Operatoren \>\>
->   und \<\<
-> - k3: Nutzung der Basisdatentypen einschließlich der Modifikatoren
-> - k3: Deklaration von Variablen, Nutzung von Kontrollstrukturen und
->   Operatoren
-> - k3: Interpretation von Integers im booleschen Kontext
-> - k3: Nutzung des Scope-Operators ::, Namensräume
-> - k3: Benutzung von sizeof zur Bestimmung des Speicherbedarfs
-> - k3: Benutzung von typedef zur Definition neuer Typen (Aliase
->   bestehender Typen)
-> - k3: Erinnerung: Automatisiertes Übersetzen mit Hilfe von GNU Make
->   und einfachsten Makefiles
-> - k2: Unterschied zwischen Deklaration und Definition, One Definition
->   Rule
-> - k2: Problematik bei der Deklaration parameterloser Funktionen
-> - k2: Call-by-Value-Semantik bei der Parameterübergabe
-> - k2: Sichtbarkeit und Initialisierung von Variablen
-> - k3: Definition und Deklaration von Funktionen
-> - k3: Nutzung lokaler und globaler und lokaler statischer Variablen
+> - k1: Ich kenne den Zusammenhang zwischen C und C++
+> - k1: Ich kenne die wichtigsten Unterschiede und Gemeinsamkeiten zu
+>   Java
+> - k1: Ich kenne die wichtigsten Aufgaben des Präprozessors
+> - k3: Ich kann einfache C++-Programme schreiben, kompilieren und
+>   starten
+> - k3: Ich kann die Standard-Ein-/Ausgabe-Kanäle in C++ sowie die
+>   Operatoren `>>` und `<<` einsetzen
+> - k3: Ich kann die Basisdatentypen einschließlich der Modifikatoren
+>   nutzen
+> - k3: Ich kann Variablen deklarieren und Kontrollstrukturen und
+>   Operatoren einsetzen
+> - k2: Ich habe verstanden, dass Integerwerte im booleschen Kontext
+>   ausgewertet werden (können)
+> - k3: Ich kann den Scope-Operator `::` und Namensräume einsetzen
+> - k3: Ich kann `sizeof` zur Bestimmung des Speicherbedarfs einsetzen
+> - k3: Ich kann `typedef` zur Definition neuer Typen (Aliase
+>   bestehender Typen) einsetzen
+> - k3: Ich kann einfache Makefiles schreiben, um das Übersetzen und
+>   Starten von Programmen mit von GNU Make zu automatisieren
+> - k2: Ich kann den Unterschied zwischen Deklaration und Definition an
+>   einem Beispiel erklären und dabei auf One Definition Rule eingehen
+> - k2: Ich kann die Problematik bei der Deklaration parameterloser
+>   Funktionen erklären
+> - k2: Ich verstehe die Call-by-Value-Semantik bei der
+>   Parameterübergabe
+> - k2: Ich kann die unterschiedliche Sichtbarkeit und Initialisierung
+>   von Variablen an einem Beispiel erklären
+> - k3: Ich kann Funktionen deklarieren und definieren und aufrufen
+> - k3: Ich kann lokale und globale und lokale statische Variablen
+>   nutzen
 >
 > </details>
 
@@ -1354,6 +1362,6 @@ Datei `tollesProgramm` zu erzeugen: `g++ main.o -o tollesProgramm`.
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> bd53f2c (lecture: rework outcomes (09/CPP0), 2025-08-21)<br></sub></sup></p></blockquote>
 
 [^1]: Achtung: C-Compiler akzeptiert **alle** Parameter!

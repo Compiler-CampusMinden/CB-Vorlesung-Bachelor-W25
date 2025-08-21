@@ -70,9 +70,9 @@ void g(int z){}
 
 ## Erweiterung des Klassendiagramms für Funktions-Scopes
 
-<img src="images/functionscopesuml.png" width="80%">
+<img src="images/functionscopesuml.png" width="65%">
 
-Quelle: Eigene Modellierung nach einer Idee in ([Parr
+Quelle: Funktions-Scopes: Eigene Modellierung nach einer Idee in ([Parr
 2010](#ref-Parr2010), p. 147)
 
 ## Funktionen sind Symbole *und* Scopes
@@ -181,9 +181,9 @@ Funktionsdefinition gespeichert werden (weiteres Feld/Attribut in
 >
 > <summary><strong>✅ Lernziele</strong></summary>
 >
-> - k3: Aufbau von Symboltabellen für Nested Scopes inkl.
->   Strukturen/Klassen mit einem Listener
-> - k3: Attribute von Klassen und Strukturen auflösen
+> - k3: Ich kann Symboltabellen für Nested Scopes implementieren unter
+>   Nutzung von passenden Strukturen/Klassen und einem Listener
+> - k3: Ich kann Parameter und lokale Variablen von Funktionen auflösen
 >
 > </details>
 
@@ -255,7 +255,7 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
 **Exceptions:**
 
-- Eigene Modellierung nach einer Idee in ([Parr 2010](#ref-Parr2010),
-  p. 147)
+- Funktions-Scopes: Eigene Modellierung nach einer Idee in ([Parr
+  2010](#ref-Parr2010), p. 147)
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> b8940b9 (lecture: rework outcomes (03/SymbTab2), 2025-08-21)<br></sub></sup></p></blockquote>

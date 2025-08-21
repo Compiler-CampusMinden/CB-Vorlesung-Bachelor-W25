@@ -256,10 +256,13 @@ s != "123";     // ???
 >
 > <summary><strong>✅ Lernziele</strong></summary>
 >
-> - k2: Implizite Typkonvertierungen bei Operatoren
-> - k3: Überladen von Operatoren (innerhalb bzw. außerhalb einer Klasse)
-> - k3: Anwendung der Deklaration als friend
-> - k3: Implementierung von Post- und Präfix-Operatoren
+> - k2: Ich kann implizite Typkonvertierungen bei Operatoren an einem
+>   Beispiel erklären
+> - k3: Ich kann in meinem Programm Operatoren überladen (innerhalb bzw.
+>   außerhalb einer Klasse)
+> - k3: Ich kann die Deklaration als `friend` gezielt anwenden
+> - k3: Ich kann Post- und Präfix-Operatoren implementieren und kenne
+>   die Unterschiede in der Signatur
 >
 > </details>
 
@@ -355,4 +358,4 @@ s != "123";     // ???
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> b74914d (lecture: rework outcomes (09/CPP4), 2025-08-21)<br></sub></sup></p></blockquote>

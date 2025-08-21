@@ -23,14 +23,11 @@ eines kleinen Compiler-Frontends für C++ ein.
     - Kontextfreie Grammatiken (CFG)
     - LL-Parser (Top-Down-Parser)
     - Generierung mit ANTLR
-3.  Semantische Analyse: Attributierte Grammatiken und Symboltabellen
+3.  Semantische Analyse: Symboltabellen
     - Namen und Scopes
     - Typen, Klassen, Polymorphie
-4.  Zwischencode: Intermediate Representation (IR), LLVM-IR
-5.  Backend:
-    - LLVM
-    - Interpreter: AST-Traversierung
-6.  C++ als zu verarbeitende Programmiersprache
+4.  Interpreter: AST-Traversierung
+5.  C++ als zu verarbeitende Programmiersprache
 
 ## Team
 
@@ -74,7 +71,7 @@ Vorstellung der Lösung im jeweiligen Praktikum in der Abgabewoche.
 |  | 46 | 13.: [Überblick Symboltabellen](lecture/03-semantics/symbtab0-intro.md), [Symboltabellen: Scopes](lecture/03-semantics/symbtab1-scopes.md), [Symboltabellen: Funktionen](lecture/03-semantics/symbtab2-functions.md), [Symboltabellen: Klassen](lecture/03-semantics/symbtab3-classes.md) | Carsten | 11.: [B03](homework/sheet03.md) ANTLR | 11\. / 12. / 15. (Carsten, *online*) |
 |  | 47 | 20.: **A-L: 09:45 - 10:30 Uhr, M-Z: 10:45 - 11:30 Uhr (B40): Parcoursprüfung: Station 1 ILIAS (Grammar, Lexing, Parsing), siehe Ankündigung** |  | 18.: [B04](homework/sheet04.md) Semantische Analyse | 18\. / 19. / 22. (Carsten, *online*) |
 |  | 48 | 26.: **18:00 - 19:30 Uhr (online): Edmonton II: Vorträge Mindener Projekte** | *Minden* |  |  |
-|  | 48 | 27.: [Überblick Zwischencode](lecture/04-intermediate/intro-ir.md), [Überblick Backend (LLVM)](lecture/04-intermediate/llvm-ir.md) | BC, Carsten |  |  |
+|  | 48 | 27.: | BC, Carsten |  |  |
 | Dezember | 49 | 03.: **18:00 - 19:30 Uhr (online): Edmonton III: Vorträge Edmontoner Projekte** | *Edmonton* |  |  |
 |  | 49 | 04.: [AST-basierte Interpreter 1](lecture/06-interpretation/astdriven-part1.md), [AST-basierte Interpreter 2](lecture/06-interpretation/astdriven-part2.md) | Carsten |  |  |
 |  | 50 | 11.: C++ I: [Basics](lecture/99-languages/cpp0-basics.md), [Pointer & Referenzen](lecture/99-languages/cpp1-pointer.md), [Klassen](lecture/99-languages/cpp2-classes.md), [Big 3](lecture/99-languages/cpp3-big3.md) | Carsten | 09.: [B05](homework/sheet05.md) Interpreter | 09\. / 10. / 13. (Carsten, *online*) |
@@ -187,4 +184,4 @@ is licensed under [CC BY-SA
 See the [credits](CREDITS.md) for a detailed list of contributing
 projects.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 00025a6 (readme: fix modul overview, 2025-08-21)<br></sub></sup></p></blockquote>

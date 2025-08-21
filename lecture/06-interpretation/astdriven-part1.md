@@ -243,7 +243,7 @@ class Interpreter(BaseVisitor<Object>):
         self.env = Environment()
 ```
 
-Quelle: Eigener Code basierend auf einer Idee nach
+Quelle: AST-Interpreter: Eigener Code basierend auf einer Idee nach
 [Interpreter.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/Interpreter.java#L21)
 by [Bob Nystrom](https://github.com/munificent) on Github.com
 ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
@@ -293,7 +293,8 @@ class Environment:
         else: raise RuntimeError(n, "undefined variable")
 ```
 
-Quelle: Eigener Code basierend auf einer Idee nach
+Quelle: Evaluieren einer Zuweisung: Eigener Code basierend auf einer
+Idee nach
 [Environment.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/Environment.java#L38)
 by [Bob Nystrom](https://github.com/munificent) on Github.com
 ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
@@ -335,7 +336,7 @@ def block(self, AST t):
     return None;
 ```
 
-Quelle: Eigener Code basierend auf einer Idee nach
+Quelle: Nested Environments: Eigener Code basierend auf einer Idee nach
 [Interpreter.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/Interpreter.java#L92)
 by [Bob Nystrom](https://github.com/munificent) on Github.com
 ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
@@ -374,12 +375,13 @@ werden (`finally`-Block).
 >
 > <summary><strong>✅ Lernziele</strong></summary>
 >
-> - k3: Traversierung von Parse-Trees und Implementierung von Aktionen
->   mit Hilfe des Visitor-Patterns
-> - k3: Interpreter müssen Namen und Werte speichern:
->   Environment-Strukturen analog zu den Symboltabellen
-> - k3: Code-Ausführung im Interpreter durch eine Read-Eval-Schleife:
->   Implementierung mit einem Visitor
+> - k3: Ich kann die Traversierung von Parse-Trees implementieren und
+>   dabei mit Hilfe des Visitor-Patterns Aktionen ausführen
+> - k3: Ich kann Environment-Strukturen analog zu den Symboltabellen
+>   aufbauen, um Namen und Werte dynamisch zu speichern
+> - k3: Ich kann eine Read-Eval-Schleife implementieren und dabei durch
+>   Traversierung des AST die dort abgelegten Anweisungen und Ausdrücke
+>   und Kontrollstrukturen ausführen
 >
 > </details>
 
@@ -427,13 +429,17 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
 **Exceptions:**
 
-- Eigener Code basierend auf einer Idee nach
+- Evaluieren einer Zuweisung: Eigener Code basierend auf einer Idee nach
   [Environment.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/Environment.java#L38)
   by [Bob Nystrom](https://github.com/munificent) on Github.com
   ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
-- Eigener Code basierend auf einer Idee nach
+- Nested Environments: Eigener Code basierend auf einer Idee nach
   [Interpreter.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/Interpreter.java#L92)
   by [Bob Nystrom](https://github.com/munificent) on Github.com
   ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
+- AST-Interpreter: Eigener Code basierend auf einer Idee nach
+  [Interpreter.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/Interpreter.java#L21)
+  by [Bob Nystrom](https://github.com/munificent) on Github.com
+  ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 6bc68bc (lecture: rework outcomes (06/AST1), 2025-08-21)<br></sub></sup></p></blockquote>

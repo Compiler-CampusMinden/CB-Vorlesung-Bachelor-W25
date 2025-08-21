@@ -45,7 +45,7 @@ int f(int x) {
 x = f(x);
 ```
 
-<img src="images/parsetree.png" width="80%">
+<img src="images/parsetree.png" width="70%">
 
 Nach der Syntaxanalyse braucht der Compiler für die darauf folgenden
 Phasen **semantische Analyse**, Optimierung und Codegenerierung
@@ -97,7 +97,7 @@ benötigt.
 
 ## Semantische Analyse und Symboltabellen
 
-<img src="images/architektur_cb.png" width="80%">
+<img src="images/architektur_cb.png" width="60%">
 
 ## Syntax und Semantik
 
@@ -224,7 +224,7 @@ for (i=0; i<10; i++) {
 }
 ```
 
-<img src="images/simpletable.png" width="20%">
+<img src="images/simpletable.png" width="10%">
 
 **Bsp.:** Die zu übersetzende Sprache hat nur einen (den globalen) Scope
 und kennt nur Bezeichner für Variablen.
@@ -350,9 +350,10 @@ dereferenziert wird.
 >
 > <summary><strong>✅ Lernziele</strong></summary>
 >
-> - k2: Aufgaben der semantischen Analyse
-> - k2: Bedeutung von Symboltabellen: Aufgaben, Verbindung zu
->   Compiler-Phasen
+> - k2: Ich kann die Aufgaben der semantischen Analyse an einem Beispiel
+>   erklären
+> - k2: Ich kann die Bedeutung von Symboltabellen erklären und die
+>   Aufgaben und Verbindung zu den Compiler-Phasen verdeutlichen
 >
 > </details>
 
@@ -399,4 +400,4 @@ dereferenziert wird.
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> ec21604 (lecture: rework outcomes (03/SymbTab0), 2025-08-21)<br></sub></sup></p></blockquote>
