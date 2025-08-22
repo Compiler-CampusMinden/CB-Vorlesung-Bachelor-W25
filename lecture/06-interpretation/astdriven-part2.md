@@ -495,41 +495,4 @@ werden soll …
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-**Exceptions:**
-
-- Native Funktionen: Eigener Code basierend auf einer Idee nach
-  [LoxCallable.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxCallable.java#L6)
-  und
-  [LoxFunction.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxFunction.java#L6)
-  by [Bob Nystrom](https://github.com/munificent) on Github.com
-  ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
-- Klassen: Eigener Code basierend auf einer Idee nach
-  [Interpreter.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/Interpreter.java#L115)
-  by [Bob Nystrom](https://github.com/munificent) on Github.com
-  ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
-- Rückgabewerte: Eigener Code basierend auf einer Idee nach
-  [Return.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/Return.java#L4)
-  und
-  [LoxFunction.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxFunction.java#L74)
-  by [Bob Nystrom](https://github.com/munificent) on Github.com
-  ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
-- Methodenaufruf: Eigener Code basierend auf einer Idee nach
-  [LoxFunction.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxFunction.java#L31)
-  by [Bob Nystrom](https://github.com/munificent) on Github.com
-  ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
-- Funktionsaufruf: Eigener Code basierend auf einer Idee nach
-  [LoxFunction.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxFunction.java#L57)
-  by [Bob Nystrom](https://github.com/munificent) on Github.com
-  ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
-- Instanzen: Eigener Code basierend auf einer Idee nach
-  [LoxClass.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxClass.java#L11)
-  und
-  [LoxInstance.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxInstance.java#L7)
-  by [Bob Nystrom](https://github.com/munificent) on Github.com
-  ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
-- Funktionsdeklaration: Eigener Code basierend auf einer Idee nach
-  [LoxFunction.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxFunction.java#L6)
-  by [Bob Nystrom](https://github.com/munificent) on Github.com
-  ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
-
-<blockquote><p><sup><sub><strong>Last modified:</strong> 2c52759 (lecture: rework outcomes (06/AST2), 2025-08-21)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> c06ddae (tooling: rename 'origin' to 'credits', 2025-08-22)<br></sub></sup></p></blockquote>

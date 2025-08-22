@@ -442,4 +442,4 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
   by [Bob Nystrom](https://github.com/munificent) on Github.com
   ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> dac3e7e (lecture: rework outcomes (Intro/Overview), 2025-08-19)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> c06ddae (tooling: rename 'origin' to 'credits', 2025-08-22)<br></sub></sup></p></blockquote>

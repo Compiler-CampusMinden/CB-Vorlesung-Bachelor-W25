@@ -310,13 +310,4 @@ die Klasse auflöst und `x` als Attribut darin.
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-**Exceptions:**
-
-- Klassen: Eigene Modellierung nach einer Idee in ([Parr
-  2010](#ref-Parr2010), p. 167)
-- Klassen: Eigene Implementierung nach einer Idee in ([Parr
-  2010](#ref-Parr2010), p. 172)
-- Structs: Eigene Modellierung nach einer Idee in ([Parr
-  2010](#ref-Parr2010), p. 162)
-
-<blockquote><p><sup><sub><strong>Last modified:</strong> 306830c (lecture: rework outcomes (03/SymbTab3), 2025-08-21)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> c06ddae (tooling: rename 'origin' to 'credits', 2025-08-22)<br></sub></sup></p></blockquote>

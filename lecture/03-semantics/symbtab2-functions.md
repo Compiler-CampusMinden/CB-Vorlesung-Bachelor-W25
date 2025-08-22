@@ -253,9 +253,4 @@ Funktionsdefinition gespeichert werden (weiteres Feld/Attribut in
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-**Exceptions:**
-
-- Funktions-Scopes: Eigene Modellierung nach einer Idee in ([Parr
-  2010](#ref-Parr2010), p. 147)
-
-<blockquote><p><sup><sub><strong>Last modified:</strong> b8940b9 (lecture: rework outcomes (03/SymbTab2), 2025-08-21)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> c06ddae (tooling: rename 'origin' to 'credits', 2025-08-22)<br></sub></sup></p></blockquote>
