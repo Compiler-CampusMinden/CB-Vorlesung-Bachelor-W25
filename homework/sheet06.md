@@ -1,613 +1,333 @@
-# Blatt 06: C++
+# Blatt 06: Interpreter
 
 ## Zusammenfassung
 
-Ziel dieses Aufgabenblattes ist die praktische Anwendung Ihrer
-C++-Kenntnisse, insbesondere werden Sie Pointer, Referenzen und Klassen
-anwenden und vertiefen. Als Anwendungsbeispiel werden Sie bestimmte in
-der C++-Welt wohlbekannte Smartpointer modellieren sowie einen einfachen
-Ringpuffer programmieren. Sie lernen mit dem *Reference Counting*
-nebenbei eine verbreitete Technik der *Garbage Collection* kennen.
+Ziel dieses Aufgabenblattes ist die Erstellung eines
+Tree-Walking-Interpreter mit ANTLR für eine Lisp-artige Sprache.
 
 ## Methodik
 
-Sie werden auf diesem Blatt vier einfache Klassen in C++ implementieren.
+Sie finden im [Sample
+Project](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/tree/master/homework/src/sample_project)
+zwei Grammatiken
+([MiniLispA](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/blob/master/homework/src/sample_project/src/main/antlr/MiniLispA.g4),
+[MiniLispB](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/blob/master/homework/src/sample_project/src/main/antlr/MiniLispB.g4)),
+die (teilweise) zu der Zielsprache auf diesem Blatt passen. Analysieren
+Sie beide Grammatiken und entscheiden Sie sich für eine der beiden
+Varianten. Vervollständigen Sie diese bzw. passen Sie diese an.
 
-Es empfiehlt sich, zunächst die Beispiele gründlich zu analysieren, um
-die gewünschte Funktionsweise der einzelnen Klassen vorab präzise zu
-verstehen. Sie werden zu einigen Dingen in der C++-Literatur
-recherchieren müssen.
+Erstellen Sie mit dieser Grammatik und ANTLR wieder einen Lexer und
+Parser.
 
-Implementieren Sie immer eine Klasse vollständig und testen Sie Ihren
-Code sowohl mit den vorgegebenen Beispielen als auch mit eigenen
-Beispielen, bevor Sie sich an die nächste Aufgabe/Klasse setzen.
+Es ist empfehlenswert, den Interpreter dreistufig zu realisieren:
 
-## Speicherverwaltung in C/C++
+1.  Einlesen aus einer Datei mit Lisp-Code und Parsen der Inhalte
+2.  Aufbauen der Symboltabelle und Durchführung der semantischen Analyse
+3.  Ablaufen des Parse-Tree/AST und Auswerten der Ausdrücke
+    (Interpretation)
 
-C und C++ erlauben als hardwarenahe Programmiersprachen den direkten
-Umgang mit dem Programmspeicher (Heap). Ein Programm kann dynamisch zu
-jeder Zeit weiteren Speicher anfordern und so beispielsweise
-mitwachsende Datenstrukturen realisieren.
+## Sprachdefinition
 
-Da der Heap-Speicher endlich ist, muss man nicht mehr benötigten
-Speicher auch wieder freigeben. Anderenfalls ist irgendwann der
-komplette Heap belegt und das Programm kann nicht mehr ordnungsgemäß
-arbeiten. Für die Freigabe ist man als Programmierer:in selbst
-zuständig.
+Ein Programm besteht aus einem oder mehreren Ausdrücken (*Expressions*).
+Die Ausdrücke haben eine spezielle Form: Sie sind sogenannte
+[S-Expressions](https://en.wikipedia.org/wiki/S-expression). Dies sind
+entweder Literale der Form `x` oder einfache listenartige Gebilde der
+Form `(. x y)`, wobei der `.` eine Operation (oder Funktion) darstellt
+und `x` und `y` selbst wieder S-Expressions sind.
 
-### Beispiel für eine Tokenizer-Funktion
+Die einfachste Form sind dabei Literale mit konkreten Werten der drei
+Datentypen `Integer`, `String` und `Boolean`:
 
-Im folgenden Programmschnipsel soll eine Funktion `next_token()` das
-nächste Token berechnen. So eine Funktion findet sich typischerweise im
-Lexer. Für die Rückgabe des Tokens hat man in C++ drei Möglichkeiten:
-als Kopie, als Referenz oder als Pointer.
-
-``` cpp
-// Return as copy
-Token next_token() {
-    Token wuppie = Token("wuppie", 1, 4);   // will be deleted automatically
-    Token bar = Token("bar", 7, 10);        // not used, will be deleted automatically
-
-    return wuppie;
-}
-int main() {
-    Token x = next_token();                 // copy constructor; no need to free
-}
+``` clojure
+42          ;; Integer
+"hello"     ;; String
+true        ;; Boolean
+false       ;; Boolean
 ```
 
-``` cpp
-// Return as pointer
-Token* next_token() {
-    Token* foo = new Token("foo", 9, 35);   // will be free'd manually
-    Token* bar = new Token("bar", 7, 10);   // leaves a memory hole!!!
+Für eine Variable `foo` wäre das Folgende ebenfalls eine S-Expression:
 
-    return foo;
-}
-int main() {
-    Token* x = next_token();                // only the pointer (i.e. address) will be copied
-    ...
-    delete x;                               // caller needs to free this object
-}
+``` clojure
+foo         ;; Variable foo
 ```
 
-``` cpp
-// Return as C++ reference
-Token& next_token() {
-    Token* foo = new Token("foo", 9, 35);   // will be free'd manually
-    Token* bar = new Token("bar", 7, 10);   // leaves a memory hole!!!
+(Über `;;` wird ein Kommentar eingeleitet, der bis zum Ende der Zeile
+geht.)
 
-    return *foo;
-}
-int main() {
-    Token& x = next_token();                // no copy, `x` is just a new alias for `foo`
-    ...
-    delete &x;                              // caller needs to free this object
-}
+Komplexere Ausdrücke werden über die Listenform gebildet:
+
+``` clojure
+(+ 1 1)               ;; 1 + 1
+(/ 10 3)              ;; 10 / 3
+(+ 1 2 3 4)           ;; 1 + 2 + 3 + 4
+(+ (+ (+ 1 2) 3) 4)   ;; (((1 + 2) + 3) + 4)
+(/ (+ 10 2) (+ 2 4))  ;; ((10 + 2) / (2 + 4))
 ```
 
-Die Rückgabe per Kopie (Standardfall in C/C++) würde ein lokales Objekt
-auf dem Stack (im Beispiel wäre das `wuppie`) als Kopie zurückgeben.
+In der listenartigen Form ist der erste Eintrag der Liste immer eine
+Operation (oder ein Funktionsname), danach kommen je nach
+Operation/Funktion (die Arität muss passen!) entsprechende Einträge, die
+als Parameter für die Operation oder Funktion zu verstehen sind.
 
-- Vorteil: Der Compiler kümmert sich um die Freigabe der lokalen
-  Variable `wuppie`, d.h. nach Beendigung des Funktionsaufrufs wird das
-  Objekt automatisch vom Stack entfernt. Da hierbei einfach der
-  Stackpointer zurückgesetzt wird, ist diese “Freigabe” eine sehr
-  preiswerte Operation.[^1]
-- Nachteil: Der Aufrufer darf nicht einfach auf das Objekt auf dem Stack
-  zugreifen (dieses ist ja nach Beendigung der Funktion nicht mehr
-  gültig). Deshalb muss das Objekt bei der Rückgabe kopiert werden
-  (Copy-Konstruktor). Zusätzlich erfolgt beim Aufrufer oft noch eine
-  Zuweisung, bei der die Attribute des Objekts vermutlich erneut kopiert
-  werden. Dies kann (je nach Aufbau der Objekte) sehr teuer sein!
+Die Ausdrücke sind implizit von links nach rechts geklammert, d.h. der
+Ausdruck `(+ 1 2 3 4)` ist [*syntactic
+sugar*](https://en.wikipedia.org/wiki/Syntactic_sugar) für
+`(+ (+ (+ 1 2) 3) 4)`.
 
-Die Rückgabe per Pointer erfordert ein Objekt, welches innerhalb der
-Funktion erzeugt wird und dessen Lebensdauer über das Funktionsende
-hinausreicht. Das Objekt muss in diesem Fall also auf dem Heap angelegt
-werden.
+### Eingebaute Funktionen
 
-- Vorteil: Die Rückgabe erfordert lediglich die Kopie der Adresse des
-  Objekts (also des Pointers). Hier handelt es sich vereinfacht
-  betrachtet um einen Integer, d.h. diese Operation ist relativ
-  preiswert.
-- Nachteil: Das Objekt muss vom Aufrufer wieder freigegeben werden,
-  sobald es nicht mehr benötigt wird. Dies muss man explizit
-  programmieren!
+Es gibt zwei Funktionen, die fest in der Sprache integriert sind.
 
-Die Rückgabe per C++-Referenz erfordert ebenfalls ein Objekt, welches
-innerhalb der Funktion erzeugt wird und dessen Lebensdauer über das
-Funktionsende hinausreicht. Das Objekt muss in diesem Fall also wieder
-auf dem Heap angelegt werden.
+Mit der eingebauten Funktion `print` kann der Wert eines Ausdrucks auf
+der Konsole ausgegeben werden:
 
-- Vorteil: Die Rückgabe erfordert keinerlei Kopien, da sich die Referenz
-  `x` an das Objekt `foo` bindet und lediglich einen neuen Alias für
-  dieses Objekt darstellt.
-- Nachteil: Das Objekt muss vom Aufrufer wieder freigegeben werden,
-  sobald es nicht mehr benötigt wird. Dies muss man explizit
-  programmieren!
-
-Es hat sich gezeigt, dass der Umgang mit den Heap-Ressourcen sehr
-fehleranfällig ist. Ein Aspekt dabei ist, dass man häufig die Freigabe
-der Objekte vergisst oder dass die Programmpfade so unübersichtlich
-sind, dass man nicht genau weiss, ob und wann man Objekte freigeben soll
-(denken Sie an Exceptions).
-
-### Smartpointer als Lösung
-
-Während man in Sprachen wie Java die Speicherverwaltung komplett dem
-Compiler überlässt oder wie in Rust mit strikten Ownership-Modellen
-arbeitet, hat man in C++ die sogenannten
-[Smartpointer](https://en.cppreference.com/book/intro/smart_pointers)
-erdacht. Diese ersetzen den direkten Umgang mit den einfachen Pointern
-(auch als *raw pointer* bezeichnet) und lösen das Problem der Freigabe
-der verwalteten Ressourcen.[^2] Es gibt verschiedene Modelle,
-insbesondere gibt es die Variante *unique pointer*, bei der immer nur
-genau ein Smartpointer gleichzeitig eine bestimmte Ressource besitzen
-darf, und die *shared pointer*, bei der mehrere Smartpointer
-gleichzeitig die selbe Ressource verwalten können. Sobald die
-Lebensdauer des *unique pointer* oder des letzten *shared pointer*
-endet, wird die verwaltete Ressource automatisch vom Smartpointer
-freigegeben.
-
-Das folgende Beispiel arbeitet mit einer selbst implementierten Variante
-der *shared pointers*. Dabei ist die Klasse `SmartToken` ein
-Smartpointer für Objekte vom Typ `Token`:
-
-``` cpp
-void fluppie() {
-    // new smart pointer for token "wuppie":
-    // wuppie lives on the stack, the token lives on the heap (`new`)
-    SmartToken wuppie = SmartToken(new Token("wuppie", 1, 4));
-
-    if (bla==42) {
-        // fluppie shares resource with wuppie
-        SmartToken fluppie = SmartToken(wuppie);
-        // fluppie2 shares resource with wuppie
-        SmartToken fluppie2(wuppie);
-
-        // now there are 3 smart pointers sharing the same resource (token "wuppie")
-
-        // new smart pointer for token "foo"
-        SmartToken foo = SmartToken(new Token("foo", 9, 35));
-    }   // fluppie, fluppie2, foo will be removed from the stack - foo releases its resource
-
-    // wuppie is the only smart pointer with shared resource "wuppie"
-
-} // wuppie will be removed from the stack - wuppie releases its resource
+``` clojure
+(print "hello world")
+(print "wuppie\nfluppie\nfoo\nbar")
 ```
 
-Im Beispiel wird mit `new Token("wuppie", 1, 4)` ein neues Token-Objekt
-auf dem Heap angelegt. Der Smartpointer `wuppie` übernimmt die Ressource
-im Konstruktor und verwaltet den Pointer. Wichtig ist zu beobachten: Das
-Token wird auf dem Heap angelegt, während der Smartpointer `wuppie` eine
-normale lokale (“automatische”) Variable ist und auf dem Stack liegt.
+Die eingebaute Funktion `str` verknüpft ihre Argumente und bildet einen
+String. Falls nötig, werden die Argumente vorher in einen String
+umgewandelt.
 
-In der Kontrollstruktur werden weitere Smartpointer angelegt. Die ersten
-beiden (`fluppie`, `fluppie2`) teilen sich die Ressource (den Pointer
-auf das Token) mit `wuppie`. Es wird kein neues Token angelegt oder
-kopiert. Der dritte Smartpointer `foo` verwaltet ein weiteres Token.
-
-Mit der Kontrollstruktur endet auch die Lebensdauer der lokalen
-Variablen `fluppie`, `fluppie2` und `foo`, sie werden automatisch vom
-Stack entfernt. Da `foo` der letzte Smartpointer ist, der das Token
-“foo” verwaltet, wird hier die Ressource freigegeben. Bei `fluppie` und
-`fluppie2` werden nur die Smartpointer auf dem Stack entfernt, die
-verwaltete Ressource (Token “wuppie”) bleibt erhalten, da die noch von
-einem anderen Smartpointer verwaltet wird.
-
-Mit dem Ende der Funktion endet auch die Lebensdauer des Smartpointers
-`wuppie`. Er wird automatisch vom Stack entfernt, und da er im Beispiel
-der letzte Smartpointer ist, der das Token “wuppie” verwaltet, wird
-dabei automatisch der Pointer zu “wuppie” wieder freigegeben.
-
-Ein Smartpointer soll entsprechend folgende Eigenschaften haben:
-
-- Verwendung soll analog zu normalen Pointern sein (Operatoren `*` und
-  `->` überladen)
-- Smartpointer haben niemals einen undefinierten Wert: entweder sie
-  zeigen auf ein Objekt oder auf `nullptr`[^3]
-- Kopieren von (*shared*) Smartpointern führt dazu, dass sich mehrere
-  Smartpointer das verwiesene Objekt *teilen*
-- Smartpointer löschen sich selbst (und das verwiesene Objekt, falls
-  kein anderer Smartpointer mehr darauf zeigt), wenn die Smartpointer
-  ungültig werden (bei Verlassen des Scopes bzw. bei explizitem Aufruf
-  von `delete` auf einen Pointer auf einen Smartpointer)
-- Es gibt keine verwitweten Objekte mehr: Wenn mehrere Smartpointer auf
-  das selbe Objekt zeigen, darf erst der letzte Smartpointer das Objekt
-  aus dem Heap löschen
-- Smartpointer funktionieren nur für mit `new` erzeugte Objekte
-
-Weitere übliche Eigenschaften, die wir auf diesem Blatt aber
-vereinfachend ignorieren[^4]:
-
-- Smartpointer sollen für beliebige Klassen nutzbar sein
-  (Template-Klasse)
-- Dereferenzierung von nicht existierenden Objekten (d.h. der
-  Smartpointer zeigt intern auf `nullptr`) führt nicht zum
-  Programmabsturz, sondern zu einer Exception
-
-### Reference Counting
-
-Smartpointer werden erzeugt, indem sie entweder einen Pointer auf die zu
-verwaltende Ressource bekommen (Konstruktor) oder eine Referenz auf ein
-anderes Smartpointer-Objekt (Copy-Konstruktor).
-
-Im Smartpointer wird entsprechend der Pointer auf die zu verwaltende
-Ressource gespeichert.
-
-Für die Bestimmung, wie viele Smartpointer sich eine Ressource teilen,
-muss ein Zähler implementiert werden. Sobald sich ein weiterer
-Smartpointer die selbe Ressource teilt, muss dort auch der Zähler (per
-Pointer!) übernommen werden und entsprechend inkrementiert werden. Im
-Destruktor muss der Zähler dekrementiert werden. Falls dabei der Zähler
-den Wert 0 erreicht, werden die Pointer auf die Ressource und den Zähler
-freigegeben.
-
-Bei einer Zuweisung verfährt man analog.
-
-``` cpp
-class SmartToken {
-public:
-    /**
-     * Constructor
-     *
-     * Constructs a new smart pointer from a raw pointer, sets the reference
-     * counter to 1.
-     *
-     * @param p is a raw pointer to the token to be shared
-     */
-    SmartToken(Token* p = nullptr);
-
-    /**
-     * Copy constructor
-     *
-     * Constructs a new smart pointer from another smart pointer, increments
-     * the reference counter.
-     *
-     * @param sp is another smart pointer
-     */
-    SmartToken(const SmartToken& sp);
-
-    /**
-     * Destructor
-     *
-     * Decrements the reference counter. If it reaches zero, the shared token
-     * will be free'd.
-     */
-    ~SmartToken();
-
-    /**
-     * Assignment
-     *
-     * Changes the shared token, thus we need first to perform something like
-     * the destructor, followed by something like the constructor.
-     *
-     * @param sp is another smart pointer
-     */
-    SmartToken& operator=(const SmartToken& sp);
-
-private:
-    Token* pObj;        ///< Pointer to the current shared token
-    RefCounter* rc;     ///< Pointer to the reference counter (used for the current token)
-};
-
-class RefCounter {
-public:
-    /**
-     * Default constructor
-     */
-    RefCounter();
-
-    /**
-     * Increment count
-     */
-    void inc();
-
-    /**
-     * Decrement count
-     */
-    void dec();
-
-    /**
-     * Compare the counter with zero
-     *
-     * @return true if n==0, false otherwise
-     */
-    bool isZero() const;
-
-    // Hide copy constructor and assignment operator
-    RefCounter(const RefCounter&) = delete;
-    RefCounter& operator=(const RefCounter&) = delete;
-
-private:
-    unsigned int n;     ///< How many SmartToken share ownership of "our" object?
-};
+``` clojure
+(str 42)                              ;; liefert "42" zurück
+(str "wuppie" "fluppie" "foo" "bar")  ;; liefert "wuppiefluppiefoobar" zurück
+(str "one: " 1 ", two: " 2)           ;; liefert "one: 1, two: 2" zurück
 ```
 
-### Dereferenzierung von Smartpointern
+### Operatoren
 
-(*Anmerkung*: Dies ist ein Vorgriff auf die Lektion “Operatoren”.
-Betrachten und implementieren Sie die vorgegebenen Operatoren einfach
-wie normale Methoden.)
+Es gibt nur wenige vordefinierte Operatoren, diese mit der üblichen
+Semantik.
 
-Pointer lassen sich dereferenzieren, d.h. man greift direkt auf das
-verwiesene Objekt zu. Dies lässt sich auch für Smartpointer erreichen,
-indem die beiden Dereferenzierungsoperatoren überladen werden.
+#### Vergleichsoperatoren
 
-``` cpp
-class SmartToken {
-public:
-    /**
-     * Dereferences the smart pointer
-     *
-     * @return a reference to the shared token
-     */
-    Token& operator*();
+| Operation  | Operator |
+|:-----------|:--------:|
+| Gleichheit |   `=`    |
+| Größer     |   `>`    |
+| Kleiner    |   `<`    |
 
-    /**
-     * Dereferences the smart pointer
-     *
-     * @return a pointer to the shared token
-     */
-    Token* operator->();
-};
+Die Operanden müssen jeweils beide den selben Typ haben. Dabei sind
+`String` und `Integer` zulässig. Das Ergebnis ist immer vom Typ
+`Boolean`.
+
+#### Arithmetische Operatoren
+
+| Operation      | Operator |
+|:---------------|:--------:|
+| Addition       |   `+`    |
+| Subtraktion    |   `-`    |
+| Multiplikation |   `*`    |
+| Division       |   `/`    |
+
+Die Operanden müssen jeweils beide den selben Typ haben. Dabei sind
+`String` und `Integer` zulässig. Das Ergebnis ist vom Typ der Operanden.
+
+### Kontrollstrukturen (If-Else)
+
+Die `if-then-else`-Abfrage gibt es mit und ohne den `else`-Zweig:
+
+``` clojure
+(if boolean-form
+    then-form
+    optional-else-form)
 ```
 
-Damit lässt sich das folgende Verhalten realisieren (Vergleich *raw*
-Pointer vs. Smartpointer):
-
-``` cpp
-Token* foo = new Token("foo", 9, 35);                       // raw pointer foo
-SmartToken wuppie = SmartToken(new Token("wuppie", 1, 4));  // smart pointer wuppie
-
-// Access via token pointer
-cout << (*foo).lexem    << endl;    // "foo"
-cout << foo->lexem      << endl;    // "foo"
-
-// Access via smart pointer
-cout << (*wuppie).lexem << endl;    // "wuppie"
-cout << wuppie->lexem   << endl;    // "wuppie"
+``` clojure
+(if (< 1 2)
+    (print "true")    ;; then
+    (print "false"))  ;; else
 ```
 
-Dabei ist die Form “`->`” eine vereinfachte Darstellung von `(*ptr).`,
-d.h. ein Pointer (linke Seite des Ausdrucks) wird dereferenziert und man
-greift auf Attribute oder Methoden des verwiesenen Objekts zu (rechte
-Seite des Ausdrucks).
+Dabei kann jeweils nur genau eine S-Expression genutzt werden. Wenn man
+mehrere Dinge berechnen möchte, nutzt man `do`:
+
+``` clojure
+(do
+    (print "wuppie")
+    (print "fluppie")
+    (print "foo")
+    (print "bar"))
+```
+
+Beispiel:
+
+``` clojure
+(if (< 1 2) (do (print "true") (print "WUPPIE")) (print "false"))
+```
+
+oder anders formatiert:
+
+``` clojure
+(if (< 1 2)
+    (do (print "true")
+        (print "WUPPIE"))
+    (print "false"))
+```
+
+### Variablen: Bindings mit *def* anlegen
+
+``` clojure
+(def x 42)  ;; definiert eine neue Variable mit dem Namen "x" und dem Wert 42
+
+x           ;; liefert 42
+(+ x 7)     ;; liefert 49
+```
+
+### Funktionen mit *defn* definieren
+
+``` clojure
+;;     name   params  body
+(defn  hello  (n)     (str "hello " n))  ;; Definition einer Funktion "hello" mit einem Parameter
+
+(hello "world")                          ;; Aufruf der Funktion "hello" mit dem Argument "world"
+```
+
+### Lokale Scopes mit *let*
+
+``` clojure
+;;    bindings      use names here
+(let  (name value)  (code that uses name))
+
+(def x 99)   ;; globale Variable x
+(def y 101)  ;; globale Variable y
+(def z 42)   ;; globale Variable z
+(let (x 1   ;; lokales x mit Wert 1(verdeckt globales x)
+      y 2)  ;; lokales y mit Wert 2
+     (+ x y z))  ;; 1+2+42
+
+(defn  hello
+       (n)
+       (let (l 42)  ;; l is valid in this scope
+            (str "hello " n ": " l)
+       )  ;; end of local scope
+)  ;; end of function definition
+```
+
+Mit `let` können lokale Variablen erzeugt werden, die dann in dem
+jeweiligen Scope genutzt werden können. Dies funktioniert wie in anderen
+Sprachen mit Scopes.
+
+### Rekursion
+
+``` clojure
+(defn fac (n)
+    (if (< n 2)
+        1
+        (* n (fac (- n 1)))))
+```
+
+Da es kein `while` oder `for` gibt, müssen Schleifen über rekursive
+Aufrufe abgebildet werden.
+
+### Datenstrukturen
+
+In unserer Sprache gibt es Listen:
+
+``` clojure
+(1 2 3)          ;; Fehler!
+(def v (1 2 3))  ;; Fehler!
+```
+
+Das Problem daran ist, dass unsere S-Expressions zwar bereits
+listenartige Strukturen sind, der erste Eintrag aber als Operator oder
+Funktion interpretiert wird. Der Ausdruck oben würde beim Auswerten
+versuchen, die “Funktion” 1 auf den Argumenten 2 und 3 aufzurufen …
+
+Man braucht also eine Notation, die ein sofortiges Auswerten verhindert
+und nur die Liste an sich zurückliefert. Dies erreicht man durch die
+Funktion `list`:
+
+``` clojure
+(list 1 2 3)          ;; (1 2 3)
+
+(def v (list 1 2 3))  ;; v = (1 2 3)
+v                     ;; (1 2 3)
+```
+
+Mit der Funktion `nth` kann man auf das n-te Element einer Liste
+zugreifen:
+
+``` clojure
+(nth (list "abc" false 99) 2)  ;; 99
+```
+
+Zusätzlich gibt es die beiden Funktionen `head` und `tail`, die das
+erste Element einer Liste bzw. die restliche Liste ohne das erste
+Element zurückliefern:
+
+``` clojure
+(head (list 1 2 3))  ;; 1
+(tail (list 1 2 3))  ;; (2 3)
+```
 
 ## Aufgaben
 
-### A6.1: Klasse für Token (1P)
+### A6.1: Grammatik und ANTLR (3P)
 
-Implementieren Sie in C++ die Klasse `Token` mit der folgenden
-Schnittstelle:
+1.  Erstellen Sie zunächst einige Programme in der Zielsprache. Diese
+    sollten von einfachsten Ausdrücken bis hin zu komplexeren Programmen
+    reichen. Definieren Sie beispielsweise eine Funktion, die rekursiv
+    die Länge einer Liste berechnet.
 
-``` cpp
-class Token {
-public:
-    /**
-     * Constructs a new token object.
-     *
-     * @param l is a pointer to the text of the token (to be copied)
-     * @param r is the row in input where this token was found
-     * @param c is the column in input where this token starts
-     */
-    Token(const char* l, int r, int c);
+    Definieren Sie neben gültigen Programmen auch solche, die in der
+    semantischen Analyse zurückgewiesen werden sollten. Welche
+    Fehlerkategorien könnte es hier geben?
 
-    /**
-     * Destructs the token object and free's the stored lexem.
-     */
-    ~Token();
+2.  Definieren Sie für die obige Sprache eine geeignete ANTLR-Grammatik.
+    Sie können dabei die Grammatik
+    [MiniLispA](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/blob/master/homework/src/sample_project/src/main/antlr/MiniLispA.g4)
+    oder
+    [MiniLispB](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/blob/master/homework/src/sample_project/src/main/antlr/MiniLispB.g4)
+    im [Sample
+    Project](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/tree/master/homework/src/sample_project)
+    als Ausgangspunkt nutzen und diese anpassen und vervollständigen.
+    Erzeugen Sie mithilfe der Grammatik und ANTLR einen Lexer und
+    Parser.
 
-private:
-    char* lexem;    ///< Pointer to the text of the token
-    int row;        ///< Row in input where this token was found
-    int col;        ///< Column in input where this token starts
-};
-```
+3.  Führen Sie die semantische Analyse durch: Sind alle Symbole bekannt,
+    passen die Scopes?
 
-Trennen Sie Deklaration und Implementierung.
+### A6.2: Tree-Walking-Interpreter (5P)
 
-Der Konstruktor muss den übergebenen `char*` kopieren, d.h. Sie müssen
-die Länge des übergebenen C-Strings bestimmen, ausreichend viel Speicher
-mit `new` für `char* lexem` reservieren und danach den String kopieren
-(C-Funktion).
+Bauen Sie einen Tree-Walking-Interpreter in Ihr Projekt ein.
 
-Sorgen Sie dafür, dass der Speicher beim Vernichten eines
-`Token`-Objekts wieder korrekt freigegeben wird.
+Realisieren Sie die eingebauten Funktionen `print` und `str` dabei als
+*native* Funktionen. Realisieren Sie `list`, `nth`, `head` und `tail`
+sowie `def`, `let`, `defn`, `do` und die Operatoren und die
+Kontrollstrukturen geeignet.
 
-Bei Bedarf können Sie zusätzliche Attribute und Methoden hinzufügen.
+Lösen Sie die als “*syntactic sugar*” bezeichneten Ausdrücke auf und
+transformieren Sie den AST entsprechend: `(+ 1 2 3 4)` soll zu
+`(+ (+ (+ 1 2) 3) 4)` umgeformt werden. Analog für die anderen
+Operatoren der Sprache (Vergleiche, Arithmetik).
 
-Testen Sie Ihre `Token`-Klasse an selbst gewählten Beispielen.
+Achten Sie auf die Datentypen. Die Typen von Variablen etc. sind erst
+zur Laufzeit bekannt und müssen dann passen.
 
-### A6.2: Implementierung eines einfachen Tokenizers (1P)
+Lesen Sie den zu interpretierenden Code aus einer Datei ein.
 
-Erstellen Sie eine Funktion
-`void tokenize(const string& input, vector<Token>& tokens)`, die einen
-gegebenen String als Eingabe erhält und diesen in Tokens (Wörter)
-splittet. Nutzen Sie Referenzen, um die Token-Liste zu aktualisieren.
-Testen Sie die Funktion mit verschiedenen Eingabestrings und geben Sie
-die Tokens aus.
+Testen Sie Ihren Interpreter mit Ihren Beispielprogrammen.
 
-### A6.3: Reference Counter (1P)
+### A6.3: Auswirkungen der Grammatik auf den Interpreter (2P)
 
-Implementieren Sie nun die Klasse `RefCounter` mit der obigen
-Schnittstelle. Auch hier können Sie bei Bedarf zusätzliche Attribute und
-Methoden hinzufügen.
+Sie haben sich vermutlich für eine der beiden Grammatiken
+([MiniLispA](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/blob/master/homework/src/sample_project/src/main/antlr/MiniLispA.g4),
+[MiniLispB](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/blob/master/homework/src/sample_project/src/main/antlr/MiniLispB.g4))
+entschieden und auf der Basis Ihren Interpreter erstellt.
 
-Testen Sie Ihre `RefCounter`-Klasse an selbst gewählten Beispielen.
+Welche Auswirkungen hat die Grammatik auf den Interpreter? Machen Sie
+ein Gedankenexperiment: Überlegen Sie, was Sie alles in Ihrer
+Implementierung ändern müssten, wenn Sie die jeweils andere
+Grammatik-Variante nutzen würden.
 
-### A6.4: Smartpointer (3P)
+### Bonus: Interaktiver Interpreter (3P)
 
-Implementieren Sie nun die Smartpointer für `Token`-Objekte mit
-folgender Signatur (wie oben, leicht erweitert):
-
-``` cpp
-class SmartToken {
-public:
-    /**
-     * Constructor
-     *
-     * Constructs a new smart pointer from a raw pointer, sets the reference
-     * counter to 1.
-     *
-     * @param p is a raw pointer to the token to be shared
-     */
-    SmartToken(Token* p = nullptr);
-
-    /**
-     * Copy constructor
-     *
-     * Constructs a new smart pointer from another smart pointer, increments
-     * the reference counter.
-     *
-     * @param sp is another smart pointer
-     */
-    SmartToken(const SmartToken& sp);
-
-    /**
-     * Destructor
-     *
-     * Decrements the reference counter. If it reaches zero, the shared token
-     * will be free'd.
-     */
-    ~SmartToken();
-
-    /**
-     * Assignment
-     *
-     * Changes the shared token, thus we need first to perform something like
-     * the destructor, followed by something like the constructor.
-     *
-     * @param sp is another smart pointer
-     */
-    SmartToken& operator=(const SmartToken& sp);
-
-    /**
-     * Dereferences the smart pointer
-     *
-     * @return a reference to the shared token
-     */
-    Token& operator*();
-
-    /**
-     * Dereferences the smart pointer
-     *
-     * @return a pointer to the shared token
-     */
-    Token* operator->();
-
-    /**
-     * Comparison
-     *
-     * @param sp is another smart pointer
-     * @return true, if `sp` shares the same token
-     */
-    bool operator==(const SmartToken& sp) const;
-
-private:
-    Token* pObj;        ///< Pointer to the current shared token
-    RefCounter* rc;     ///< Pointer to the reference counter (used for the current token)
-};
-```
-
-Bei Bedarf können Sie zusätzliche Attribute und Methoden hinzufügen.
-
-Testen Sie Ihre `SmartToken`-Klasse an selbst gewählten Beispielen sowie
-an den obigen Beispielen.
-
-### A6.5: Ringpuffer (4P)
-
-Ein Ringpuffer ist eine Form der abstrakten Datenstruktur
-“Warteschlange” (*Queue*), die nur eine beschränkte Anzahl $`n`$ von
-Elementen (Datensätzen) aufnehmen kann. Die Daten werden nach dem
-FIFO-Prinzip über die Funktion `writeBuffer()` am Ende der Schlange
-eingefügt und mit der Funktion `readBuffer()` vom Anfang der Schlange
-entnommen.
-
-Aus Effizienzgründen wird bei `readBuffer()` nur das erste Element
-zurückgeliefert, das gelesene Element wird aber (noch) nicht aus dem
-Ringpuffer entfernt. Über ein Attribut `head` merkt man sich
-stattdessen, wo das nächste zu lesende Element liegt (auf dem Platz
-hinter dem aktuell gelesenen). Ist der Puffer voll, wird bei
-`writeBuffer()` das älteste Element entfernt und das neue Element auf
-dem frei gewordenen Platz im internen Array `elems` eingefügt.
-
-Unser Ringpuffer ist auf Elemente vom Typ `SmartToken` festgelegt. Es
-wird davon ausgegangen, dass diese Elemente Smartpointer mit der *shared
-pointer*-Semantik sind.[^5] Da die `SmartToken` selbst (zum Teil) eine
-Pointersemantik implementiert haben (man kann die Smartpointer
-dereferenzieren), vermeiden wir Pointer auf die Smartpointer in der
-Schnittstelle und arbeiten stattdessen mit C++-Referenzen bzw. Kopien:
-Bei `writeBuffer()` wird ein `SmartToken` per konstanter C++-Referenz
-übergeben, und bei `readBuffer()` wird eine Kopie des gelesenen
-`SmartToken` zurückgeliefert.
-
-Der Puffer kann effizient durch ein zur Laufzeit angelegtes **Array**
-mit `size` (Template-Parameter) Plätzen zur Speicherung der Pointer auf
-die Elemente realisiert werden. Die Ringstruktur wird durch
-Modulo-Operationen auf den Array-Indizes realisiert.
-
-Implementieren Sie nun den Ringpuffer für `SmartToken`-Objekte mit
-folgender Signatur:
-
-``` cpp
-class RingBuffer {
-public:
-    /**
-     * Constructor that creates a new ring buffer for max. `size` elements
-     *
-     * Initialises the attributes and allocates memory for `size` elements
-     * of type `SmartToken` and let the pointer `elems` point to this new
-     * array
-     *
-     * @param size is the max. number of elements that can be stored
-     */
-    RingBuffer(unsigned int size);
-
-    /**
-     * Destructor
-     *
-     * free's the dynamically allocated array `elems`
-     */
-    ~RingBuffer();
-
-    /**
-     * Reading the first (oldest) element
-     *
-     * If an element has been read, the `head` points to the next element
-     * and `count` is decremented. The read element is **not** released.
-     *
-     * @return Returns (a copy of) the first (i.e. oldest) element of the
-     * buffer, but does not (yet) release it; returns an empty `SmartToken`
-     * if buffer is empty
-     */
-    SmartToken readBuffer();
-
-    /**
-     * Adding a new element
-     *
-     * Appends the new element to the end of the queue. If the buffer is
-     * full, the oldest element will be overwritten by the new element. The
-     * old element will take care of releasing its memory (smart pointer).
-     *
-     * @param data is a reference to the element to be added
-     */
-    void writeBuffer(const SmartToken& data);
-
-private:
-    unsigned int count;     ///< number of elements currently stored in the buffer
-    unsigned int head;      ///< points to the beginning of the buffer (oldest element)
-    unsigned int size;      ///< length of array `elems`
-    SmartToken* elems;      ///< array with `size` places of type `SmartToken`, dynamically allocated
-};
-```
-
-Bei Bedarf können Sie zusätzliche Attribute und Methoden hinzufügen.
-
-Testen Sie Ihre `RingBuffer`-Klasse an selbst gewählten Beispielen.
-Überzeugen Sie sich insbesondere vom korrekten Zugriff auf die
-Ringstruktur und prüfen Sie, ob die Smartpointer wie gewünscht arbeiten.
-Prüfen Sie hierzu auch die `RefCounter` der beteiligten Smartpointer.
-Welche Sonderfälle können Sie identifizieren?
+Bauen Sie eine *REPL* ein, d.h. geben Sie nach dem Start des
+Interpreters einen Prompt aus und verarbeiten Sie die Eingaben
+interaktiv. Wie müssen Sie hier mit der Symboltabelle umgehen?
 
 ------------------------------------------------------------------------
 
@@ -615,23 +335,4 @@ Welche Sonderfälle können Sie identifizieren?
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>
-
-[^1]: Anmerkung: Man spricht trotzdem von “Freigabe” des Objekts, obwohl
-    lediglich der Stackpointer zurückgesetzt wird und das Objekt
-    zunächst auf dem Stack noch vollständig ist. Es kann und wird aber
-    im weiteren Verlauf des Programms überschrieben.
-
-[^2]: Dereferenzierung von Null-Pointern oder nicht initialisierten
-    Pointern, Nutzung von `delete` für Pointer, die nicht mit `new`
-    erstellt wurden, mehrfaches `delete`, Speicherlöcher durch Vergessen
-    von `delete`, Dangling Pointer, verwitwete Objekte, …
-
-[^3]: Sie müssen für `nullptr` den g++ auf C++11 oder höher umstellen
-    (`--std=c++11`) und den Header `<cstddef>` includen.
-
-[^4]: Templates haben wir hier noch nicht behandelt, Exceptions werden
-    wir gar nicht betrachten
-
-[^5]: Wenn Sie die obigen Aufgaben richtig gelöst haben, haben Sie genau
-    diese Semantik vorliegen.
+<blockquote><p><sup><sub><strong>Last modified:</strong> 400a8c0 (homework: add new B04 (lexer/parser), move remaining sheets up, 2025-08-29)<br></sub></sup></p></blockquote>

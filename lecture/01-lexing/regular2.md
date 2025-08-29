@@ -1,4 +1,4 @@
-# Reguläre Sprachen, Ausdrucksstärke
+# Reguläre Sprachen, Ausdrucksstärke (Teil 2)
 
 > [!NOTE]
 >
@@ -362,4 +362,4 @@ Sprachen**.
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 9bc15ce (lecture: rework outcomes (01_Regular), 2025-08-19)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 64341f7 (lecture: split regular expressions into two lessons, 2025-08-29)<br></sub></sup></p></blockquote>

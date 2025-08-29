@@ -60,29 +60,22 @@ Abgabe der Übungsblätter jeweils **Montag bis 09:00 Uhr** im
 [ILIAS](https://www.hsbi.de/elearning/goto.php?target=exc_1420724&client_id=FH-Bielefeld).
 Vorstellung der Lösung im jeweiligen Praktikum in der Abgabewoche.
 
-| Monat | Woche | Vorlesung | Lead | Abgabe Aufgabenblatt | Vorstellung Praktikum |
-|:---|:---|:---|:---|:---|:---|
-| Oktober | 41 | 09.: [Orga](https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1360443/index.html#überblick-modulinhalte) (*Zoom*); [Überblick](lecture/00-intro/overview.md), [Sprachen](lecture/00-intro/languages.md), [Anwendungen](lecture/00-intro/applications.md) | Carsten, BC |  |  |
-|  | 42 | 16.: [Reguläre Sprachen](lecture/01-lexing/regular.md) | BC |  |  |
-|  | 43 | 23.: [CFG](lecture/02-parsing/cfg.md) | BC | 21.: [B01](homework/sheet01.md) Reguläre Sprachen | 21\. / 22. / 25. (BC, *Präsenz*) |
-|  | 44 | 29.: **18:00 - 19:30 Uhr (online): Edmonton I: ANTLR + Live-Coding** | *Edmonton* |  |  |
-|  | 44 | 30.: [Lexer mit ANTLR](lecture/01-lexing/antlr-lexing.md), [Parser mit ANTLR](lecture/02-parsing/antlr-parsing.md) | Carsten |  |  |
-| November | 45 | 06.: *Dienstbesprechung* |  | 04.: [B02](homework/sheet02.md) CFG | ~~04.~~ **07. 08:00** / 05. / 08. (BC, *Präsenz*) |
-|  | 46 | 13.: [Überblick Symboltabellen](lecture/03-semantics/symbtab0-intro.md), [Symboltabellen: Scopes](lecture/03-semantics/symbtab1-scopes.md), [Symboltabellen: Funktionen](lecture/03-semantics/symbtab2-functions.md), [Symboltabellen: Klassen](lecture/03-semantics/symbtab3-classes.md) | Carsten | 11.: [B03](homework/sheet03.md) ANTLR | 11\. / 12. / 15. (Carsten, *online*) |
-|  | 47 | 20.: **A-L: 09:45 - 10:30 Uhr, M-Z: 10:45 - 11:30 Uhr (B40): Parcoursprüfung: Station 1 ILIAS (Grammar, Lexing, Parsing), siehe Ankündigung** |  | 18.: [B04](homework/sheet04.md) Semantische Analyse | 18\. / 19. / 22. (Carsten, *online*) |
-|  | 48 | 26.: **18:00 - 19:30 Uhr (online): Edmonton II: Vorträge Mindener Projekte** | *Minden* |  |  |
-|  | 48 | 27.: | BC, Carsten |  |  |
-| Dezember | 49 | 03.: **18:00 - 19:30 Uhr (online): Edmonton III: Vorträge Edmontoner Projekte** | *Edmonton* |  |  |
-|  | 49 | 04.: [AST-basierte Interpreter 1](lecture/06-interpretation/astdriven-part1.md), [AST-basierte Interpreter 2](lecture/06-interpretation/astdriven-part2.md) | Carsten |  |  |
-|  | 50 | 11.: C++ I: [Basics](lecture/99-languages/cpp0-basics.md), [Pointer & Referenzen](lecture/99-languages/cpp1-pointer.md), [Klassen](lecture/99-languages/cpp2-classes.md), [Big 3](lecture/99-languages/cpp3-big3.md) | Carsten | 09.: [B05](homework/sheet05.md) Interpreter | 09\. / 10. / 13. (Carsten, *online*) |
-|  | 51 | 18.: ~~Projektwoche Semester 1+3~~ C++ II: [Operatoren](lecture/99-languages/cpp4-operators.md), [Vererbung & Polymorphie](lecture/99-languages/cpp5-inheritance.md), [Templates](lecture/99-languages/cpp6-templates.md) |  |  |  |
-|  | 52 | 25.: *Weihnachtspause* |  |  |  |
-| Januar | 01 | 01.: *Weihnachtspause* |  |  |  |
-|  | 02 | 08.: *Sprechstunde/Freies Arbeiten* | Carsten | 06.: [B06](homework/sheet06.md) C++ | 06\. / 07. / 10. (Carsten, *online*) |
-|  | 03 | 15.: *Freies Arbeiten/Puffer* |  |  |  |
-|  | 04 | 22.: **Parcoursprüfung: Station 2 [B07](homework/sheet07.md) (VL- und Praktika-Slots, siehe Ankündigung)** | Carsten, BC | 20.: [B07](homework/sheet07.md) Mini-Projekt | 20\. / 21. / 24. (**15:00-16:30**) (Carsten/BC, *online*) |
-| *(Prüfungsphase I)* | 05 | 30.: **Feedback-Gespräche (15:30 - 18:00 Uhr, online)** |  |  |  |
-| *(Prüfungsphase II)* |  | **Parcoursprüfung: Do, 27. Mar 2025, 08-18 Uhr, mdl. Prüfung (alle Themen)** (je Prüfung ca. 45’, Vergabe ca. 2 Wochen vorher) |  |  |  |
+| Woche | Vorlesung: Selbststudium (Vorbereitung) | Vorlesung: Gemeinsame Sitzung | Praktikum |  |
+|:---|:---|:---|:---|:---|
+| W01 / KW41 |  | [Orga](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor-W25) (*Zoom*) \|\| [Überblick](lecture/00-intro/overview.md) \| [Sprachen](lecture/00-intro/languages.md) \| [Anwendungen](lecture/00-intro/applications.md) |  |  |
+| W02 / KW42 |  | [Reguläre Sprachen I](lecture/01-lexing/regular1.md) |  |  |
+| W03 / KW43 |  | [Reguläre Sprachen II](lecture/01-lexing/regular2.md) \|\| [CFG](lecture/02-parsing/cfg.md) | [B01](homework/sheet01.md) Reguläre Sprachen |  |
+| W04 / KW44 | [Lexer mit ANTLR](lecture/01-lexing/antlr-lexing.md) | [Parser mit ANTLR](lecture/02-parsing/antlr-parsing.md) | [B02](homework/sheet02.md) CFG |  |
+| W05 / KW45 |  |  | [B03](homework/sheet03.md) ANTLR | **18:00 - 19:30 Uhr (online): Edmonton I: ANTLR + Live-Coding** |
+| W06 / KW46 |  | [LL-Parser](lecture/02-parsing/ll-parser.md) |  | **Parcours I** |
+| W07 / KW47 | [Lexer (Impl)](lecture/01-lexing/recursive.md) | [LL-Parser (Impl)](lecture/02-parsing/ll-parser-impl.md) |  |  |
+| W08 / KW48 | [Überblick Symboltabellen](lecture/03-semantics/symbtab0-intro.md) \| [Symboltabellen: Scopes](lecture/03-semantics/symbtab1-scopes.md) | [Symboltabellen: Funktionen](lecture/03-semantics/symbtab2-functions.md) \| [Symboltabellen: Klassen](lecture/03-semantics/symbtab3-classes.md) | [B04](homework/sheet04.md) LL hand coded |  |
+| W09 / KW49 | [AST-basierte Interpreter 1](lecture/06-interpretation/astdriven-part1.md) | [AST-basierte Interpreter 2](lecture/06-interpretation/astdriven-part2.md) | [B05](homework/sheet05.md) Semantische Analyse | **18:00 - 19:30 Uhr (online): Edmonton II: Vorträge Mindener Projekte** |
+| W10 / KW50 | C++ I: [Basics](lecture/99-languages/cpp0-basics.md) | [Pointer & Referenzen](lecture/99-languages/cpp1-pointer.md) |  | **Parcours II** \|\| **18:00 - 19:30 Uhr (online): Edmonton III: Vorträge Edmontoner Projekte** |
+| W11 / KW51 | C++ II: [Klassen](lecture/99-languages/cpp2-classes.md) \| [Big 3](lecture/99-languages/cpp3-big3.md) \| [Operatoren](lecture/99-languages/cpp4-operators.md) | [Vererbung & Polymorphie](lecture/99-languages/cpp5-inheritance.md) | [B06](homework/sheet06.md) Interpreter |  |
+| W12 / KW02 |  | *Sprechstunde/Freies Arbeiten* | [B07](homework/sheet07.md) C++ | **Parcours III** |
+| W13 / KW03 |  | *Sprechstunde/Freies Arbeiten* |  |  |
+| W14 / KW04 |  | Rückblick (*Zoom*) \| [Prüfungsvorbereitung](admin/exams.md) | [B08](homework/sheet08.md) Mini-Projekt |  |
 
 ## Prüfungsform, Note und Credits
 
@@ -184,4 +177,4 @@ is licensed under [CC BY-SA
 See the [credits](CREDITS.md) for a detailed list of contributing
 projects.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 00025a6 (readme: fix modul overview, 2025-08-21)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> c8af504 (orga: update plan, split self study and class session (#368), 2025-08-29)<br></sub></sup></p></blockquote>

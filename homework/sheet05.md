@@ -1,333 +1,399 @@
-# Blatt 05: Interpreter
+# Blatt 05: Semantische Analyse
 
 ## Zusammenfassung
 
-Ziel dieses Aufgabenblattes ist die Erstellung eines
-Tree-Walking-Interpreter mit ANTLR für eine Lisp-artige Sprache.
+Ziel dieses Aufgabenblattes ist die Erstellung einer Symboltabelle und
+eines einfachen Type-Checkers für eine fiktive statisch typisierte
+Sprache mit Expressions, Kontrollstrukturen und Funktionen.
 
 ## Methodik
 
 Sie finden im [Sample
 Project](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/tree/master/homework/src/sample_project)
-zwei Grammatiken
-([MiniLispA](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/blob/master/homework/src/sample_project/src/main/antlr/MiniLispA.g4),
-[MiniLispB](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/blob/master/homework/src/sample_project/src/main/antlr/MiniLispB.g4)),
-die (teilweise) zu der Zielsprache auf diesem Blatt passen. Analysieren
-Sie beide Grammatiken und entscheiden Sie sich für eine der beiden
-Varianten. Vervollständigen Sie diese bzw. passen Sie diese an.
+eine
+[Grammatik](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/blob/master/homework/src/sample_project/src/main/antlr/MiniC.g4),
+die (teilweise) zu der Zielsprache auf diesem Blatt passt. Analysieren
+Sie diese Grammatik und vervollständigen Sie diese bzw. passen Sie diese
+an.
 
 Erstellen Sie mit dieser Grammatik und ANTLR wieder einen Lexer und
-Parser.
+Parser. Definieren Sie einen AST und konvertieren Sie Ihren Parse-Tree
+in einen AST.
 
-Es ist empfehlenswert, den Interpreter dreistufig zu realisieren:
+Es ist empfehlenswert, den Type-Checker dreiphasig zu realisieren:
 
-1.  Einlesen aus einer Datei mit Lisp-Code und Parsen der Inhalte
-2.  Aufbauen der Symboltabelle und Durchführung der semantischen Analyse
-3.  Ablaufen des Parse-Tree/AST und Auswerten der Ausdrücke
-    (Interpretation)
+1.  Aufbauen der Symboltabelle und Prüfen von z.B.
+    Deklaration/Definition vs. Benutzung (Variablen) usw.
+2.  Prüfen bei Funktionsaufrufen auf vorhandene/sichtbare
+    Funktionsdefinitionen
+3.  Prüfen der verwendeten Typen
 
 ## Sprachdefinition
 
-Ein Programm besteht aus einem oder mehreren Ausdrücken (*Expressions*).
-Die Ausdrücke haben eine spezielle Form: Sie sind sogenannte
-[S-Expressions](https://en.wikipedia.org/wiki/S-expression). Dies sind
-entweder Literale der Form `x` oder einfache listenartige Gebilde der
-Form `(. x y)`, wobei der `.` eine Operation (oder Funktion) darstellt
-und `x` und `y` selbst wieder S-Expressions sind.
+Ein Programm besteht aus einer oder mehreren Anweisungen (*Statements*).
 
-Die einfachste Form sind dabei Literale mit konkreten Werten der drei
-Datentypen `Integer`, `String` und `Boolean`:
+### Anweisungen (*Statements*)
 
-``` clojure
-42          ;; Integer
-"hello"     ;; String
-true        ;; Boolean
-false       ;; Boolean
+Eine Anweisung ist eine Befehlsfolge, beispielsweise eine Deklaration
+(Funktionen), Definition (Variablen, Funktionen), Zuweisung, ein
+Funktionsaufruf oder eine Operation. Sie muss immer mit einem Semikolon
+abgeschlossen werden. Eine Anweisung hat keinen Wert.
+
+``` python
+int a;           # Definition der Integer-Variablen a
+int b = 10 - 5;  # Definition der Integer-Variablen b und Zuweisung des Ausdruckes 10-5 (Integer-Wert 5)
+c = "foo";       # Zuweisung des Ausdrucks "foo" (String) an die Variable c (diese muss dazu vorher definiert und sichtbar sein)
+func1(a, c);     # Funktionsaufruf mit Variablen a und c
 ```
 
-Für eine Variable `foo` wäre das Folgende ebenfalls eine S-Expression:
+Kontrollstrukturen und Code-Blöcke sowie `return`-Statements zählen
+ebenfalls als Anweisung.
 
-``` clojure
-foo         ;; Variable foo
+### Code-Blöcke und Scopes
+
+Code-Blöcke werden in geschweifte Klammern eingeschlossen und enthalten
+eine beliebige Anzahl von Anweisungen.
+
+Jeder Code-Block bildet einen eigenen Scope - alle
+Deklarationen/Definition in diesem Scope sind im äußeren Scope nicht
+sichtbar. Im Scope kann auf die Symbole des/der umgebenden Scopes
+zugegriffen werden. Symbole in einem Scope können gleichnamige Symbole
+im äußeren Scope verdecken.
+
+``` python
+# globaler Scope
+int a = 7;
+int d;
+{   # erster innerer Scope
+    int b = 7;      # b ist nur in diesem und im zweiten inneren Scope sichtbar
+    foo(a);         # Funktionsaufruf mit der Variable a aus dem äußeren Scope (Wert 7)
+    int a = 42;     # Variable verdeckt das a aus dem äußeren Scope
+    foo(a);         # Funktionsaufruf mit der Variable a aus dem aktuellen Scope (Wert 42)
+    {   # zweiter innerer Scope
+        int c = 9;  # dieses c ist nur hier sichtbar
+        foo(d);     # d wird im äußeren Scope gesucht, dort nicht gefunden und im nächsthöheren Scope gesucht (rekursiv)
+    }
+}
+{   # dritter innerer Scope
+    int b;          # dieses b hat mit dem b aus dem ersten inneren Scope nichts zu tun
+    foo(a);         # Funktionsaufruf mit der Variable a aus dem äußeren Scope (Wert 7)
+}
 ```
 
-(Über `;;` wird ein Kommentar eingeleitet, der bis zum Ende der Zeile
-geht.)
+### Ausdrücke (*Expressions*)
 
-Komplexere Ausdrücke werden über die Listenform gebildet:
+Die einfachsten Ausdrücke sind Integer- oder String-Literale. Variablen
+und Funktionsaufrufe sind ebenfalls Ausdrücke. Komplexere Ausdrücke
+werden mit Hilfe von Operationen gebildet, dabei sind die Operanden
+jeweils auch wieder Ausdrücke.
 
-``` clojure
-(+ 1 1)               ;; 1 + 1
-(/ 10 3)              ;; 10 / 3
-(+ 1 2 3 4)           ;; 1 + 2 + 3 + 4
-(+ (+ (+ 1 2) 3) 4)   ;; (((1 + 2) + 3) + 4)
-(/ (+ 10 2) (+ 2 4))  ;; ((10 + 2) / (2 + 4))
-```
+Ein Ausdruck hat immer einen Wert und einen Typ.
 
-In der listenartigen Form ist der erste Eintrag der Liste immer eine
-Operation (oder ein Funktionsname), danach kommen je nach
-Operation/Funktion (die Arität muss passen!) entsprechende Einträge, die
-als Parameter für die Operation oder Funktion zu verstehen sind.
+Die Operatoren besitzen eine Rangfolge, um verschachtelte Operationen
+aufzulösen. Sie dürfen daher nicht einfach von links nach rechts
+aufgelöst werden. Die Rangfolge der Operatoren entspricht der üblichen
+Semantik (vgl. Java, C, Python).
 
-Die Ausdrücke sind implizit von links nach rechts geklammert, d.h. der
-Ausdruck `(+ 1 2 3 4)` ist [*syntactic
-sugar*](https://en.wikipedia.org/wiki/Syntactic_sugar) für
-`(+ (+ (+ 1 2) 3) 4)`.
-
-### Eingebaute Funktionen
-
-Es gibt zwei Funktionen, die fest in der Sprache integriert sind.
-
-Mit der eingebauten Funktion `print` kann der Wert eines Ausdrucks auf
-der Konsole ausgegeben werden:
-
-``` clojure
-(print "hello world")
-(print "wuppie\nfluppie\nfoo\nbar")
-```
-
-Die eingebaute Funktion `str` verknüpft ihre Argumente und bildet einen
-String. Falls nötig, werden die Argumente vorher in einen String
-umgewandelt.
-
-``` clojure
-(str 42)                              ;; liefert "42" zurück
-(str "wuppie" "fluppie" "foo" "bar")  ;; liefert "wuppiefluppiefoobar" zurück
-(str "one: " 1 ", two: " 2)           ;; liefert "one: 1, two: 2" zurück
-```
-
-### Operatoren
-
-Es gibt nur wenige vordefinierte Operatoren, diese mit der üblichen
-Semantik.
+Es gibt in unserer Sprache folgende Operationen mit der üblichen
+Semantik:
 
 #### Vergleichsoperatoren
 
-| Operation  | Operator |
-|:-----------|:--------:|
-| Gleichheit |   `=`    |
-| Größer     |   `>`    |
-| Kleiner    |   `<`    |
+| Operation    | Operator |
+|:-------------|:--------:|
+| Gleichheit   |   `==`   |
+| Ungleichheit |   `!=`   |
+| Größer       |   `>`    |
+| Kleiner      |   `<`    |
 
 Die Operanden müssen jeweils beide den selben Typ haben. Dabei sind
-`String` und `Integer` zulässig. Das Ergebnis ist immer vom Typ
-`Boolean`.
+`string` und `int` zulässig. Das Ergebnis ist immer vom Typ `bool`.
 
 #### Arithmetische Operatoren
 
-| Operation      | Operator |
-|:---------------|:--------:|
-| Addition       |   `+`    |
-| Subtraktion    |   `-`    |
-| Multiplikation |   `*`    |
-| Division       |   `/`    |
+| Operation                            | Operator |
+|:-------------------------------------|:--------:|
+| Addition / String-Literal-Verkettung |   `+`    |
+| Subtraktion                          |   `-`    |
+| Multiplikation                       |   `*`    |
+| Division                             |   `/`    |
 
-Die Operanden müssen jeweils beide den selben Typ haben. Dabei sind
-`String` und `Integer` zulässig. Das Ergebnis ist vom Typ der Operanden.
+Die Operanden müssen jeweils beide den selben Typ haben. Für `+` sind
+`string` und `int` zulässig, für die anderen Operatoren (`-`, `*`, `/`)
+nur `int`. Das Ergebnis ist vom Typ der Operanden.
 
-### Kontrollstrukturen (If-Else)
+#### Beispiele für Ausdrücke
 
-Die `if-then-else`-Abfrage gibt es mit und ohne den `else`-Zweig:
-
-``` clojure
-(if boolean-form
-    then-form
-    optional-else-form)
+``` python
+10 - 5       # Der Integer-Wert 5
+"foo"        # Der String "foo"
+a            # Wert der Variablen a (Zugriff auf a)
+a + b        # Ergebnis der Addition der Variablen a und b
+func1(a, b)  # Ergebnis des Funktionsaufrufs
 ```
 
-``` clojure
-(if (< 1 2)
-    (print "true")    ;; then
-    (print "false"))  ;; else
+Ausdrücke werden nicht mit einem Semikolon abgeschlossen. Sie sind also
+Teil einer Anweisung.
+
+### Bezeichner
+
+Werden zur Bezeichnung von Variablen und Funktionsnamen verwendet. Sie
+bestehen aus einer Zeichenkette der Zeichen `a-z`,`A-Z`, `0-9`.
+Bezeichner dürfen nicht mit einer Ziffer `0-9` beginnen.
+
+### Variablen
+
+Variablen bestehen aus einem eindeutigen Bezeichner (Variablennamen).
+Den Variablen können Werte zugewiesen werden und Variablen können als
+Werte verwendet werden. Die Zuweisung erfolgt mithilfe des
+`=`-Operators. Auf der rechten Seite der Zuweisung können auch Ausdrücke
+stehen.
+
+``` python
+int a;         # Definition der Variablen a (Typ: Integer)
+int a = 7;     # Definition und Initialisierung einer Variablen
+a = 5;         # Zuweisung des Wertes 5 an die Variable a
+a = 2 + 3;     # Zuweisung des Wertes 5 an die Variable a
 ```
 
-Dabei kann jeweils nur genau eine S-Expression genutzt werden. Wenn man
-mehrere Dinge berechnen möchte, nutzt man `do`:
+Variablen müssen vor ihrer Benutzung (Zugriff, Zuweisung) definiert und
+im aktuellen Scope sichtbar sein. Die Initialisierung kann zusammen mit
+der Definition erfolgen.
 
-``` clojure
-(do
-    (print "wuppie")
-    (print "fluppie")
-    (print "foo")
-    (print "bar"))
+Variablen können in einem Scope nicht mehrfach definiert werden.
+
+``` python
+int a = 42;
+
+{
+    a = 7;  # zulässig - a ist hier sichtbar, Zugriff auf globalen Scope
+    b = 9;  # unzulässig - b ist nicht definiert
+
+    int a;  # zulässig - erste Definition in diesem Scope
+    int a;  # unzulässig - a ist in diesem Scope bereits definiert
+}
 ```
 
-Beispiel:
+### Kommentare
 
-``` clojure
-(if (< 1 2) (do (print "true") (print "WUPPIE")) (print "false"))
+Kommentare werden durch das Zeichen `#` eingeleitet und umfassen
+sämtliche Zeichen bis zum nächsten Newline.
+
+### Kontrollstrukturen
+
+#### While-Schleife
+
+While-Schleifen werden mit dem Schlüsselwort `while` eingeleitet. Sie
+bestehen im Weiteren aus einer Bedingung in runden Klammern und einem in
+geschweiften Klammern formulierten Code-Block.
+
+Die Bedingung besteht aus einem Vergleichsausdruck.
+
+``` c
+while (<Bedingung>) {
+    <Anweisung_1>
+    <Anweisung_2>
+}
 ```
 
-oder anders formatiert:
+``` c
+int a = 10;
 
-``` clojure
-(if (< 1 2)
-    (do (print "true")
-        (print "WUPPIE"))
-    (print "false"))
+while (a > 0) {
+    a = a - 1;
+}
 ```
 
-### Variablen: Bindings mit *def* anlegen
+#### Bedingte Anweisung (If-Else)
 
-``` clojure
-(def x 42)  ;; definiert eine neue Variable mit dem Namen "x" und dem Wert 42
+Eine bedingte Anweisung besteht immer aus genau einer `if`-Anweisung,
+und einer oder keiner `else`-Anweisung.
 
-x           ;; liefert 42
-(+ x 7)     ;; liefert 49
+Eine `if`-Anweisung wird mit dem Schlüsselwort `if` eingeleitet und
+besteht aus einer Bedingung in runden Klammern und einem in geschweiften
+Klammern formulierten Code-Block.
+
+Die Bedingung besteht aus einem Vergleichsausdruck.
+
+Eine `else`-Anweisung wird mit dem Schlüsselwort `else` eingeleitet. Auf
+das Schlüsselwort folgt in geschweiften Klammern formulierter
+Code-Block.
+
+``` c
+if (<Bedingung>) {
+    <Anweisung_1>
+    <Anweisung_2>
+}
 ```
 
-### Funktionen mit *defn* definieren
-
-``` clojure
-;;     name   params  body
-(defn  hello  (n)     (str "hello " n))  ;; Definition einer Funktion "hello" mit einem Parameter
-
-(hello "world")                          ;; Aufruf der Funktion "hello" mit dem Argument "world"
+``` c
+if (<Bedingung>) {
+    <Anweisung>
+} else {
+    <Anweisung>
+}
 ```
 
-### Lokale Scopes mit *let*
+``` c
+int a = 42;
 
-``` clojure
-;;    bindings      use names here
-(let  (name value)  (code that uses name))
-
-(def x 99)   ;; globale Variable x
-(def y 101)  ;; globale Variable y
-(def z 42)   ;; globale Variable z
-(let (x 1   ;; lokales x mit Wert 1(verdeckt globales x)
-      y 2)  ;; lokales y mit Wert 2
-     (+ x y z))  ;; 1+2+42
-
-(defn  hello
-       (n)
-       (let (l 42)  ;; l is valid in this scope
-            (str "hello " n ": " l)
-       )  ;; end of local scope
-)  ;; end of function definition
+if (a > 0) {
+    a = a - 1;
+    if (a > 0) {
+        a = a - 1;
+    }
+} else {
+    a = a + 1;
+}
 ```
 
-Mit `let` können lokale Variablen erzeugt werden, die dann in dem
-jeweiligen Scope genutzt werden können. Dies funktioniert wie in anderen
-Sprachen mit Scopes.
+### Funktionen
 
-### Rekursion
+#### Funktionsdefinition
 
-``` clojure
-(defn fac (n)
-    (if (< n 2)
-        1
-        (* n (fac (- n 1)))))
+Eine Funktionsdefinition macht dem Compiler die Implementierung einer
+Funktion bekannt.
+
+Sie gibt zunächst die Signatur der Funktion (den “Funktionskopf”)
+bekannt: Rückgabetyp, Funktionsname, Parameterliste.
+
+Die Parameterliste ist eine Komma-separierte Liste mit der Deklaration
+der Parameter (jeweils Typ und Variablenname). Die Parameterliste kann
+auch leer sein.
+
+Nach dem Funktionskopf folgt der Körper der Funktion als Code-Block.
+
+Funktionen können in einem Scope nicht mehrfach definiert werden.
+
+``` c
+type bezeichner(type param1, type param2) {
+    <Anweisung_1>
+    <Anweisung_2>
+    return <Bezeichner, Wert oder Operation>;
+}
 ```
 
-Da es kein `while` oder `for` gibt, müssen Schleifen über rekursive
-Aufrufe abgebildet werden.
-
-### Datenstrukturen
-
-In unserer Sprache gibt es Listen:
-
-``` clojure
-(1 2 3)          ;; Fehler!
-(def v (1 2 3))  ;; Fehler!
+``` c
+bool func1(int a, string b) {
+    int c = a + f2(b);
+    return c == 42;
+}
 ```
 
-Das Problem daran ist, dass unsere S-Expressions zwar bereits
-listenartige Strukturen sind, der erste Eintrag aber als Operator oder
-Funktion interpretiert wird. Der Ausdruck oben würde beim Auswerten
-versuchen, die “Funktion” 1 auf den Argumenten 2 und 3 aufzurufen …
+#### Funktionsaufrufe
 
-Man braucht also eine Notation, die ein sofortiges Auswerten verhindert
-und nur die Liste an sich zurückliefert. Dies erreicht man durch die
-Funktion `list`:
+Funktionsaufrufe bestehen aus einem Bezeichner (Funktionsname) gefolgt
+von einer in Klammern angegebenen Liste der Argumente, die auch leer
+sein kann. Als Argumente können alle passend typisierten Ausdrücke
+dienen.
 
-``` clojure
-(list 1 2 3)          ;; (1 2 3)
-
-(def v (list 1 2 3))  ;; v = (1 2 3)
-v                     ;; (1 2 3)
+``` python
+func1(5, var1)
+func1(func2(), 1 + 1)
 ```
 
-Mit der Funktion `nth` kann man auf das n-te Element einer Liste
-zugreifen:
+Die aufgerufene Funktion muss im aktuellen Scope sichtbar sein, der
+Funktionsaufruf muss zur Definition passen.
 
-``` clojure
-(nth (list "abc" false 99) 2)  ;; 99
+Die aufgerufene Funktion muss (im Gegensatz zum Zugriff auf Variablen)
+nicht vor dem ersten Aufruf definiert sein. Folgender Code ist also
+zulässig:
+
+``` python
+int a = 42;
+if (a == 42) {
+    foo(5);    # zulässig: foo ist erst nach diesem Aufruf definiert, aber in diesem Scope sichtbar
+}
+
+int foo(int a) {
+    return a + 37;
+}
 ```
 
-Zusätzlich gibt es die beiden Funktionen `head` und `tail`, die das
-erste Element einer Liste bzw. die restliche Liste ohne das erste
-Element zurückliefern:
+### Datentypen
 
-``` clojure
-(head (list 1 2 3))  ;; 1
-(tail (list 1 2 3))  ;; (2 3)
+Unsere Sprache hat drei eingebaute Datentypen:
+
+| Datentyp | Definition der Literale                                       |
+|:---------|:--------------------------------------------------------------|
+| `int`    | eine beliebige Folge der Ziffern `0-9`                        |
+| `string` | eine beliebige Folge von ASCII-Zeichen, eingeschlossen in `"` |
+| `bool`   | eines der beiden Schlüsselwörter `T` oder `F`                 |
+
+### Beispiele
+
+``` c
+string a = "wuppie fluppie";
+```
+
+``` c
+int a = 0;
+if (10 < 1) {
+    a = 42;
+} else {
+    foo();
+}
+```
+
+``` c
+int f95(int n) {
+    if (n == 0) {
+        return 1;
+    } else {
+        if (n == 1) {
+            return 1;
+        } else {
+            return f95(n - 1) + f95(n - 2) + f95(n - 3) + f95(n - 4) + f95(n - 5);
+        }
+    }
+}
+
+int n = 10;
+f95(n);
 ```
 
 ## Aufgaben
 
-### A5.1: Grammatik und ANTLR (3P)
+### A5.1: Grammatik und AST (2P)
 
-1.  Erstellen Sie zunächst einige Programme in der Zielsprache. Diese
-    sollten von einfachsten Ausdrücken bis hin zu komplexeren Programmen
-    reichen. Definieren Sie beispielsweise eine Funktion, die rekursiv
-    die Länge einer Liste berechnet.
+Erstellen Sie eine ANTLR-Grammatik für die Zielsprache. Sie können dabei
+die
+[Grammatik](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/blob/master/homework/src/sample_project/src/main/antlr/MiniC.g4)
+im [Sample
+Project](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/tree/master/homework/src/sample_project)
+als Ausgangspunkt nutzen und diese anpassen und vervollständigen.
 
-    Definieren Sie neben gültigen Programmen auch solche, die in der
-    semantischen Analyse zurückgewiesen werden sollten. Welche
-    Fehlerkategorien könnte es hier geben?
+Definieren Sie einen AST für die Zielsprache. Welche Informationen aus
+dem Eingabeprogramm müssen repräsentiert werden?
 
-2.  Definieren Sie für die obige Sprache eine geeignete ANTLR-Grammatik.
-    Sie können dabei die Grammatik
-    [MiniLispA](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/blob/master/homework/src/sample_project/src/main/antlr/MiniLispA.g4)
-    oder
-    [MiniLispB](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/blob/master/homework/src/sample_project/src/main/antlr/MiniLispB.g4)
-    im [Sample
-    Project](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/tree/master/homework/src/sample_project)
-    als Ausgangspunkt nutzen und diese anpassen und vervollständigen.
-    Erzeugen Sie mithilfe der Grammatik und ANTLR einen Lexer und
-    Parser.
+Programmieren Sie eine Traversierung des Parse-Trees, die den AST
+erzeugt. Testen Sie dies mit den obigen Beispielprogrammen und
+definieren Sie sich selbst weitere Programme unterschiedlicher
+Komplexität für diesen Zweck.
 
-3.  Führen Sie die semantische Analyse durch: Sind alle Symbole bekannt,
-    passen die Scopes?
+### A5.2: Aufbau der Symboltabelle (2P)
 
-### A5.2: Tree-Walking-Interpreter (5P)
+Bauen Sie für den AST eine Symboltabelle auf. Führen Sie dabei die im
+ersten Lauf möglichen Prüfungen durch, beispielsweise ob referenzierte
+Variablen tatsächlich bereits definiert und sichtbar sind oder ob eine
+Variable oder Funktion in einem Scope mehrfach definiert wird oder ob
+Variablen als Funktion genutzt werden. Geben Sie erkannte Fehler auf der
+Konsole aus.
 
-Bauen Sie einen Tree-Walking-Interpreter in Ihr Projekt ein.
+### A5.3: Symboltabelle: Funktionsaufrufe (1P)
 
-Realisieren Sie die eingebauten Funktionen `print` und `str` dabei als
-*native* Funktionen. Realisieren Sie `list`, `nth`, `head` und `tail`
-sowie `def`, `let`, `defn`, `do` und die Operatoren und die
-Kontrollstrukturen geeignet.
+Implementieren Sie einen zweiten Lauf. Dabei soll für Funktionsaufrufe
+geprüft werden, ob diese Funktionen bereits definiert sind und im Scope
+sichtbar sind. Geben Sie erkannte Fehler auf der Konsole aus.
 
-Lösen Sie die als “*syntactic sugar*” bezeichneten Ausdrücke auf und
-transformieren Sie den AST entsprechend: `(+ 1 2 3 4)` soll zu
-`(+ (+ (+ 1 2) 3) 4)` umgeformt werden. Analog für die anderen
-Operatoren der Sprache (Vergleiche, Arithmetik).
+### A5.4: Symboltabelle: Typprüfungen (5P)
 
-Achten Sie auf die Datentypen. Die Typen von Variablen etc. sind erst
-zur Laufzeit bekannt und müssen dann passen.
-
-Lesen Sie den zu interpretierenden Code aus einer Datei ein.
-
-Testen Sie Ihren Interpreter mit Ihren Beispielprogrammen.
-
-### A5.3: Auswirkungen der Grammatik auf den Interpreter (2P)
-
-Sie haben sich vermutlich für eine der beiden Grammatiken
-([MiniLispA](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/blob/master/homework/src/sample_project/src/main/antlr/MiniLispA.g4),
-[MiniLispB](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/blob/master/homework/src/sample_project/src/main/antlr/MiniLispB.g4))
-entschieden und auf der Basis Ihren Interpreter erstellt.
-
-Welche Auswirkungen hat die Grammatik auf den Interpreter? Machen Sie
-ein Gedankenexperiment: Überlegen Sie, was Sie alles in Ihrer
-Implementierung ändern müssten, wenn Sie die jeweils andere
-Grammatik-Variante nutzen würden.
-
-### Bonus: Interaktiver Interpreter (3P)
-
-Bauen Sie eine *REPL* ein, d.h. geben Sie nach dem Start des
-Interpreters einen Prompt aus und verarbeiten Sie die Eingaben
-interaktiv. Wie müssen Sie hier mit der Symboltabelle umgehen?
+Implementieren Sie einen dritten Lauf. Führen Sie die Typprüfung durch:
+Haben die Operanden in Ausdrücken die richtigen Typen, passen die Typen
+der Funktionsargumente, passen die Typen bei einer Zuweisung, … Geben
+Sie erkannte Fehler auf der Konsole aus. *Hinweis*: Sie brauchen hier
+nur die Typprüfung durchführen. Eine Typinferenz oder Typerweiterung
+o.ä. ist nicht notwendig.
 
 ------------------------------------------------------------------------
 
@@ -335,4 +401,4 @@ interaktiv. Wie müssen Sie hier mit der Symboltabelle umgehen?
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> e188a08 (markdown: switch to leaner yaml header (#363), 2025-08-09)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 400a8c0 (homework: add new B04 (lexer/parser), move remaining sheets up, 2025-08-29)<br></sub></sup></p></blockquote>
