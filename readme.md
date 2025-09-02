@@ -88,11 +88,11 @@ Vorstellung der Lösung im jeweiligen Praktikum in der Abgabewoche.
   1.  Aktive Teilnahme an mind. zwei der drei Edmonton/Minden-Termine
   2.  Mind. vier der sieben Übungsblätter B01..B07 erfolgreich
       bearbeitet[^1]
-  3.  Mini-Projekt (B08) erfolgreich bearbeitet[^2]
+  3.  Mini-Projekt (B08) erfolgreich bearbeitet
   4.  Vortrag über Mini-Projekt (B08) am Semesterende (W14), pro Team 15
       Minuten
 
-  Je Kriterium: Abgabe eines Post Mortem[^3] im ILIAS (**jede Person
+  Je Kriterium: Abgabe eines Post Mortem[^2] im ILIAS (**jede Person
   individuell**)
 
 - **Gesamtnote**: (Digitale) Klausur im B40 (90 Minuten)
@@ -158,17 +158,13 @@ is licensed under [CC BY-SA
 See the [credits](CREDITS.md) for a detailed list of contributing
 projects.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 60155d2 (orga: move some more content to self-study, 2025-09-02)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> b677dc2 (orga: fix footnote, 2025-09-02)<br></sub></sup></p></blockquote>
 
-[^1]: (“erfolgreich bearbeitet”: Bearbeitung in 3er Teams, alle
+[^1]: “erfolgreich bearbeitet”: Bearbeitung in 3er Teams, alle
     Aufgaben/Punkte bearbeitet, fristgerechte Abgabe des Post Mortem im
-    ILIAS)
+    ILIAS
 
-[^2]: (“erfolgreich bearbeitet”: Bearbeitung in 3er Teams, alle
-    Aufgaben/Punkte bearbeitet, fristgerechte Abgabe des Post Mortem im
-    ILIAS)
-
-[^3]: **Post Mortem**: Jede Person beschreibt in der ILIAS-Abgabe
+[^2]: **Post Mortem**: Jede Person beschreibt in der ILIAS-Abgabe
     individuell(!) die Bearbeitung des jeweiligen Kriteriums bzw. die
     Teilnahme am Edmonton/Minden-Meeting zurückblickend mit mind. 200
     bis max. 400 Wörtern (Nutzlast; Überschriften und Links zählen nicht
