@@ -29,7 +29,8 @@ jobs:
         id: message
         run: |
           cd _gfm/
-          echo "COMMIT_MESSAGE=$(git log -1 --format=%s)" >> "$GITHUB_OUTPUT"
+          msg="$(git log -n 1 --pretty=reference | sed -e 's/["\\$$`]//g' -e "s/'//g")"
+          echo "COMMIT_MESSAGE=$msg" >> "$GITHUB_OUTPUT"
           cd ..
       - name: Copy files over
         run: |
