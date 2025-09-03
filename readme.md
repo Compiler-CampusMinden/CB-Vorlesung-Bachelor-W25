@@ -73,8 +73,8 @@ Vorstellung der Lösung im jeweiligen Praktikum in der Abgabewoche.
 | W09 / KW49 | C++ I: [Basics](lecture/99-languages/cpp0-basics.md) | [Pointer & Referenzen](lecture/99-languages/cpp1-pointer.md) |  | **Mo, 01.12., 18:00 - 19:00 Uhr (online): Edmonton/Minden: Minden Presentations** |
 | W10 / KW50 | C++ II: [Klassen](lecture/99-languages/cpp2-classes.md) \| [Big Three](lecture/99-languages/cpp3-big3.md) \| [Operatoren](lecture/99-languages/cpp4-operators.md) | [Vererbung & Polymorphie](lecture/99-languages/cpp5-inheritance.md) | [B06](homework/sheet06.md) Interpreter | **Mo, 08.12., 18:00 - 19:00 Uhr (online): Edmonton/Minden: Edmonton Presentations** |
 | W11 / KW51 |  | *Sprechstunde* | [B07](homework/sheet07.md) C++ |  |
-| \- / KW52 |  | *Weihnachtspause* |  |  |
-| \- / KW01 |  | *Weihnachtspause* |  |  |
+| *- / KW52* |  | *Weihnachtspause* |  |  |
+| *- / KW01* |  | *Weihnachtspause* |  |  |
 | W12 / KW02 |  | *Sprechstunde* | *Freies Arbeiten [B08](homework/sheet08.md)* |  |
 | W13 / KW03 |  | *Sprechstunde* | *Freies Arbeiten [B08](homework/sheet08.md)* |  |
 | W14 / KW04 | [Prüfungsvorbereitung](admin/exams.md) | Rückblick (*Zoom*) | [B08](homework/sheet08.md) Mini-Projekt |  |
@@ -160,7 +160,7 @@ is licensed under [CC BY-SA
 See the [credits](CREDITS.md) for a detailed list of contributing
 projects.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> a529b20 (orga: refine plan (#370), 2025-09-02)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 229c1fe (orga: improve readability of schedule, 2025-09-03)<br></sub></sup></p></blockquote>
 
 [^1]: “erfolgreich bearbeitet”: Bearbeitung in 3er Teams, alle
     Aufgaben/Punkte bearbeitet, fristgerechte Abgabe des Post Mortem im
