@@ -160,11 +160,11 @@ is licensed under [CC BY-SA
 See the [credits](CREDITS.md) for a detailed list of contributing
 projects.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 229c1fe (orga: improve readability of schedule, 2025-09-03)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> e733abc (orga: improve wording exams/grading, 2025-09-04)<br></sub></sup></p></blockquote>
 
 [^1]: “erfolgreich bearbeitet”: Bearbeitung in 3er Teams, alle
-    Aufgaben/Punkte bearbeitet, fristgerechte Abgabe des Post Mortem im
-    ILIAS
+    Aufgaben/Punkte bearbeitet, fristgerechte Abgabe des ausreichenden
+    Post Mortems im ILIAS
 
 [^2]: **Post Mortem**: Jede Person beschreibt in der ILIAS-Abgabe
     individuell(!) die Bearbeitung des jeweiligen Kriteriums bzw. die
