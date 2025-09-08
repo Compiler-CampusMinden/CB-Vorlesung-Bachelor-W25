@@ -9,9 +9,9 @@ Sprache mit Expressions, Kontrollstrukturen und Funktionen.
 ## Methodik
 
 Sie finden im [Sample
-Project](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/tree/master/homework/src/sample_project)
+Project](https://github.com/Compiler-CampusMinden/student-support-code-template)
 eine
-[Grammatik](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/blob/master/homework/src/sample_project/src/main/antlr/MiniC.g4),
+[Grammatik](https://github.com/Compiler-CampusMinden/student-support-code-template/blob/master/src/main/antlr/MiniC.g4),
 die (teilweise) zu der Zielsprache auf diesem Blatt passt. Analysieren
 Sie diese Grammatik und vervollständigen Sie diese bzw. passen Sie diese
 an.
@@ -358,9 +358,9 @@ f95(n);
 
 Erstellen Sie eine ANTLR-Grammatik für die Zielsprache. Sie können dabei
 die
-[Grammatik](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/blob/master/homework/src/sample_project/src/main/antlr/MiniC.g4)
+[Grammatik](https://github.com/Compiler-CampusMinden/student-support-code-template/blob/master/src/main/antlr/MiniC.g4)
 im [Sample
-Project](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/tree/master/homework/src/sample_project)
+Project](https://github.com/Compiler-CampusMinden/student-support-code-template)
 als Ausgangspunkt nutzen und diese anpassen und vervollständigen.
 
 Definieren Sie einen AST für die Zielsprache. Welche Informationen aus
@@ -401,4 +401,4 @@ o.ä. ist nicht notwendig.
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 400a8c0 (homework: add new B04 (lexer/parser), move remaining sheets up, 2025-08-29)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 2f2a9e0 (clean-up: remove sample project, 2025-09-08)<br></sub></sup></p></blockquote>
