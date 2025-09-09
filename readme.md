@@ -56,7 +56,7 @@ Hier finden Sie einen abonnierbaren [Google
 Kalender](https://calendar.google.com/calendar/ical/07021c87022fe3f132fa2e2e799b230b5ab9c7088c85d152f2beab8f1b5218af%40group.calendar.google.com/public/basic.ics)
 mit allen Terminen der Veranstaltung zum Einbinden in Ihre Kalender-App.
 
-Abgabe der Übungsblätter jeweils **Montag bis 09:00 Uhr** im
+Abgabe der Post Mortems jeweils **Mittwoch bis 09:00 Uhr** im
 [ILIAS](https://www.hsbi.de/elearning/goto.php?target=exc_1420724&client_id=FH-Bielefeld).
 Vorstellung der Lösung im jeweiligen Praktikum in der Abgabewoche.
 
@@ -160,7 +160,7 @@ is licensed under [CC BY-SA
 See the [credits](CREDITS.md) for a detailed list of contributing
 projects.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 0079f9d (orga: update lecture time, 2025-09-09)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 2ff581a (orga: fix deadline for ILIAS, 2025-09-09)<br></sub></sup></p></blockquote>
 
 [^1]: “erfolgreich bearbeitet”: Bearbeitung in 3er Teams, alle
     Aufgaben/Punkte bearbeitet, fristgerechte Abgabe des ausreichenden
