@@ -39,12 +39,12 @@ eines kleinen Compiler-Frontends für C++ ein.
 
 ## Kursformat
 
-| Vorlesung (2 SWS)            | Praktikum (2 SWS)                        |
-|:-----------------------------|:-----------------------------------------|
-| Do, 15:45 - 17:15 Uhr (Zoom) | G1: Mi, 09:45 - 11:15 Uhr (Zoom)         |
-|                              | G2: Mi, 11:30 - 13:00 Uhr (Zoom)         |
-|                              | G3: Mi, 09:45 - 11:15 Uhr (Präsenz J101) |
-|                              | G4: Mi, 11:30 - 13:00 Uhr (Präsenz J101) |
+| Vorlesung (2 SWS)            | Praktikum (2 SWS)                       |
+|:-----------------------------|:----------------------------------------|
+| Do, 15:45 - 17:15 Uhr (Zoom) | G1: Mi, 09:45 - 11:15 Uhr (Zoom)        |
+|                              | G2: Mi, 11:30 - 13:00 Uhr (Zoom)        |
+|                              | G3: Mi, 09:45 - 11:15 Uhr (Präsenz B40) |
+|                              | G4: Mi, 11:30 - 13:00 Uhr (Präsenz B40) |
 
 Durchführung der Vorlesung als *Flipped Classroom* (Carsten) bzw. als
 *reguläre Vorlesung* (BC). Zugangsdaten Zoom siehe
@@ -160,7 +160,7 @@ is licensed under [CC BY-SA
 See the [credits](CREDITS.md) for a detailed list of contributing
 projects.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> e733abc (orga: improve wording exams/grading, 2025-09-04)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 0079f9d (orga: update lecture time, 2025-09-09)<br></sub></sup></p></blockquote>
 
 [^1]: “erfolgreich bearbeitet”: Bearbeitung in 3er Teams, alle
     Aufgaben/Punkte bearbeitet, fristgerechte Abgabe des ausreichenden
