@@ -48,7 +48,7 @@ eines kleinen Compiler-Frontends für C++ ein.
 
 Durchführung der Vorlesung als *Flipped Classroom* (Carsten) bzw. als
 *reguläre Vorlesung* (BC). Zugangsdaten Zoom siehe
-[ILIAS](https://www.hsbi.de/elearning/goto.php?target=crs_1400597&client_id=FH-Bielefeld).
+[ILIAS](https://www.hsbi.de/elearning/goto.php/crs/1555855).
 
 ## Fahrplan
 
@@ -57,8 +57,8 @@ Kalender](https://calendar.google.com/calendar/ical/07021c87022fe3f132fa2e2e799b
 mit allen Terminen der Veranstaltung zum Einbinden in Ihre Kalender-App.
 
 Abgabe der Post Mortems jeweils **Mittwoch bis 09:00 Uhr** im
-[ILIAS](https://www.hsbi.de/elearning/goto.php?target=exc_1420724&client_id=FH-Bielefeld).
-Vorstellung der Lösung im jeweiligen Praktikum in der Abgabewoche.
+[ILIAS](https://www.hsbi.de/elearning/goto.php/exc/1582799). Vorstellung
+der Lösung im jeweiligen Praktikum in der Abgabewoche.
 
 | Woche | Vorlesung: Selbststudium (Vorbereitung) | Vorlesung: Gemeinsame Sitzung | Praktikum | Edmonton/Minden-Meetings |
 |:---|:---|:---|:---|:---|
@@ -160,7 +160,7 @@ is licensed under [CC BY-SA
 See the [credits](CREDITS.md) for a detailed list of contributing
 projects.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 2ff581a (orga: fix deadline for ILIAS, 2025-09-09)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> d7278a8 (orga: fix link to ilias, 2025-09-10)<br></sub></sup></p></blockquote>
 
 [^1]: “erfolgreich bearbeitet”: Bearbeitung in 3er Teams, alle
     Aufgaben/Punkte bearbeitet, fristgerechte Abgabe des ausreichenden
