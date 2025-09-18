@@ -81,23 +81,62 @@ der Lösung im jeweiligen Praktikum in der Abgabewoche.
 
 ## Prüfungsform, Note und Credits
 
-**(Digitale) Klausur plus Studienleistung**, 5 ECTS
+**(Digitale) Klausur plus Studienleistung (Portfolio)**, 5 ECTS
 
-- **Studienleistung**: “Portfolio”
+- **Studienleistung**: “Portfolio” - Kriterien je Person:
 
-  Kriterien je Team (3 Personen):
+  1.  Teilnahme an mind. zwei Edmonton/Minden-Terminen mit aktiver
+      Beteiligung
+  2.  Mind. vier der Übungsblätter B01..B07 erfolgreich bearbeitet
+  3.  Abschlussvortrag zum erfolgreich bearbeiteten Mini-Projekt (B08)
+      am Semesterende (W14) a 15 Minuten (pro Team)
 
-  1.  Aktive Teilnahme an mind. zwei der drei Edmonton/Minden-Termine
-  2.  Mind. vier der sieben Übungsblätter B01..B07 erfolgreich
-      bearbeitet[^1]
-  3.  Mini-Projekt (B08) erfolgreich bearbeitet
-  4.  Vortrag über Mini-Projekt (B08) am Semesterende (W14), pro Team 15
-      Minuten
-
-  Je Kriterium: Abgabe eines Post Mortem[^2] im ILIAS (**jede Person
+  Je Kriterium: Abgabe eines Post Mortem im ILIAS (**jede Person
   individuell**)
 
 - **Gesamtnote**: (Digitale) Klausur im B40 (90 Minuten)
+
+*Hinweise*:
+
+- Die Bearbeitung der Leistungen erfolgt im Team.
+
+- Ein Team umfasst 3 Personen.
+
+- Die Post Mortems sind individuell zu erstellen und abzugeben.
+
+- “Aktive Beteiligung” umfasst Anwesenheit und sachbezogene Beiträge;
+  Anwesenheit/Beteiligung werden dokumentiert.
+
+- “Erfolgreiche Bearbeitung” eines Blattes umfasst Bearbeitung im Team,
+  Bearbeitung aller Aufgaben des Blattes, fristgerechte Abgabe des
+  ausreichenden Post Mortems im ILIAS. Die intensive Beschäftigung mit
+  den Aufgaben muss erkennbar sein.
+
+- **Post Mortem**: Jede Person beschreibt individuell(!) die Bearbeitung
+  des jeweiligen Kriteriums bzw. die Teilnahme am
+  Edmonton/Minden-Meeting zurückblickend mit mind. 200 bis max. 400
+  Wörtern (Nutzlast; Überschriften und Links zählen nicht mit). Gehen
+  Sie dabei aussagekräftig und nachvollziehbar auf folgende Punkte ein:
+
+  1.  Zusammenfassung: Was wurde gemacht bzw. was wurde auf dem Meeting
+      besprochen?
+  2.  Details: Kurze Beschreibung besonders interessanter Aspekte.
+  3.  Reflexion: Was war der schwierigste Teil? Wie haben Sie dieses
+      Problem gelöst?
+  4.  Reflexion: Was haben Sie gelernt oder (besser) verstanden?
+  5.  Team: Mit wem haben Sie zusammengearbeitet?
+  6.  Link zu Ihrem Repo mit den relevanten Artefakten (Lösung, Slides
+      für den Vortrag, …).
+
+  Für die Edmonton/Minden-Meetings passen Sie bitte die Punkte (1)
+  bis (4) entsprechend inhaltlich an, (5) und (6) entfallen.
+
+  Die Post Mortems geben Sie bitte pro Person bis spätestens zur
+  jeweiligen Deadline im
+  [ILIAS](https://www.hsbi.de/elearning/goto.php/exc/1582799) ab.
+
+  Siehe auch
+  https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor-W25/discussions/3.
 
 ## Materialien
 
@@ -160,32 +199,4 @@ is licensed under [CC BY-SA
 See the [credits](CREDITS.md) for a detailed list of contributing
 projects.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> d7278a8 (orga: fix link to ilias, 2025-09-10)<br></sub></sup></p></blockquote>
-
-[^1]: “erfolgreich bearbeitet”: Bearbeitung in 3er Teams, alle
-    Aufgaben/Punkte bearbeitet, fristgerechte Abgabe des ausreichenden
-    Post Mortems im ILIAS
-
-[^2]: **Post Mortem**: Jede Person beschreibt in der ILIAS-Abgabe
-    individuell(!) die Bearbeitung des jeweiligen Kriteriums bzw. die
-    Teilnahme am Edmonton/Minden-Meeting zurückblickend mit mind. 200
-    bis max. 400 Wörtern (Nutzlast; Überschriften und Links zählen nicht
-    mit). Gehen Sie dabei aussagekräftig und nachvollziehbar auf
-    folgende Punkte ein:
-
-    1.  Zusammenfassung: Was wurde gemacht bzw. was wurde auf dem
-        Meeting besprochen?
-    2.  Details: Kurze Beschreibung besonders interessanter Aspekte der
-        Umsetzung bzw. des Meetings.
-    3.  Reflexion: Was war der schwierigste Teil bei der Bearbeitung?
-        Wie haben Sie dieses Problem gelöst?
-    4.  Reflexion: Was haben Sie gelernt oder (besser) verstanden?
-    5.  Team: Mit wem haben Sie zusammengearbeitet?
-    6.  Link zu Ihrem Repo mit den relevanten Artefakten (Lösung, Slides
-        für den Vortrag, …).
-
-    Für die Edmonton/Minden-Meetings passen Sie bitte die Punkte (1) bis
-    (4) entsprechend inhaltlich an, (5) und (6) entfallen.
-
-    Siehe auch
-    https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor-W25/discussions/3.
+<blockquote><p><sup><sub><strong>Last modified:</strong> 7dcff10 (orga: improve description of Portfolio, 2025-09-18)<br></sub></sup></p></blockquote>
