@@ -96,7 +96,9 @@ der Lösung im jeweiligen Praktikum in der Abgabewoche.
 
 - **Gesamtnote**: (Digitale) Klausur im B40 (90 Minuten)
 
-*Hinweise*:
+<details>
+
+<summary><strong>Hinweise</strong></summary>
 
 - Die Bearbeitung der Leistungen erfolgt im Team.
 
@@ -137,6 +139,8 @@ der Lösung im jeweiligen Praktikum in der Abgabewoche.
 
   Siehe auch
   https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor-W25/discussions/3.
+
+</details>
 
 ## Materialien
 
@@ -199,4 +203,4 @@ is licensed under [CC BY-SA
 See the [credits](CREDITS.md) for a detailed list of contributing
 projects.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 7dcff10 (orga: improve description of Portfolio, 2025-09-18)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> dbdd743 (orga: wrap hinweise as gh-details, 2025-09-18)<br></sub></sup></p></blockquote>
