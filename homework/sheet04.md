@@ -1,34 +1,10 @@
 # Blatt 04: Lexer und Parser selbst implementiert
 
-## Zusammenfassung
+<div align="center">
 
-Ziel dieses Aufgabenblattes ist … TODO
+**Wir arbeiten gerade an dieser Seite …**
 
-## Methodik
-
-TODO
-
-## TODO
-
-TODO
-
-## Aufgaben
-
-### A4.1: Grammatik (2P)
-
-Erstellen Sie eine Grammatik für die Zielsprache.
-
-### A4.2: Lexer und Token (3P)
-
-TODO
-
-### A4.3: Parser (3P)
-
-TODO
-
-### A4.4: AST (2P)
-
-TODO
+</div>
 
 ------------------------------------------------------------------------
 
@@ -36,4 +12,4 @@ TODO
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 400a8c0 (homework: add new B04 (lexer/parser), move remaining sheets up, 2025-08-29)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 4ab2ebb (homework: deactivate exercise sheets for rework, 2025-10-01)<br></sub></sup></p></blockquote>
