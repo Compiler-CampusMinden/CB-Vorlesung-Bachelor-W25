@@ -75,8 +75,8 @@ der Lösung im jeweiligen Praktikum in der Abgabewoche.
 | W11 / KW51 |  | *Sprechstunde* | [B07](homework/sheet07.md) C++ |  |
 | *- / KW52* |  | *Weihnachtspause* |  |  |
 | *- / KW01* |  | *Weihnachtspause* |  |  |
-| W12 / KW02 |  | *Sprechstunde* | *Freies Arbeiten [B08](homework/sheet08.md)* |  |
-| W13 / KW03 |  | *Sprechstunde* | *Freies Arbeiten [B08](homework/sheet08.md)* |  |
+| W12 / KW02 |  | *Sprechstunde* | *Freies Arbeiten ([B08](homework/sheet08.md))* |  |
+| W13 / KW03 |  | *Sprechstunde* | *Freies Arbeiten ([B08](homework/sheet08.md))* |  |
 | W14 / KW04 | [Prüfungsvorbereitung](admin/exams.md) | Rückblick (*Zoom*) | [B08](homework/sheet08.md) Mini-Projekt |  |
 
 ## Prüfungsform, Note und Credits
@@ -203,4 +203,4 @@ is licensed under [CC BY-SA
 See the [credits](CREDITS.md) for a detailed list of contributing
 projects.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 3d15118 (orga: ll-parser in w05 is actually ll-parser theory, 2025-10-03)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 824f3fa (orga: improve readability of schedule, 2025-10-04)<br></sub></sup></p></blockquote>
