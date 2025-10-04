@@ -36,6 +36,7 @@ eines kleinen Compiler-Frontends für C++ ein.
 - [Carsten
   Gips](https://www.hsbi.de/minden/ueber-uns/personenverzeichnis/carsten-gips)
   (Sprechstunde nach Vereinbarung)
+- Alesia Herbertz (Tutorin)
 
 ## Kursformat
 
@@ -201,4 +202,4 @@ is licensed under [CC BY-SA
 See the [credits](CREDITS.md) for a detailed list of contributing
 projects.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 593c9d5 (orga: clarify post mortem, 2025-10-04)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> bc4e058 (orga: add alesia to staff overview, 2025-10-04)<br></sub></sup></p></blockquote>
