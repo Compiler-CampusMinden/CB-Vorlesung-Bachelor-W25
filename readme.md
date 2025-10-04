@@ -101,22 +101,20 @@ der Lösung im jeweiligen Praktikum in der Abgabewoche.
 <summary><strong>Hinweise</strong></summary>
 
 - Die Bearbeitung der Leistungen erfolgt im Team.
-
 - Ein Team umfasst 3 Personen.
-
 - Die Post Mortems sind individuell zu erstellen und abzugeben.
-
 - “Aktive Beteiligung” umfasst Anwesenheit und sachbezogene Beiträge;
   Anwesenheit/Beteiligung werden dokumentiert.
-
 - “Erfolgreiche Bearbeitung” eines Blattes umfasst Bearbeitung im Team,
   Bearbeitung aller Aufgaben des Blattes, fristgerechte Abgabe des
   ausreichenden Post Mortems im ILIAS. Die intensive Beschäftigung mit
   den Aufgaben muss erkennbar sein.
 
+<!-- -->
+
 - **Post Mortem**: Jede Person beschreibt individuell(!) die Bearbeitung
-  des jeweiligen Kriteriums bzw. die Teilnahme am
-  Edmonton/Minden-Meeting zurückblickend mit mind. 200 bis max. 400
+  des jeweiligen Kriteriums bzw. die Teilnahme an den
+  Edmonton/Minden-Meetings zurückblickend mit mind. 200 bis max. 400
   Wörtern (Nutzlast; Überschriften und Links zählen nicht mit). Gehen
   Sie dabei aussagekräftig und nachvollziehbar auf folgende Punkte ein:
 
@@ -203,4 +201,4 @@ is licensed under [CC BY-SA
 See the [credits](CREDITS.md) for a detailed list of contributing
 projects.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 824f3fa (orga: improve readability of schedule, 2025-10-04)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 593c9d5 (orga: clarify post mortem, 2025-10-04)<br></sub></sup></p></blockquote>
