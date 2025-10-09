@@ -78,7 +78,7 @@ der Lösung im jeweiligen Praktikum in der Abgabewoche.
 | *29.12. - 02.01.* |  | *Weihnachtspause* |  |  |
 | 05\. - 09.01. |  | *Sprechstunde* | *Freies Arbeiten ([B08](homework/sheet08.md))* |  |
 | 12\. - 16.01. |  | *Sprechstunde* | *Freies Arbeiten ([B08](homework/sheet08.md))* |  |
-| 19\. - 22.01. | [Prüfungsvorbereitung](admin/exams.md) | Rückblick (*Zoom*) | [B08](homework/sheet08.md) Mini-Projekt |  |
+| 19\. - 23.01. | [Prüfungsvorbereitung](admin/exams.md) | Rückblick (*Zoom*) | [B08](homework/sheet08.md) Mini-Projekt |  |
 
 ## Prüfungsform, Note und Credits
 
@@ -202,4 +202,4 @@ is licensed under [CC BY-SA
 See the [credits](CREDITS.md) for a detailed list of contributing
 projects.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> eea4dca (orga: improve readability, 2025-10-09)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 6717d64 (orga: fix typo, 2025-10-09)<br></sub></sup></p></blockquote>
