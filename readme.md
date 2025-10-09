@@ -63,22 +63,22 @@ der Lösung im jeweiligen Praktikum in der Abgabewoche.
 
 | Woche | Vorlesung: Selbststudium (Vorbereitung) | Vorlesung: Gemeinsame Sitzung | Praktikum | Edmonton/Minden-Meetings |
 |:---|:---|:---|:---|:---|
-| W01 / KW41 | [Überblick](lecture/00-intro/overview.md) \| [Sprachen](lecture/00-intro/languages.md) \| [Anwendungen](lecture/00-intro/applications.md) | [Orga](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor-W25) (*Zoom*) |  |  |
-| W02 / KW42 |  | [Reguläre Sprachen 1](lecture/01-lexing/regular1.md) |  |  |
-| W03 / KW43 |  | [Reguläre Sprachen 2](lecture/01-lexing/regular2.md) \|\| [CFG](lecture/02-parsing/cfg.md) | [B01](homework/sheet01.md) Reguläre Sprachen |  |
-| W04 / KW44 | [Lexer mit ANTLR](lecture/01-lexing/antlr-lexing.md) | [Parser mit ANTLR](lecture/02-parsing/antlr-parsing.md) | [B02](homework/sheet02.md) CFG |  |
-| W05 / KW45 |  | [LL-Parser (Theorie)](lecture/02-parsing/ll-parser.md) | [B03](homework/sheet03.md) ANTLR | **Mo, 03.11., 18:00 - 19:00 Uhr (online): Edmonton/Minden: ANTLR + Live-Coding** |
-| W06 / KW46 | [Lexer (Implementierung)](lecture/01-lexing/recursive.md) | [LL-Parser (Implementierung)](lecture/02-parsing/ll-parser-impl.md) |  |  |
-| W07 / KW47 | Symboltabellen: [Überblick](lecture/03-semantics/symbtab0-intro.md) \| [Scopes](lecture/03-semantics/symbtab1-scopes.md) | [Funktionen](lecture/03-semantics/symbtab2-functions.md) \| [Klassen](lecture/03-semantics/symbtab3-classes.md) | [B04](homework/sheet04.md) LL hand coded |  |
-| W08 / KW48 | [AST-basierte Interpreter 1](lecture/06-interpretation/astdriven-part1.md) | [AST-basierte Interpreter 2](lecture/06-interpretation/astdriven-part2.md) | [B05](homework/sheet05.md) Semantische Analyse |  |
-| W09 / KW49 | C++ I: [Basics](lecture/99-languages/cpp0-basics.md) | [Pointer & Referenzen](lecture/99-languages/cpp1-pointer.md) |  | **Mo, 01.12., 18:00 - 19:00 Uhr (online): Edmonton/Minden: Minden Presentations** |
-| W10 / KW50 | C++ II: [Klassen](lecture/99-languages/cpp2-classes.md) \| [Big Three](lecture/99-languages/cpp3-big3.md) \| [Operatoren](lecture/99-languages/cpp4-operators.md) | [Vererbung & Polymorphie](lecture/99-languages/cpp5-inheritance.md) | [B06](homework/sheet06.md) Interpreter | **Mo, 08.12., 18:00 - 19:00 Uhr (online): Edmonton/Minden: Edmonton Presentations** |
-| W11 / KW51 |  | *Sprechstunde* | [B07](homework/sheet07.md) C++ |  |
-| *- / KW52* |  | *Weihnachtspause* |  |  |
-| *- / KW01* |  | *Weihnachtspause* |  |  |
-| W12 / KW02 |  | *Sprechstunde* | *Freies Arbeiten ([B08](homework/sheet08.md))* |  |
-| W13 / KW03 |  | *Sprechstunde* | *Freies Arbeiten ([B08](homework/sheet08.md))* |  |
-| W14 / KW04 | [Prüfungsvorbereitung](admin/exams.md) | Rückblick (*Zoom*) | [B08](homework/sheet08.md) Mini-Projekt |  |
+| 06\. - 10.10. | [Überblick](lecture/00-intro/overview.md) \| [Sprachen](lecture/00-intro/languages.md) \| [Anwendungen](lecture/00-intro/applications.md) | [Orga](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor-W25) (*Zoom*) |  |  |
+| 13\. - 17.10. |  | [Reguläre Sprachen 1](lecture/01-lexing/regular1.md) |  |  |
+| 20\. - 24.10. |  | [Reguläre Sprachen 2](lecture/01-lexing/regular2.md) \|\| [CFG](lecture/02-parsing/cfg.md) | [B01](homework/sheet01.md) Reguläre Sprachen |  |
+| 27\. - 31.10. | [Lexer mit ANTLR](lecture/01-lexing/antlr-lexing.md) | [Parser mit ANTLR](lecture/02-parsing/antlr-parsing.md) | [B02](homework/sheet02.md) CFG |  |
+| 03\. - 07.11. |  | [LL-Parser (Theorie)](lecture/02-parsing/ll-parser.md) | [B03](homework/sheet03.md) ANTLR | **Mo, 03.11., 18:00 - 19:00 Uhr (online): Edmonton/Minden: ANTLR + Live-Coding** |
+| 10\. - 14.11. | [Lexer (Implementierung)](lecture/01-lexing/recursive.md) | [LL-Parser (Implementierung)](lecture/02-parsing/ll-parser-impl.md) |  |  |
+| 17\. - 21.11. | Symboltabellen: [Überblick](lecture/03-semantics/symbtab0-intro.md) \| [Scopes](lecture/03-semantics/symbtab1-scopes.md) | [Funktionen](lecture/03-semantics/symbtab2-functions.md) \| [Klassen](lecture/03-semantics/symbtab3-classes.md) | [B04](homework/sheet04.md) LL hand coded |  |
+| 24\. - 28.11. | [AST-basierte Interpreter 1](lecture/06-interpretation/astdriven-part1.md) | [AST-basierte Interpreter 2](lecture/06-interpretation/astdriven-part2.md) | [B05](homework/sheet05.md) Semantische Analyse |  |
+| 01\. - 05.12. | C++ I: [Basics](lecture/99-languages/cpp0-basics.md) | [Pointer & Referenzen](lecture/99-languages/cpp1-pointer.md) |  | **Mo, 01.12., 18:00 - 19:00 Uhr (online): Edmonton/Minden: Minden Presentations** |
+| 08\. - 12.12. | C++ II: [Klassen](lecture/99-languages/cpp2-classes.md) \| [Big Three](lecture/99-languages/cpp3-big3.md) \| [Operatoren](lecture/99-languages/cpp4-operators.md) | [Vererbung & Polymorphie](lecture/99-languages/cpp5-inheritance.md) | [B06](homework/sheet06.md) Interpreter | **Mo, 08.12., 18:00 - 19:00 Uhr (online): Edmonton/Minden: Edmonton Presentations** |
+| 15\. - 19.12. |  | *Sprechstunde* | [B07](homework/sheet07.md) C++ |  |
+| *22. - 26.12.* |  | *Weihnachtspause* |  |  |
+| *29.12. - 02.01.* |  | *Weihnachtspause* |  |  |
+| 05\. - 09.01. |  | *Sprechstunde* | *Freies Arbeiten ([B08](homework/sheet08.md))* |  |
+| 12\. - 16.01. |  | *Sprechstunde* | *Freies Arbeiten ([B08](homework/sheet08.md))* |  |
+| 19\. - 22.01. | [Prüfungsvorbereitung](admin/exams.md) | Rückblick (*Zoom*) | [B08](homework/sheet08.md) Mini-Projekt |  |
 
 ## Prüfungsform, Note und Credits
 
@@ -90,7 +90,7 @@ der Lösung im jeweiligen Praktikum in der Abgabewoche.
       Beteiligung
   2.  Mind. vier der Übungsblätter B01..B07 erfolgreich bearbeitet
   3.  Abschlussvortrag zum erfolgreich bearbeiteten Mini-Projekt (B08)
-      am Semesterende (W14) a 15 Minuten (pro Team)
+      am Semesterende (21.01.) a 15 Minuten (pro Team)
 
   Je Kriterium: Abgabe eines Post Mortem im ILIAS (**jede Person
   individuell**)
@@ -202,4 +202,4 @@ is licensed under [CC BY-SA
 See the [credits](CREDITS.md) for a detailed list of contributing
 projects.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> bc4e058 (orga: add alesia to staff overview, 2025-10-04)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> eea4dca (orga: improve readability, 2025-10-09)<br></sub></sup></p></blockquote>
