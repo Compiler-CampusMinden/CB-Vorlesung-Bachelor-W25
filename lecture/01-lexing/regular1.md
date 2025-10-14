@@ -19,9 +19,9 @@ Hier entsteht ein Tafelbild.
 
 ### Themen für heute
 
+- Lexer
 - Endliche Automaten
 - Reguläre Sprachen
-- Lexer
 
 ## Endliche Automaten
 
@@ -39,15 +39,25 @@ von Buchstaben, die es enthält (Kardinalität).
 eine Menge von Wörtern über diesem Alphabet. Sprachen können endlich
 oder unendlich viele Wörter enthalten.
 
-### Beispiel
+### State machine
 
 Hier entsteht ein Tafelbild.
 
 ### Deterministische endliche Automaten
 
+Bestimmte State machines:
+
+- Eingaben bestimmen Zustandsübergänge
+
+- Zustandsübergänge sind eindeutig
+
+- Es gibt Anfang(szustand) und End(zuständ)e
+
+### Wie definieren wir das formal?
+
 Hier entsteht ein Tafelbild.
 
-### Def.: deterministischer endlicher Automat
+### Def.: Deterministischer endlicher Automat
 
 **Def.:** Ein **deterministischer endlicher Automat** (DFA) ist ein
 5-Tupel $`A = (Q, \Sigma, \delta, q_0, F)`$ mit
@@ -63,7 +73,11 @@ Hier entsteht ein Tafelbild.
 
 - $`F \subseteq Q`$ : die Menge der **Endzustände**
 
-### Die Übergangsfunktion
+### Beispiel
+
+Hier entsteht ein Tafelbild.
+
+### Eingabewörter statt Buchstaben
 
 **Def.:** Wir definieren
 $`\delta^{\ast}: (Q \times \Sigma^{\ast}) \rightarrow Q`$: induktiv wie
@@ -82,6 +96,10 @@ dann, wenn $`\delta^{\ast}(q_0, w) \in F.`$
 Hier entsteht ein Tafelbild.
 
 ### Nichtdeterministische endliche Automaten
+
+Hier entsteht ein Tafelbild.
+
+### Def.: Nichtdeterministischer Automat
 
 **Def.:** Ein **nichtdeterministischer endlicher Automat** (NFA) ist ein
 5-Tupel $`A = (Q, \Sigma, \delta, q_0, F)`$ mit
@@ -224,62 +242,12 @@ Grammatik mit den folgenden Einschränkungen:
 
 Hier entsteht ein Tafelbild.
 
-### Reguläre Sprachen und ihre Grenzen
+### Reguläre Sprachen
 
 **Satz:** Die von endlichen Automaten akzeptiert Sprachklasse, die von
 regulären Ausdrücken beschriebene Sprachklasse und die von regulären
 Grammatiken erzeugte Sprachklasse sind identisch und heißen **reguläre
 Sprachen**.
-
-**Reguläre Sprachen**
-
-- einfache Struktur
-- Matchen von Symbolen (z. B. Klammern) nicht möglich, da die fixe
-  Anzahl von Zuständen eines DFAs die Erkennung solcher Sprachen
-  verhindert.
-
-### Wozu reguläre Sprachen im Compilerbau?
-
-- Reguläre Ausdrücke
-
-  - definieren Schlüsselwörter und alle weiteren Symbole einer
-    Programmiersprache, z. B. den Aufbau von Gleitkommazahlen
-  - werden (oft von einem Generator) in DFAs umgewandelt
-  - sind die Basis des *Scanners* oder *Lexers*
-
-## Lexer
-
-### Ein Lexer ist mehr als ein DFA
-
-- Ein **Lexer**
-
-  - wandelt mittels DFAs aus regulären Ausdrücken die Folge von Zeichen
-    der Quelldatei in eine Folge von sog. Token um
-
-  - bekommt als Input eine Liste von Paaren aus regulären Ausdrücken und
-    Tokennamen, z. B. (“while”, WHILE)
-
-  - Kommentare und Strings müssen richtig erkannt werden.
-    (Schachtelungen)
-
-  - liefert Paare von Token und deren Werte, sofern benötigt, z. B.
-    (WHILE, \_), oder (IDENTIFIER, “radius”) oder (INTEGERZAHL, “334”)
-
-### Wie geht es weiter?
-
-- Ein **Parser**
-
-  - führt mit Hilfe des Tokenstreams vom Lexer die Syntaxanalyse durch
-
-  - basiert auf einer sog. kontextfreien Grammatik, deren Terminale die
-    Token sind
-
-  - liefert die syntaktische Struktur in Form eines Ableitungsbaums
-    (**syntax tree**, **parse tree**), bzw. einen **AST** (abstract
-    syntax tree) ohne redundante Informationen im Ableitungsbaum (z. B.
-    Semikolons)
-
-  - liefert evtl. Fehlermeldungen
 
 ## Wrap-Up
 
@@ -362,4 +330,4 @@ Sprachen**.
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 64341f7 (lecture: split regular expressions into two lessons, 2025-08-29)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 073d64d (regular1.md splitted into regular1.md and regular2.md (#383), 2025-10-14)<br></sub></sup></p></blockquote>
