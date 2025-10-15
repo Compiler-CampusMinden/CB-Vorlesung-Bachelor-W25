@@ -61,7 +61,7 @@ float y;
 }
 ```
 
-<img src="images/nestedscopes.png">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/nestedscopes_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/nestedscopes_dark.png"><img src="images/nestedscopes.png"></picture>
 
 **Aufgaben**:
 
@@ -143,7 +143,7 @@ und Typ gespeichert wird. Variablensymbole leiten direkt von dieser
 Klasse ab. Für die eingebauten Typen wird ein “Marker-Interface” `Type`
 erstellt, um Variablen- und Typ-Symbole unterscheiden zu können.
 
-<img src="images/nestedscopesuml.png" width="60%">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/nestedscopesuml_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/nestedscopesuml_dark.png"><img src="images/nestedscopesuml.png" width="60%"></picture>
 
 Quelle: Nested Scopes: Eigene Modellierung nach einer Idee in ([Parr
 2010](#ref-Parr2010), p. 142)

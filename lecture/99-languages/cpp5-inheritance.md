@@ -315,13 +315,13 @@ Polymorphie in C++.
 class HiWi: public Student, public Angestellter {...};
 ```
 
-<img src="images/mehrfachvererbung-studi_new.png" width="50%">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/mehrfachvererbung-studi_new_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/mehrfachvererbung-studi_new_dark.png"><img src="images/mehrfachvererbung-studi_new.png" width="50%"></picture>
 
 <p align="right">Hinweis Speicherlayout …</p>
 
 ### Problem 1: Gleichnamige Methoden aus Basisklassen geerbt
 
-<img src="images/mehrfachvererbung-namenskollision_new.png" width="50%">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/mehrfachvererbung-namenskollision_new_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/mehrfachvererbung-namenskollision_new_dark.png"><img src="images/mehrfachvererbung-namenskollision_new.png" width="50%"></picture>
 
 Namenskollision bei Mehrfachvererbung auflösen:
 
@@ -350,7 +350,7 @@ Namenskollision bei Mehrfachvererbung auflösen:
 
 ### Problem 2: Gemeinsam geerbte Attribute sind mehrfach vorhanden
 
-<img src="images/mehrfachvererbung-attributkollision_new.png" width="50%">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/mehrfachvererbung-attributkollision_new_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/mehrfachvererbung-attributkollision_new_dark.png"><img src="images/mehrfachvererbung-attributkollision_new.png" width="50%"></picture>
 
 <p align="right"><a href="https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/blob/master/lecture/99-languages/src/vererbungMultiAttribute.cpp">Konsole vererbungMultiAttribute.cpp</a></p>
 

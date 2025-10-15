@@ -171,7 +171,7 @@ void main() {
 }
 ```
 
-<img src="images/bigthreeDefaults.png">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/bigthreeDefaults_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/bigthreeDefaults_dark.png"><img src="images/bigthreeDefaults.png"></picture>
 
 Analyse:
 

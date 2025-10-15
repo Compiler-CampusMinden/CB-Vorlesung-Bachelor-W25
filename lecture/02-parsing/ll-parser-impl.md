@@ -6,7 +6,7 @@
 >
 > <summary><strong>🎯 TL;DR</strong></summary>
 >
-> <img src="https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/blob/master/lecture/02-parsing/images/architektur_cb_parser.png?raw=true">
+> <picture><source media="(prefers-color-scheme: light)" srcset="images/architektur_cb_parser_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/architektur_cb_parser_dark.png"><img src="images/architektur_cb_parser.png"></picture>
 >
 > LL-Parser können über einen “rekursiven Abstieg” direkt aus einer
 > Grammatik implementiert werden:
@@ -462,4 +462,4 @@ Quelle: Eigener Code basierend auf einer Idee nach ([Parr
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> bb2342d (lecture: re-add handcrafted ll-parser, 2025-08-29)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 6fdab3d (lecture: use local files for attachments (LL impl), 2025-10-15)<br></sub></sup></p></blockquote>

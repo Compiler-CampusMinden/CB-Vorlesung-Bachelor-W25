@@ -32,7 +32,7 @@
 
 ## Anwendung: Compiler
 
-<img src="images/compiler.png">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/compiler_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/compiler_dark.png"><img src="images/compiler.png"></picture>
 
 Wie oben diskutiert: Der Sourcecode durchläuft alle Phasen des
 Compilers, am Ende fällt ein ausführbares Programm heraus. Dieses kann
@@ -44,7 +44,7 @@ Beispiele: gcc, clang, …
 
 ## Anwendung: Interpreter
 
-<img src="images/interpreter.png">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/interpreter_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/interpreter_dark.png"><img src="images/interpreter.png"></picture>
 
 Beim Interpreter durchläuft der Sourcecode nur das Frontend, also die
 Analyse. Es wird kein Code erzeugt, stattdessen führt der Interpreter
@@ -56,7 +56,7 @@ Beispiele: Python
 
 ## Anwendung: Virtuelle Maschinen
 
-<img src="images/virtualmachine.png">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/virtualmachine_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/virtualmachine_dark.png"><img src="images/virtualmachine.png"></picture>
 
 Hier liegt eine Art Mischform aus Compiler und Interpreter vor: Der
 Compiler übersetzt den Quellcode in ein maschinenunabhängiges
@@ -68,7 +68,7 @@ Beispiel: Java mit seiner JVM
 
 ## Anwendung: C-Toolchain
 
-<img src="images/c-toolchain.png" width="70%">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/c-toolchain_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/c-toolchain_dark.png"><img src="images/c-toolchain.png" width="70%"></picture>
 
 Erinnern Sie sich an die LV “Systemprogrammierung” im dritten Semester
 :-)
@@ -84,7 +84,7 @@ Beispiele: gcc, clang, …
 
 ## Anwendung: C++-Compiler
 
-<img src="images/cpp-toolchain.png" width="60%">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/cpp-toolchain_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/cpp-toolchain_dark.png"><img src="images/cpp-toolchain.png" width="60%"></picture>
 
 C++ hat meist keinen eigenen (vollständigen) Compiler :-)
 
@@ -98,7 +98,7 @@ Beispiel: g++
 
 ## Anwendung: Bugfinder
 
-<img src="images/findbugs.png" width="60%">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/findbugs_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/findbugs_dark.png"><img src="images/findbugs.png" width="60%"></picture>
 
 Tools wie FindBugs analysieren den (Java-) Quellcode und suchen nach
 bekannten Fehlermustern. Dazu benötigen sie nur den Analyse-Teil eines

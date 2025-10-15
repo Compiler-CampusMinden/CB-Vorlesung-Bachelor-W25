@@ -45,7 +45,7 @@ int f(int x) {
 x = f(x);
 ```
 
-<img src="images/parsetree.png" width="70%">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/parsetree_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/parsetree_dark.png"><img src="images/parsetree.png" width="70%"></picture>
 
 Nach der Syntaxanalyse braucht der Compiler für die darauf folgenden
 Phasen **semantische Analyse**, Optimierung und Codegenerierung
@@ -97,7 +97,7 @@ benötigt.
 
 ## Semantische Analyse und Symboltabellen
 
-<img src="images/architektur_cb.png" width="60%">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/architektur_cb_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/architektur_cb_dark.png"><img src="images/architektur_cb.png" width="60%"></picture>
 
 ## Syntax und Semantik
 
@@ -224,7 +224,7 @@ for (i=0; i<10; i++) {
 }
 ```
 
-<img src="images/simpletable.png" width="10%">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/simpletable_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/simpletable_dark.png"><img src="images/simpletable.png" width="10%"></picture>
 
 **Bsp.:** Die zu übersetzende Sprache hat nur einen (den globalen) Scope
 und kennt nur Bezeichner für Variablen.

@@ -40,7 +40,7 @@ void f() {
 void g(int z){}
 ```
 
-<img src="images/functionscopes.png">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/functionscopes_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/functionscopes_dark.png"><img src="images/functionscopes.png"></picture>
 
 ### Behandlung von Funktionsdefinitionen
 
@@ -70,7 +70,7 @@ void g(int z){}
 
 ## Erweiterung des Klassendiagramms für Funktions-Scopes
 
-<img src="images/functionscopesuml.png" width="65%">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/functionscopesuml_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/functionscopesuml_dark.png"><img src="images/functionscopesuml.png" width="65%"></picture>
 
 Quelle: Funktions-Scopes: Eigene Modellierung nach einer Idee in ([Parr
 2010](#ref-Parr2010), p. 147)

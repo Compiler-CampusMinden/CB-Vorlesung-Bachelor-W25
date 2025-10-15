@@ -180,7 +180,7 @@ Betrachten wir erneut die obige Grammatik.
 
 Die Eingabe von “`a = 42;`” führt zu folgendem Parse-Tree:
 
-<img src="images/hello_ex1.png" width="30%">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/hello_ex1_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/hello_ex1_dark.png"><img src="images/hello_ex1.png" width="30%"></picture>
 
 Diese Eingabe führt zur Erkennung der Token `[ID, WS, =, WS, NUM, ;]`,
 wobei die `WS`-Token verworfen werden und der Parser den Tokenstream
@@ -213,7 +213,7 @@ zu `stmt - 42` vereinfachen.
 Betrachten wir nun die Eingabe `foo = 2+3*4; bar = 3*4+2;`. Diese führt
 zu folgendem Parse-Tree:
 
-<img src="images/hello_ex2.png" width="35%">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/hello_ex2_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/hello_ex2_dark.png"><img src="images/hello_ex2.png" width="35%"></picture>
 
 Wie man sehen kann, sind in der Grammatik die üblichen Vorrangregeln für
 die Operationen `+` und `*` berücksichtigt - die Multiplikation wird in
@@ -374,7 +374,7 @@ s    : expr         {List<EContext> x = $expr.ctx.e();}
 expr : e '*' e ;
 ```
 
-<img src="images/ParserRuleContext.png" width="80%">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/ParserRuleContext_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/ParserRuleContext_dark.png"><img src="images/ParserRuleContext.png" width="80%"></picture>
 
 Jede Regel liefert ein passend zu dieser Regel generiertes
 Kontext-Objekt zurück. Darüber kann man das/die Kontextobjekt(e) der
@@ -445,7 +445,7 @@ ANTLR kann zu dieser Grammatik `calc.g4` einen passenden Listener
 von `antlr`). Weiterhin generiert ANTLR eine leere Basisimplementierung
 (Klasse `calcBaseListener`):
 
-<img src="images/ParseTreeListener.png" width="70%">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/ParseTreeListener_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/ParseTreeListener_dark.png"><img src="images/ParseTreeListener.png" width="70%"></picture>
 
 (Nur “interessante” Methoden gezeigt.)
 
@@ -513,7 +513,7 @@ ANTLR kann zu dieser Grammatik einen passenden Visitor (Interface
 `antlr`). Weiterhin generiert ANTLR eine leere Basisimplementierung
 (Klasse `calcBaseVisitor<T>`):
 
-<img src="images/ParseTreeVisitor.png" width="60%">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/ParseTreeVisitor_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/ParseTreeVisitor_dark.png"><img src="images/ParseTreeVisitor.png" width="60%"></picture>
 
 (Nur “interessante” Methoden gezeigt.)
 

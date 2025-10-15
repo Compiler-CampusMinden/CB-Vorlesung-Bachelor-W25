@@ -42,11 +42,11 @@ void f() {
 }
 ```
 
-<img src="images/structscopes.png">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/structscopes_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/structscopes_dark.png"><img src="images/structscopes.png"></picture>
 
 ## Strukturen: Erweiterung der Symbole und Scopes
 
-<img src="images/structscopesuml.png" width="80%">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/structscopesuml_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/structscopesuml_dark.png"><img src="images/structscopesuml.png" width="80%"></picture>
 
 Quelle: Structs: Eigene Modellierung nach einer Idee in ([Parr
 2010](#ref-Parr2010), p. 162)
@@ -97,11 +97,11 @@ public
 };
 ```
 
-<img src="images/classscopes.png">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/classscopes_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/classscopes_dark.png"><img src="images/classscopes.png"></picture>
 
 ## Klassen: Erweiterung der Symbole und Scopes
 
-<img src="images/classscopesuml.png" width="80%">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/classscopesuml_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/classscopesuml_dark.png"><img src="images/classscopesuml.png" width="80%"></picture>
 
 Quelle: Klassen: Eigene Modellierung nach einer Idee in ([Parr
 2010](#ref-Parr2010), p. 167)

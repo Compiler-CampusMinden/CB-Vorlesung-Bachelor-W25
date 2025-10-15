@@ -212,7 +212,7 @@ float y;
 }
 ```
 
-<img src="images/nested_envs.png">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/nested_envs_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/nested_envs_dark.png"><img src="images/nested_envs.png"></picture>
 
 Das erinnert nicht nur zufällig an den Aufbau der Symboltabellen :-)
 

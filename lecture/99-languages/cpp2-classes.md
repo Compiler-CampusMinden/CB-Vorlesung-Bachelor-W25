@@ -97,7 +97,7 @@ class Student {
 }
 ```
 
-<img src="images/objektLayoutJava.png">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/objektLayoutJava_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/objektLayoutJava_dark.png"><img src="images/objektLayoutJava.png"></picture>
 
 In Java werden im Objektlayout lediglich die primitiven Attribute direkt
 gespeichert.
@@ -116,7 +116,7 @@ class Student {
 };
 ```
 
-<img src="images/objektLayoutCpp.png">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/objektLayoutCpp_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/objektLayoutCpp_dark.png"><img src="images/objektLayoutCpp.png"></picture>
 
 In C++ werden alle Attribute innerhalb des Objektlayouts gespeichert.
 Ein Objekt mit vielen oder großen Feldern braucht also auch entsprechend

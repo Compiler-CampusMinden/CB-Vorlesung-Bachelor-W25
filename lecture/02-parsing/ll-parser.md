@@ -135,7 +135,7 @@ effiziente Parsergeneratoren (hier: ANTLR), deren Eingabe eine LL(k)-
 
 **Ausgabe:** Eine Parsertabelle *P*
 
-<p align="center"><img src="images/LL-Parsertabelle.png" width="60%"></p><p align="center">Algorithmus
+<p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="images/LL-Parsertabelle_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/LL-Parsertabelle_dark.png"><img src="images/LL-Parsertabelle.png" width="60%"></picture></p><p align="center">Algorithmus
 zur Generierung einer LL-Parsertabelle</p>
 
 Hier ist $`\perp`$ das Endezeichen des Inputs. Statt $`First_1(\alpha)`$
@@ -163,7 +163,7 @@ Input gematcht.
 **Ausgabe:** Wenn $`w \in L(G)`$, eine Linksableitung von $`w`$, Fehler
 sonst
 
-<p align="center"><img src="images/LL-Parser.png" width="49%"></p><p align="center">Algorithmus
+<p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="images/LL-Parser_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/LL-Parser_dark.png"><img src="images/LL-Parser.png" width="49%"></picture></p><p align="center">Algorithmus
 zum tabellengesteuerten LL-Parsen</p>
 
 ### Ergebnisse der Syntaxanalyse

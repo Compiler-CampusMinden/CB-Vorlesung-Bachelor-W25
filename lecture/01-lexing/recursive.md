@@ -6,7 +6,7 @@
 >
 > <summary><strong>🎯 TL;DR</strong></summary>
 >
-> <img src="https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/blob/master/lecture/01-lexing/images/architektur_cb_lexer.png?raw=true">
+> <picture><source media="(prefers-color-scheme: light)" srcset="images/architektur_cb_lexer_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/architektur_cb_lexer_dark.png"><img src="images/architektur_cb_lexer.png"></picture>
 >
 > Der Lexer (auch “Scanner”) soll den Zeichenstrom in eine Folge von
 > Token zerlegen. Zur Spezifikation der Token werden reguläre Ausdrücke
@@ -15,7 +15,7 @@
 > Von Hand implementierte Lexer arbeiten üblicherweise rekursiv und
 > verarbeiten immer das nächste Zeichen im Eingabestrom. Die
 > Arbeitsweise erinnert an LL-Parser (vgl.
-> [LL-Parser](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/blob/master/lecture/02-parsing/ll-parser-impl.md)).
+> [LL-Parser](../02-parsing/ll-parser-impl.md)).
 >
 > Lexer müssen sehr effizient sein, da sie noch direkt auf der
 > niedrigsten Abstraktionsstufe arbeiten und u.U. oft durchlaufen
@@ -141,7 +141,7 @@ großen `char`-Puffern mit jeweils der Länge $`N`$ simulieren kann.
 Vergleiche auch [Wikipedia: “Circular
 Buffer”](https://en.wikipedia.org/wiki/Circular_buffer).
 
-<img src="images/doublebuffer.png" width="65%">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/doublebuffer_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/doublebuffer_dark.png"><img src="images/doublebuffer.png" width="65%"></picture>
 
 ``` python
 start = 0; end = 0; fill(buffer[0:n])
@@ -420,4 +420,4 @@ Optionen:
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> a189957 (lecture: re-add handcrafted lexer, 2025-08-29)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> c887e93 (lecture: use local files for attachments (Recursive), 2025-10-15)<br></sub></sup></p></blockquote>

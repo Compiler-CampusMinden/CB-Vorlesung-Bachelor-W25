@@ -69,7 +69,7 @@ Sprachklasse gegenüber DFAs vergrößert.
 $`P = (Q,\ \Sigma,\ \Gamma,\  \delta,\ q_0,\ \perp,\ F)`$ ist ein
 Septupel mit:
 
-<p align="center"><img src="images/Def_PDA.png" width="60%"></p><p align="center">Definition
+<p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="images/Def_PDA_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/Def_PDA_dark.png"><img src="images/Def_PDA.png" width="60%"></picture></p><p align="center">Definition
 eines PDAs</p>
 
 Ein PDA ist per Definition nichtdeterministisch und kann spontane
@@ -92,7 +92,7 @@ wieder gepusht werden.
 Ein PDA für
 $`L=\lbrace ww^{R}\mid w\in \lbrace a,b\rbrace^{\ast}\rbrace`$:
 
-<img src="images/pda2.png" width="45%">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/pda2_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/pda2_dark.png"><img src="images/pda2.png" width="45%"></picture>
 
 ### Deterministische PDAs
 
@@ -285,7 +285,7 @@ Hier entsteht ein Tafelbild.
 
 **Ausgabe:** Eine Parsertabelle $`P`$
 
-<p align="center"><img src="images/LL-Parsertabelle.png" width="60%"></p><p align="center">Algorithmus
+<p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="images/LL-Parsertabelle_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/LL-Parsertabelle_dark.png"><img src="images/LL-Parsertabelle.png" width="60%"></picture></p><p align="center">Algorithmus
 zur Generierung einer LL-Parsertabelle</p>
 
 Statt $`First_1(\alpha)`$ wird oft nur $`First(\alpha)`$ geschrieben.
@@ -312,7 +312,7 @@ $`P`$ mit “$`w\perp`$” als initialem Kellerinhalt
 **Ausgabe:** Wenn $`w \in L(G)`$, eine Linksableitung von $`w`$, Fehler
 sonst
 
-<p align="center"><img src="images/LL-Parser.png" width="49%"></p><p align="center">Algorithmus
+<p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="images/LL-Parser_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/LL-Parser_dark.png"><img src="images/LL-Parser.png" width="49%"></picture></p><p align="center">Algorithmus
 zum tabellengesteuerten LL-Parsen</p>
 
 ### Beispiel: LL-Parsen

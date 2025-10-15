@@ -104,7 +104,7 @@ def funcDecl(self, AST t):
     self.env.define(t.ID().getText(), fn)
 ```
 
-<img src="images/fun.png">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/fun_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/fun_dark.png"><img src="images/fun.png"></picture>
 
 Quelle: Funktionsdeklaration: Eigener Code basierend auf einer Idee nach
 [LoxFunction.java](https://github.com/munificent/craftinginterpreters/blob/master/java/com/craftinginterpreters/lox/LoxFunction.java#L6)
@@ -257,7 +257,7 @@ auf und übergibt den Interpreter (== Zustand) und die Argumente. Die
 im Funktionsobjekt referenzierten AST-Teilbaum des Funktionskörpers mit
 dem Aufruf von `eval()` interpretieren …
 
-<img src="images/callFun.png">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/callFun_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/callFun_dark.png"><img src="images/callFun.png"></picture>
 
 Für die nativen Funktionen leitet man einfach eine (anonyme) Klasse ab
 und speichert sie unter dem gewünschten Namen im globalen Kontext des

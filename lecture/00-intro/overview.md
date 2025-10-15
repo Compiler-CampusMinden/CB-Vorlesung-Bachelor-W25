@@ -16,7 +16,7 @@
 > wird ein Strom von Wörtern (Token), daraus ein Baum (Parse Tree),
 > Zwischencode (IC), …
 >
-> <img src="https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/blob/master/lecture/00-intro/images/architektur_cb.png?raw=true">
+> <picture><source media="(prefers-color-scheme: light)" srcset="images/architektur_cb_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/architektur_cb_dark.png"><img src="images/architektur_cb.png"></picture>
 >
 > Die gezeigten Phasen werden traditionell unterschieden. Je nach
 > Aufgabe können verschiedene Stufen zusammengefasst werden oder sogar
@@ -72,7 +72,7 @@ Die obige Bergsteige-Metapher kann man in ein nüchternes Ablaufdiagramm
 mit verschiedenen Stufen und den zwischen den Stufen ausgetauschten
 Artefakten übersetzen:
 
-<img src="images/architektur_cb.png" width="70%">
+<picture><source media="(prefers-color-scheme: light)" srcset="images/architektur_cb_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/architektur_cb_dark.png"><img src="images/architektur_cb.png" width="70%"></picture>
 
 ### Frontend, Analyse
 
@@ -442,4 +442,4 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
   by [Bob Nystrom](https://github.com/munificent) on Github.com
   ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> c06ddae (tooling: rename origin to credits, 2025-08-22)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> d404db6 (lecture: use local files for attachments (Overview), 2025-10-15)<br></sub></sup></p></blockquote>
