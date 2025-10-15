@@ -7,7 +7,7 @@
 > <summary><strong>🖇 Weitere Unterlagen</strong></summary>
 >
 > - [Annotierte Folien: Reguläre Sprachen,
->   Ausdrucksstärke](https://github.com/Compiler-CampusMinden/AnnotatedSlides/blob/master/lexing_regular.ann.ba.pdf)
+>   Ausdrucksstärke](https://github.com/Compiler-CampusMinden/AnnotatedSlides/blob/master/lexing_regular1.ann.ba.pdf)
 >
 > </details>
 
@@ -330,4 +330,4 @@ Sprachen**.
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 073d64d (regular1.md splitted into regular1.md and regular2.md (#383), 2025-10-14)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 9697eda (lecture: fix indentation/formatting (Regular), 2025-10-15)<br></sub></sup></p></blockquote>
