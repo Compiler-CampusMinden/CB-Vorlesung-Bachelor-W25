@@ -42,10 +42,14 @@ eines kleinen Compiler-Frontends für C++ ein.
 
 | Vorlesung (2 SWS)            | Praktikum (2 SWS)                       |
 |:-----------------------------|:----------------------------------------|
-| Do, 15:45 - 17:15 Uhr (Zoom) | G1: Mi, 09:45 - 11:15 Uhr (Zoom)        |
+| Do, 15:30 - 17:00 Uhr (Zoom) | G1: Mi, 09:45 - 11:15 Uhr (Zoom)        |
 |                              | G2: Mi, 11:30 - 13:00 Uhr (Zoom)        |
 |                              | G3: Mi, 09:45 - 11:15 Uhr (Präsenz B40) |
 |                              | G4: Mi, 11:30 - 13:00 Uhr (Präsenz B40) |
+
+**Achtung**: Ab dem 23.10. fangen wir die Vorlesung eine Viertelstunde
+früher an als im Stundenplan eingetragen, um allen die Chance zu geben,
+den letzten Uni-Bus um 17:30 Uhr noch rechtzeitig zu erreichen.
 
 Durchführung der Vorlesung als *Flipped Classroom* (Carsten) bzw. als
 *reguläre Vorlesung* (BC). Zugangsdaten Zoom siehe
@@ -202,4 +206,4 @@ is licensed under [CC BY-SA
 See the [credits](CREDITS.md) for a detailed list of contributing
 projects.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 6717d64 (orga: fix typo, 2025-10-09)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 760a74a (orga: start lecture 15 minutes earlier, 2025-10-16)<br></sub></sup></p></blockquote>
