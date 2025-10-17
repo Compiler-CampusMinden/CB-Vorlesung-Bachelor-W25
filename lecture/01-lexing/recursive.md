@@ -375,6 +375,35 @@ Optionen:
 >
 > </details>
 
+> [!TIP]
+>
+> <details>
+>
+> <summary><strong>🏅 Challenges</strong></summary>
+>
+> **Manuell implementierter Lexer**
+>
+> Betrachten Sie die folgende einfache Sprache:
+>
+>     a = 10 - 5     # Zuweisung des Ausdruckes 10-5 (Integer-Wert 5) an Variable a
+>     b = a + 2 * 3  # Zuweisung von 16 an Variable b
+>     c = a != b     # Zuweisung eines boolschen Werts an c
+>
+> Es gibt nur Statements und Expressions:
+>
+> - Statement: Zuweisung; jedes Statement endet mit einem NL
+> - Expression: Zahl, Variable, Addition, Subtraktion, Multiplikation
+>   (mit üblichem Vorrang), Vergleich
+>
+> **Aufgaben**:
+>
+> - Geben Sie eine ANTLR-Grammatik für diese Sprache an.
+> - Implementieren Sie analog zum Vorgehen in der Vorlesung einen Lexer
+>   für diese Sprache. (Nur den Lexer, den Parser besprechen wir in
+>   einer anderen [Sitzung](../02-parsing/ll-parser-impl.md).)
+>
+> </details>
+
 ------------------------------------------------------------------------
 
 > [!NOTE]
@@ -420,4 +449,4 @@ Optionen:
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> c887e93 (lecture: use local files for attachments (Recursive), 2025-10-15)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 53fa23d (lecture: add challenge (LL Lexer), 2025-10-17)<br></sub></sup></p></blockquote>

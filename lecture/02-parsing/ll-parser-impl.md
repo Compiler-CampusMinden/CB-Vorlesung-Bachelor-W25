@@ -391,6 +391,8 @@ Quelle: Eigener Code basierend auf einer Idee nach ([Parr
 >
 > <summary><strong>🏅 Challenges</strong></summary>
 >
+> **Quizzfragen**:
+>
 > - Wie kann man aus einer LL(1)-Grammatik einen LL(1)-Parser mit
 >   rekursivem Abstieg implementieren? Wie “übersetzt” man dabei Token
 >   und Regeln?
@@ -400,6 +402,32 @@ Quelle: Eigener Code basierend auf einer Idee nach ([Parr
 > - Wie kann man Vorrangregeln implementieren?
 > - Wann braucht man mehr als ein Token Lookahead? Geben Sie ein
 >   Beispiel an.
+>
+> **Manuell implementierter Parser**
+>
+> Betrachten Sie erneut die folgende einfache Sprache:
+>
+>     a = 10 - 5     # Zuweisung des Ausdruckes 10-5 (Integer-Wert 5) an Variable a
+>     b = a + 2 * 3  # Zuweisung von 16 an Variable b
+>     c = a != b     # Zuweisung eines boolschen Werts an c
+>
+> Es gibt nur Statements und Expressions:
+>
+> - Statement: Zuweisung; jedes Statement endet mit einem NL
+> - Expression: Zahl, Variable, Addition, Subtraktion, Multiplikation
+>   (mit üblichem Vorrang), Vergleich
+>
+> **Aufgaben**:
+>
+> In den Challenges von [LL Lexer](../01-lexing/recursive.md) haben Sie
+> eine Grammatik definiert und einen Lexer implementiert.
+>
+> - Geben Sie nun geeignete Datenstrukturen für den AST an.
+> - Implementieren Sie analog zum Vorgehen in der Vorlesung einen Parser
+>   mit *recursive descent* für diese Sprache.
+> - Was müssten Sie anpassen bzw. ergänzen, wenn Sie beispielsweise
+>   weitere Statements wie eine `if`-Abfrage oder eine `while`-Schleife
+>   mit einbauen wollten?
 >
 > </details>
 
@@ -462,4 +490,4 @@ Quelle: Eigener Code basierend auf einer Idee nach ([Parr
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 6fdab3d (lecture: use local files for attachments (LL impl), 2025-10-15)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 6a598c8 (lecture: add challenge (LL Parser), 2025-10-17)<br></sub></sup></p></blockquote>
