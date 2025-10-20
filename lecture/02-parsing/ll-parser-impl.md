@@ -30,8 +30,13 @@
 > (ANTLR bietet hier gewisse Vereinfachungen an, kann aber mit
 > indirekter Linksrekursion auch nicht umgehen.)
 >
-> Eine gute Darstellung finden Sie in ([Parr 2010](#ref-Parr2010))
-> (Kapitel 2).
+> Eine gute Darstellung, die sich am zeichen- bzw. tokenweisen Einlesen
+> orientiert, finden Sie in ([Parr 2010](#ref-Parr2010)) (Kapitel 2).
+> Eine weitere sehr gut lesbare Darstellung ist in \[Nystrom2021\]
+> (Kapitel 4, 5 und 6) zu finden. Dort wird die Eingabe komplett
+> eingelesen und daraus eine Liste aller Token erzeugt, auf der der
+> Parser operiert. Der Beispiel-Code in dieser Vorlesung orientiert sich
+> an der zeichenweisen bzw. tokenweisen Verarbeitung.
 >
 > </details>
 
@@ -362,13 +367,9 @@ Quelle: Eigener Code basierend auf einer Idee nach ([Parr
 
 ## 📖 Zum Nachlesen
 
-- Parr ([2010](#ref-Parr2010)): Kapitel 2
-- Parr ([2014](#ref-Parr2014))
-- Mogensen ([2017](#ref-Mogensen2017)): Kapitel 2 (insbesondere
-  Abschnitte 2.3 bis (einschließlich) 2.19)
-- Aho u. a. ([2023](#ref-Aho2023)): Abschnitte 2.4 und 4.4
-- Grune u. a. ([2012](#ref-Grune2012)): Abschnitte 3.1 bis
-  (einschließlich) 3.4
+- Nystrom ([2021](#ref-Nystrom2021)): Kapitel 5 und 6
+- Parr ([2010](#ref-Parr2010)): Kapitel 2 (“Pattern 3: LL(1)
+  Recursive-Decent Parser”)
 
 > [!NOTE]
 >
@@ -442,26 +443,10 @@ Quelle: Eigener Code basierend auf einer Idee nach ([Parr
 > <div id="refs" class="references csl-bib-body hanging-indent"
 > entry-spacing="0">
 >
-> <div id="ref-Aho2023" class="csl-entry">
+> <div id="ref-Nystrom2021" class="csl-entry">
 >
-> Aho, A. V., M. S. Lam, R. Sethi, J. D. Ullman, und S. Bansal. 2023.
-> *Compilers: Principles, Techniques, and Tools, Updated 2nd Edition by
-> Pearson*. Pearson India.
-> <https://learning.oreilly.com/library/view/compilers-principles-techniques/9789357054881/>.
->
-> </div>
->
-> <div id="ref-Grune2012" class="csl-entry">
->
-> Grune, D., K. van Reeuwijk, H. E. Bal, C. J. H. Jacobs, und K.
-> Langendoen. 2012. *Modern Compiler Design*. Springer.
->
-> </div>
->
-> <div id="ref-Mogensen2017" class="csl-entry">
->
-> Mogensen, T. 2017. *Introduction to Compiler Design*. Springer.
-> <https://doi.org/10.1007/978-3-319-66966-3>.
+> Nystrom, R. 2021. *Crafting Interpreters*. Genever Benning.
+> <https://github.com/munificent/craftinginterpreters>.
 >
 > </div>
 >
@@ -470,13 +455,6 @@ Quelle: Eigener Code basierend auf einer Idee nach ([Parr
 > Parr, T. 2010. *Language Implementation Patterns*. Pragmatic
 > Bookshelf.
 > <https://learning.oreilly.com/library/view/language-implementation-patterns/9781680500097/>.
->
-> </div>
->
-> <div id="ref-Parr2014" class="csl-entry">
->
-> ———. 2014. *The Definitive ANTLR 4 Reference*. Pragmatic Bookshelf.
-> <https://learning.oreilly.com/library/view/the-definitive-antlr/9781941222621/>.
 >
 > </div>
 >
@@ -490,4 +468,4 @@ Quelle: Eigener Code basierend auf einer Idee nach ([Parr
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 6a598c8 (lecture: add challenge (LL Parser), 2025-10-17)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 66d4de6 (lecture: fix readings (LL Parser), 2025-10-20)<br></sub></sup></p></blockquote>

@@ -71,7 +71,7 @@ der Lösung im jeweiligen Praktikum in der Abgabewoche.
 | 13\. - 17.10. |  | [Reguläre Sprachen 1](lecture/01-lexing/regular1.md) |  |  |
 | 20\. - 24.10. |  | [Reguläre Sprachen 2](lecture/01-lexing/regular2.md) \|\| [CFG](lecture/02-parsing/cfg.md) | [B01](homework/sheet01.md) Reguläre Sprachen |  |
 | 27\. - 31.10. | [Lexer mit ANTLR](lecture/01-lexing/antlr-lexing.md) | [Parser mit ANTLR](lecture/02-parsing/antlr-parsing.md) | [B02](homework/sheet02.md) CFG |  |
-| 03\. - 07.11. |  | [LL-Parser (Theorie)](lecture/02-parsing/ll-parser.md) | [B03](homework/sheet03.md) ANTLR | **Mo, 03.11., 18:00 - 19:00 Uhr (online): Edmonton/Minden: ANTLR + Live-Coding** |
+| 03\. - 07.11. |  | [LL-Parser (Theorie)](lecture/02-parsing/ll-parser.md) | [B03](homework/sheet03.md) ANTLR | **Mi, 05.11., 18:00 - 19:00 Uhr (online): Edmonton/Minden: ANTLR + Live-Coding** |
 | 10\. - 14.11. | [Lexer (Implementierung)](lecture/01-lexing/recursive.md) | [LL-Parser (Implementierung)](lecture/02-parsing/ll-parser-impl.md) |  |  |
 | 17\. - 21.11. | Symboltabellen: [Überblick](lecture/03-semantics/symbtab0-intro.md) \| [Scopes](lecture/03-semantics/symbtab1-scopes.md) | [Funktionen](lecture/03-semantics/symbtab2-functions.md) \| [Klassen](lecture/03-semantics/symbtab3-classes.md) | [B04](homework/sheet04.md) LL hand coded |  |
 | 24\. - 28.11. | [AST-basierte Interpreter 1](lecture/06-interpretation/astdriven-part1.md) | [AST-basierte Interpreter 2](lecture/06-interpretation/astdriven-part2.md) | [B05](homework/sheet05.md) Semantische Analyse |  |
@@ -206,4 +206,4 @@ is licensed under [CC BY-SA
 See the [credits](CREDITS.md) for a detailed list of contributing
 projects.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 760a74a (orga: start lecture 15 minutes earlier, 2025-10-16)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 112f48b (orga: move first joint meeting to 05.11., 2025-10-20)<br></sub></sup></p></blockquote>

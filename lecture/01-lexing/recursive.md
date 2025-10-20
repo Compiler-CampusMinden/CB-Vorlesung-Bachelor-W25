@@ -205,8 +205,8 @@ Bezeichnern dem Parser überlassen.
 1.  Schlüsselwörter
 
     - Ein eigenes Token (RE/DFA) für jedes Schlüsselwort, oder
-    - Erkennung als Name und Vergleich mit Wörterbuch und nachträgliche
-      Korrektur des Tokentyps
+    - Erkennung als Name (`ID`) und nachträglich Vergleich mit
+      Wörterbuch sowie Korrektur des Tokentyps
 
     Wenn Schlüsselwörter über je ein eigenes Token abgebildet werden,
     benötigt man für jedes Schlüsselwort einen eigenen RE bzw. DFA. Die
@@ -235,9 +235,7 @@ Bezeichnern dem Parser überlassen.
 
 6.  Komma, Semikolon, Klammern, …: Je ein eigenes Token
 
-<!-- -->
-
-1.  Regeln für White-Space und Kommentare etc. …
+7.  Regeln für White-Space und Kommentare etc. …
 
     Normalerweise benötigt man Kommentare und White-Spaces in den
     folgenden Stufen nicht und entfernt diese deshalb aus dem
@@ -349,10 +347,9 @@ Optionen:
 
 ## 📖 Zum Nachlesen
 
-- Aho u. a. ([2023](#ref-Aho2023)): Abschnitt 2.6 und Kapitel 3
-- Torczon und Cooper ([2012](#ref-Torczon2012)): Kapitel 2
-- Mogensen ([2017](#ref-Mogensen2017)): Kapitel 1 (insbesondere
-  Abschnitt 1.8)
+- Nystrom ([2021](#ref-Nystrom2021)): Kapitel 4
+- Parr ([2010](#ref-Parr2010)): Kapitel 2 (“Pattern 2: LL(1)
+  Recursive-Decent Lexer”)
 
 > [!NOTE]
 >
@@ -415,27 +412,18 @@ Optionen:
 > <div id="refs" class="references csl-bib-body hanging-indent"
 > entry-spacing="0">
 >
-> <div id="ref-Aho2023" class="csl-entry">
+> <div id="ref-Nystrom2021" class="csl-entry">
 >
-> Aho, A. V., M. S. Lam, R. Sethi, J. D. Ullman, und S. Bansal. 2023.
-> *Compilers: Principles, Techniques, and Tools, Updated 2nd Edition by
-> Pearson*. Pearson India.
-> <https://learning.oreilly.com/library/view/compilers-principles-techniques/9789357054881/>.
+> Nystrom, R. 2021. *Crafting Interpreters*. Genever Benning.
+> <https://github.com/munificent/craftinginterpreters>.
 >
 > </div>
 >
-> <div id="ref-Mogensen2017" class="csl-entry">
+> <div id="ref-Parr2010" class="csl-entry">
 >
-> Mogensen, T. 2017. *Introduction to Compiler Design*. Springer.
-> <https://doi.org/10.1007/978-3-319-66966-3>.
->
-> </div>
->
-> <div id="ref-Torczon2012" class="csl-entry">
->
-> Torczon, L., und K. Cooper. 2012. *Engineering a Compiler*. Morgan
-> Kaufmann.
-> <https://learning.oreilly.com/library/view/engineering-a-compiler/9780080916613/>.
+> Parr, T. 2010. *Language Implementation Patterns*. Pragmatic
+> Bookshelf.
+> <https://learning.oreilly.com/library/view/language-implementation-patterns/9781680500097/>.
 >
 > </div>
 >
@@ -449,4 +437,4 @@ Optionen:
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 53fa23d (lecture: add challenge (LL Lexer), 2025-10-17)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> ce96fcd (lecture: fix readings (LL Lexer), 2025-10-20)<br></sub></sup></p></blockquote>

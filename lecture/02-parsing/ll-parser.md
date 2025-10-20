@@ -177,6 +177,8 @@ zum tabellengesteuerten LL-Parsen</p>
     manche Schlüsselwörter, $`\ldots`$)
 - Symboltabelle
 
+## Wrap-Up
+
 ### Wrap-Up
 
 - Syntaxanalyse wird mit deterministisch kontextfreien Grammatiken
@@ -242,4 +244,4 @@ zum tabellengesteuerten LL-Parsen</p>
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 9ddbd9f (lecture: rework outcomes (02/LL-Theory), 2025-08-19)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 36165d6 (lecture: fix slide level (LL Parser Theory), 2025-10-20)<br></sub></sup></p></blockquote>
