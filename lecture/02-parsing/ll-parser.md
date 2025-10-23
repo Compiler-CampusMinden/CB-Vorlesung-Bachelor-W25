@@ -2,7 +2,7 @@
 
 > [!NOTE]
 >
-> <details>
+> <details open>
 >
 > <summary><strong>🖇 Weitere Unterlagen</strong></summary>
 >

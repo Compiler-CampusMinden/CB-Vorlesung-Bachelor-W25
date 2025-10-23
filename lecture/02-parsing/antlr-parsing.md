@@ -59,7 +59,7 @@
 
 > [!TIP]
 >
-> <details>
+> <details open>
 >
 > <summary><strong>🎦 Videos</strong></summary>
 >
