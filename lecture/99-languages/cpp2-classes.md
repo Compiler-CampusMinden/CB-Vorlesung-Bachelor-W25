@@ -40,7 +40,6 @@
 > einer Initialisierung im Body des Konstruktors vs. der Initialisierung
 > über eine **Initialisierungsliste**. (Nutzen Sie in C++ nach
 > Möglichkeit Initialisierungslisten.)
->
 > </details>
 
 > [!TIP]
@@ -426,8 +425,7 @@ Delegierende Konstruktoren gibt es ab C++11:
 >
 > <summary><strong>👀 Quellen</strong></summary>
 >
-> <div id="refs" class="references csl-bib-body hanging-indent"
-> entry-spacing="0">
+> <div id="refs" class="references csl-bib-body hanging-indent">
 >
 > <div id="ref-cprogramming.com" class="csl-entry">
 >
@@ -444,7 +442,7 @@ Delegierende Konstruktoren gibt es ab C++11:
 >
 > <div id="ref-cppreference.com" class="csl-entry">
 >
-> „C and C++ Reference“. o. J. cppreference.com. Zugegriffen 16.
+> „C and C++ Reference“. o. J. Cppreference.com. Zugegriffen 16.
 > September 2024. <https://en.cppreference.com/w/>.
 >
 > </div>

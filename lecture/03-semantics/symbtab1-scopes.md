@@ -16,7 +16,6 @@
 > ihren jeweiligen Scope =\> `bind()`. Zusätzlich müssen Symboltabellen
 > auch das Abrufen von Bezeichnern aus dem aktuellen Scope oder den
 > Elternscopes unterstützen =\> `resolve()`.
->
 > </details>
 
 > [!TIP]
@@ -323,8 +322,7 @@ symbolischen Debugger noch gebraucht werden.
 >
 > <summary><strong>👀 Quellen</strong></summary>
 >
-> <div id="refs" class="references csl-bib-body hanging-indent"
-> entry-spacing="0">
+> <div id="refs" class="references csl-bib-body hanging-indent">
 >
 > <div id="ref-Mogensen2017" class="csl-entry">
 >
@@ -343,7 +341,8 @@ symbolischen Debugger noch gebraucht werden.
 >
 > <div id="ref-Parr2014" class="csl-entry">
 >
-> ———. 2014. *The Definitive ANTLR 4 Reference*. Pragmatic Bookshelf.
+> Parr, T. 2014. *The Definitive ANTLR 4 Reference*. Pragmatic
+> Bookshelf.
 > <https://learning.oreilly.com/library/view/the-definitive-antlr/9781941222621/>.
 >
 > </div>

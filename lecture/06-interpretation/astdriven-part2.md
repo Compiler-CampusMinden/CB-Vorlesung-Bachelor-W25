@@ -45,7 +45,6 @@
 > der Methode auf die Attribute der Klasse erfolgt dann über `this` bzw.
 > `self`, welche in der Closure der Funktion nun definiert sind und auf
 > das Instanzobjekt mit den Attributen verweisen.
->
 > </details>
 
 > [!TIP]
@@ -453,8 +452,7 @@ werden soll …
 >
 > <summary><strong>👀 Quellen</strong></summary>
 >
-> <div id="refs" class="references csl-bib-body hanging-indent"
-> entry-spacing="0">
+> <div id="refs" class="references csl-bib-body hanging-indent">
 >
 > <div id="ref-Grune2012" class="csl-entry">
 >

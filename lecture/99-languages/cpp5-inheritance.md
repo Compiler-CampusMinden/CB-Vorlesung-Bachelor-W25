@@ -56,7 +56,6 @@
 > der durch die direkten Unterklassen aufgerufen wird) und die Klasse am
 > “unteren Ende der Raute” kann direkt den Konstruktor der virtuellen
 > Basisklasse am “oberen Ende der Raute” aufrufen.
->
 > </details>
 
 > [!TIP]
@@ -519,8 +518,7 @@ Attribute (Zustand) ist in Java-Interfaces (noch) nicht erlaubt.
 >
 > <summary><strong>👀 Quellen</strong></summary>
 >
-> <div id="refs" class="references csl-bib-body hanging-indent"
-> entry-spacing="0">
+> <div id="refs" class="references csl-bib-body hanging-indent">
 >
 > <div id="ref-cprogramming.com" class="csl-entry">
 >
@@ -537,7 +535,7 @@ Attribute (Zustand) ist in Java-Interfaces (noch) nicht erlaubt.
 >
 > <div id="ref-cppreference.com" class="csl-entry">
 >
-> „C and C++ Reference“. o. J. cppreference.com. Zugegriffen 16.
+> „C and C++ Reference“. o. J. Cppreference.com. Zugegriffen 16.
 > September 2024. <https://en.cppreference.com/w/>.
 >
 > </div>

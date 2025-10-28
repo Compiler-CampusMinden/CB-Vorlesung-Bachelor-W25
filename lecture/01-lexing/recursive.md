@@ -26,7 +26,6 @@
 > “aufgeben” über den “Panic Mode” (“gobbeln” von Zeichen, bis wieder
 > eines passt) und Ein-Schritt-Transformationen bis hin zu speziellen
 > Lexer-Regeln, die beispielsweise besonders häufige Typos abfangen.
->
 > </details>
 
 > [!TIP]
@@ -409,8 +408,7 @@ Optionen:
 >
 > <summary><strong>👀 Quellen</strong></summary>
 >
-> <div id="refs" class="references csl-bib-body hanging-indent"
-> entry-spacing="0">
+> <div id="refs" class="references csl-bib-body hanging-indent">
 >
 > <div id="ref-Nystrom2021" class="csl-entry">
 >

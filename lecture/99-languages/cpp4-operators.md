@@ -27,7 +27,6 @@
 > Variante für den Compiler unterscheidbar zu machen, hat die Signatur
 > der Postfix-Variante einen Dummy-Parameter vom Typ `int`. Dieser wird
 > beim Aufruf aber nicht genutzt.
->
 > </details>
 
 > [!TIP]
@@ -325,8 +324,7 @@ s != "123";     // ???
 >
 > <summary><strong>👀 Quellen</strong></summary>
 >
-> <div id="refs" class="references csl-bib-body hanging-indent"
-> entry-spacing="0">
+> <div id="refs" class="references csl-bib-body hanging-indent">
 >
 > <div id="ref-cprogramming.com" class="csl-entry">
 >
@@ -343,7 +341,7 @@ s != "123";     // ???
 >
 > <div id="ref-cppreference.com" class="csl-entry">
 >
-> „C and C++ Reference“. o. J. cppreference.com. Zugegriffen 16.
+> „C and C++ Reference“. o. J. Cppreference.com. Zugegriffen 16.
 > September 2024. <https://en.cppreference.com/w/>.
 >
 > </div>

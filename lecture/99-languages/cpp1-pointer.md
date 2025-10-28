@@ -80,7 +80,6 @@
 > Pointer haben einen Typ: Die Pointerarithmetik berücksichtigt die
 > Speicherbreite des Typs! Damit springt man mit `ptr+1` automatisch zum
 > nächsten Objekt und nicht notwendigerweise zum nächsten Byte.
->
 > </details>
 
 > [!TIP]
@@ -563,7 +562,6 @@ scanf("%d", i);
 <details>
 
 Tipp: `i` ist **kein** Pointer :)
-
 </details>
 
 #### Auslesen von nicht-initialisiertem Speicher
@@ -587,7 +585,6 @@ int *matvec(int **A, int *x, int N) {
 <details>
 
 Tipp: `y[i] += ...` setzt sinnvolle Werte in `y[i]` voraus …
-
 </details>
 
 #### Überschreiben von Speicher I
@@ -609,7 +606,6 @@ for (int i=0; i<N; i++) {
 Tipp: Jedes `p[i]` kann einen `int` speichern, bekommt aber einen
 Pointer zugewiesen (könnte deutlich breiter im Speicher sein als ein
 `int`) …
-
 </details>
 
 #### Überschreiben von Speicher II
@@ -629,7 +625,6 @@ for (int i=0; i<=N; i++) {
 <details>
 
 Tipp: Hier läuft `i` um einen Platz zu weit …
-
 </details>
 
 #### Überschreiben von Speicher III
@@ -645,7 +640,6 @@ gets(s);
 
 Tipp: Wenn hier mehr als 7 Zeichen eingegeben werden, gibt es Probleme
 :)
-
 </details>
 
 #### Überschreiben von Speicher IV
@@ -667,7 +661,6 @@ rutscht um so viele Bytes im Speicher weiter, wie der Typ breit ist.
 D.h. mit einem “Pointer + 1” gelangt man zum nächsten Element, während
 der obige Ausdruck `p += sizeof(int);` um `sizeof(int)` Elemente
 weiterspringt!
-
 </details>
 
 ## Pointer und Arrays
@@ -1348,8 +1341,7 @@ zwischen den beiden Signaturen `bar foo(wuppie&,  bar)` und
 >
 > <summary><strong>👀 Quellen</strong></summary>
 >
-> <div id="refs" class="references csl-bib-body hanging-indent"
-> entry-spacing="0">
+> <div id="refs" class="references csl-bib-body hanging-indent">
 >
 > <div id="ref-cprogramming.com" class="csl-entry">
 >
@@ -1366,7 +1358,7 @@ zwischen den beiden Signaturen `bar foo(wuppie&,  bar)` und
 >
 > <div id="ref-cppreference.com" class="csl-entry">
 >
-> „C and C++ Reference“. o. J. cppreference.com. Zugegriffen 16.
+> „C and C++ Reference“. o. J. Cppreference.com. Zugegriffen 16.
 > September 2024. <https://en.cppreference.com/w/>.
 >
 > </div>

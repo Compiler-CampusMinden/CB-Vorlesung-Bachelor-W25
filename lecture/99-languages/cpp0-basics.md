@@ -114,7 +114,6 @@
 > Unterscheidung in globale, lokale und lokale statische Variablen mit
 > unterschiedlicher Lebensdauer und unterschiedlicher Initialisierung
 > durch den Compiler.
->
 > </details>
 
 > [!TIP]
@@ -1329,8 +1328,7 @@ Datei `tollesProgramm` zu erzeugen: `g++ main.o -o tollesProgramm`.
 >
 > <summary><strong>👀 Quellen</strong></summary>
 >
-> <div id="refs" class="references csl-bib-body hanging-indent"
-> entry-spacing="0">
+> <div id="refs" class="references csl-bib-body hanging-indent">
 >
 > <div id="ref-cprogramming.com" class="csl-entry">
 >
@@ -1347,7 +1345,7 @@ Datei `tollesProgramm` zu erzeugen: `g++ main.o -o tollesProgramm`.
 >
 > <div id="ref-cppreference.com" class="csl-entry">
 >
-> „C and C++ Reference“. o. J. cppreference.com. Zugegriffen 16.
+> „C and C++ Reference“. o. J. Cppreference.com. Zugegriffen 16.
 > September 2024. <https://en.cppreference.com/w/>.
 >
 > </div>

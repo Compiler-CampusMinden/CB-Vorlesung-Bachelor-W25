@@ -37,7 +37,6 @@
 > eingelesen und daraus eine Liste aller Token erzeugt, auf der der
 > Parser operiert. Der Beispiel-Code in dieser Vorlesung orientiert sich
 > an der zeichenweisen bzw. tokenweisen Verarbeitung.
->
 > </details>
 
 > [!TIP]
@@ -440,8 +439,7 @@ Quelle: Eigener Code basierend auf einer Idee nach ([Parr
 >
 > <summary><strong>👀 Quellen</strong></summary>
 >
-> <div id="refs" class="references csl-bib-body hanging-indent"
-> entry-spacing="0">
+> <div id="refs" class="references csl-bib-body hanging-indent">
 >
 > <div id="ref-Nystrom2021" class="csl-entry">
 >

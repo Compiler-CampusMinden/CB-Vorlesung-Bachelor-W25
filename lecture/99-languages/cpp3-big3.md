@@ -33,7 +33,6 @@
 > von der Parameterliste). Das `const` gehört zur Signatur der Methode!
 > Konstante Methoden dürfen auf konstanten Objekten/Referenzen
 > aufgerufen werden.
->
 > </details>
 
 > [!TIP]
@@ -488,8 +487,7 @@ Hier darf der Rückgabewert nicht als L-Wert benutzt werden:
 >
 > <summary><strong>👀 Quellen</strong></summary>
 >
-> <div id="refs" class="references csl-bib-body hanging-indent"
-> entry-spacing="0">
+> <div id="refs" class="references csl-bib-body hanging-indent">
 >
 > <div id="ref-cprogramming.com" class="csl-entry">
 >
@@ -506,7 +504,7 @@ Hier darf der Rückgabewert nicht als L-Wert benutzt werden:
 >
 > <div id="ref-cppreference.com" class="csl-entry">
 >
-> „C and C++ Reference“. o. J. cppreference.com. Zugegriffen 16.
+> „C and C++ Reference“. o. J. Cppreference.com. Zugegriffen 16.
 > September 2024. <https://en.cppreference.com/w/>.
 >
 > </div>

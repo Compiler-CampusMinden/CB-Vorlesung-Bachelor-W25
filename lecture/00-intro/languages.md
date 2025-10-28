@@ -15,7 +15,6 @@
 > Auch wenn die Darstellung längst nicht vollständig ist, macht sie doch
 > deutlich, dass Compiler teilweise sehr unterschiedliche Konzepte
 > “verstehen” müssen.
->
 > </details>
 
 > [!TIP]
@@ -287,8 +286,7 @@ Code und VM zu studieren :)
 >
 > <summary><strong>👀 Quellen</strong></summary>
 >
-> <div id="refs" class="references csl-bib-body hanging-indent"
-> entry-spacing="0">
+> <div id="refs" class="references csl-bib-body hanging-indent">
 >
 > <div id="ref-Aho2023" class="csl-entry">
 >
@@ -318,22 +316,22 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
 **Exceptions:**
 
-- Abzählreim “99 Bottles of Beer” nach [“Lyrics of the song 99 Bottles
-  of Beer”](https://www.99-bottles-of-beer.net/lyrics.html) on
-  99-bottles-of-beer.net
 - [“Language
   Java”](https://www.99-bottles-of-beer.net/language-java-4.html) by
   Sean Russell on 99-bottles-of-beer.net
-- [“Language
-  Prolog”](https://www.99-bottles-of-beer.net/language-prolog-965.html)
-  by M@ on 99-bottles-of-beer.net
 - Screenshot of [“Language
   Brainfuck”](https://99-bottles-of-beer.net/language-brainfuck-2542.html)
   by Michal Wojciech Tarnowski on 99-bottles-of-beer.net
+- Abzählreim “99 Bottles of Beer” nach [“Lyrics of the song 99 Bottles
+  of Beer”](https://www.99-bottles-of-beer.net/lyrics.html) on
+  99-bottles-of-beer.net
 - [“Language
   Haskell”](https://www.99-bottles-of-beer.net/language-haskell-1070.html)
   by Iavor on 99-bottles-of-beer.net
 - [“Language C”](https://www.99-bottles-of-beer.net/language-c-116.html)
   by Bill Wein on 99-bottles-of-beer.net
+- [“Language
+  Prolog”](https://www.99-bottles-of-beer.net/language-prolog-965.html)
+  by M@ on 99-bottles-of-beer.net
 
 <blockquote><p><sup><sub><strong>Last modified:</strong> c06ddae (tooling: rename origin to credits, 2025-08-22)<br></sub></sup></p></blockquote>

@@ -20,7 +20,6 @@
 > Matchen der jeweiligen Regel abgearbeitet werden. Diese Aktionen
 > müssen in der Zielprogrammiersprache formuliert werden, da sie in die
 > generierte Lexerklasse in die jeweiligen Methoden eingebettet werden.
->
 > </details>
 
 > [!TIP]
@@ -624,7 +623,6 @@ geschrieben
 >
 > Definieren Sie eine Lexer-Grammatik für ANTLR, mit der Sie die
 > verschiedenen IBAN-Formate für Deutschland einlesen können.
->
 > </details>
 
 ------------------------------------------------------------------------
@@ -635,8 +633,7 @@ geschrieben
 >
 > <summary><strong>👀 Quellen</strong></summary>
 >
-> <div id="refs" class="references csl-bib-body hanging-indent"
-> entry-spacing="0">
+> <div id="refs" class="references csl-bib-body hanging-indent">
 >
 > <div id="ref-Parr2014" class="csl-entry">
 >

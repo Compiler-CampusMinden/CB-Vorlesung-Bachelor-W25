@@ -318,12 +318,11 @@ implementieren.)
 >
 > <summary><strong>👀 Quellen</strong></summary>
 >
-> <div id="refs" class="references csl-bib-body hanging-indent"
-> entry-spacing="0">
+> <div id="refs" class="references csl-bib-body hanging-indent">
 >
 > <div id="ref-Nystrom2015" class="csl-entry">
 >
-> Nystrom, R. 2015. „The Hardest Program I’ve Ever Written“. 2015.
+> Nystrom, R. 2015. „The Hardest Program I’ve Ever Written“.
 > <https://journal.stuffwithstuff.com/2015/09/08/the-hardest-program-ive-ever-written/>.
 >
 > </div>
