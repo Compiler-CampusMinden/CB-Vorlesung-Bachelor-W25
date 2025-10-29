@@ -647,7 +647,7 @@ Parser mit ANTLR generieren: Parser-Regeln werden mit
 
 ## 📖 Zum Nachlesen
 
-- @Parr ([2014](#ref-Parr2014))
+- Parr ([2014](#ref-Parr2014))
 
 > [!NOTE]
 >
@@ -737,4 +737,4 @@ Parser mit ANTLR generieren: Parser-Regeln werden mit
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> c4264af (lecture: distinguish between expressions and instructions (ANTLR), 2025-10-28)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 9c406a2 (lecture: fix typo in readings (ANTLR), 2025-10-29)<br></sub></sup></p></blockquote>
