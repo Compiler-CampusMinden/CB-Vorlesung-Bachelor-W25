@@ -363,7 +363,7 @@ Token aus dem Tokenstrom entfernen, so dass der generierte LL-Parser
 hier in einer Endlosschleife stecken bleiben würde. Mit indirekter
 Links-Rekursion kann ANTLR nicht umgehen.
 
-### Konflikte in Regeln
+### Konflikte in Regeln und implizite Token
 
 Wenn mehrere Alternativen einer Regel anwendbar sind, entscheidet sich
 ANTLR für die erste Alternative.
@@ -385,7 +385,7 @@ nicht über `ID` gematcht, weil sie *vor* der Regel `ID` definiert sind.
 
 Tatsächlich sortiert ANTLR die Regeln intern um, so dass alle
 Parser-Regeln *vor* den Lexer-Regeln definiert sind. Die impliziten
-Token werden dabei noch vor den expliziten Token-Regeln angeordnet. Im
+Token werden dabei noch *vor* den expliziten Token-Regeln angeordnet. Im
 obigen Beispiel hat also `'func'` eine höhere Priorität als `FOR`, und
 `FOR` hat eine höhere Priorität als `ID`. Aus diesem Grund gibt es die
 Konvention, die Parser-Regeln in der Grammatik vor den Lexer-Regeln zu
@@ -405,6 +405,35 @@ def : 'func' ID '(' ')' block ;
 Intern würde ANTLR die Parser-Regel `def` wieder vor den beiden
 Lexer-Regeln anordnen, und zwischen den Parser-Regeln und den
 Lexer-Regeln die impliziten Token (hier `'func'`).
+
+### Lustige Probleme mit überlappenden Token (typische Stolperfalle)
+
+Die folgende Grammatik sieht harmlos aus:
+
+``` antlr
+foo  :  (ID '(' ')' '=' '0' | ID | NUM) EOF ;
+
+ID      : [a-z][a-zA-Z]* ;
+NUM     : [0-9]+ ;
+WS      : [ \t\n]+ -> skip ;
+```
+
+Was passiert bei der Eingabe von `10` und `01` und `a() = 0`, wie sieht
+der Parse-Tree aus? Was passiert bei der Eingabe von `0`?
+
+Antwort: `10` wird als `foo -> NUM(10)` erkannt, `01` als
+`foo -> NUM(01)`, und `a() = 0` wird zu einem
+`foo -> ID(a), (, ), =, 0`. Dagegen ist die Eingabe `0` ein Fehler!
+
+Das liegt hier an überlappenden Token-Definitionen: Die `0` wird als
+implizites Token definiert, während die Integerzahlen als explizites
+Token `NUM` definiert werden. Damit ist die `0` in `NUM` enthalten. Da
+ANTLR die impliziten Token intern vor den expliziten Token definiert
+(egal, in welcher Reihenfolge wir die Grammatik aufbauen), fällt die
+Eingabe “0” an das implizite Token `0` und nicht an `NUM`. Da es keine
+Regel gibt, wo eine einzelne “0” erlaubt ist, bekommen wir einen Fehler.
+Sobald die Eingabe länger wird, greift wieder die Regel des längsten
+Matches und `NUM` “gewinnt”.
 
 ## Kontext-Objekte für Parser-Regeln
 
@@ -675,6 +704,18 @@ Parser mit ANTLR generieren: Parser-Regeln werden mit
 >
 > <summary><strong>🏅 Challenges</strong></summary>
 >
+> **Lexer und Parser mit ANTLR**
+>
+> Betrachten Sie den folgenden Programmschnipsel:
+>
+>     result99 = acc_2*ACC_2 + spillover7 + bonus_1*3 + inc_0;
+>     calc_42 = __9 * zZ_1 + 5 + FooBar_42 * bar_7 + q0;
+>     _ExprLine + A_1 * bB_2 + cc3 * 7 +      11;
+>
+> Erstellen Sie für diese fiktive Sprache einen Lexer+Parser mit ANTLR.
+> Implementieren Sie mit Hilfe des Parse-Trees und der Listener oder
+> Visitoren einen einfachen Pretty-Printer.
+>
 > **Lexer und Parser mit ANTLR: Programmiersprache Lox**
 >
 > Betrachten Sie folgenden Code-Schnipsel in der Sprache
@@ -700,6 +741,7 @@ Parser mit ANTLR generieren: Parser-Regeln werden mit
 >
 > (Die genauere Sprachdefinition finden Sie bei Bedarf unter
 > [craftinginterpreters.com/the-lox-language.html](https://www.craftinginterpreters.com/the-lox-language.html).)
+>
 > </details>
 
 ------------------------------------------------------------------------
@@ -737,4 +779,4 @@ Parser mit ANTLR generieren: Parser-Regeln werden mit
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 9c406a2 (lecture: fix typo in readings (ANTLR), 2025-10-29)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 3d22565 (lecture: add another simple challenge (ANTLR), 2025-10-29)<br></sub></sup></p></blockquote>
