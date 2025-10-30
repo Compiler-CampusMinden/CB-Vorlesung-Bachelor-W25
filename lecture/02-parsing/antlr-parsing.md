@@ -105,7 +105,8 @@ WS    : [ \t\n]+ -> skip ;
 
       public class Main {
           public static void main(String[] args) throws Exception {
-              HelloLexer lexer = new HelloLexer(CharStreams.fromStream(System.in));
+              CharStream input = CharStreams.fromString(IO.readln("expr?> "));
+              HelloLexer lexer = new HelloLexer(input);
               CommonTokenStream tokens = new CommonTokenStream(lexer);
               HelloParser parser = new HelloParser(tokens);
 
@@ -545,7 +546,8 @@ public class TestMyListener {
     }
 
     public static void main(String[] args) throws Exception {
-        calcLexer lexer = new calcLexer(CharStreams.fromStream(System.in));
+        CharStream input = CharStreams.fromString(IO.readln("expr?> "));
+        calcLexer lexer = new calcLexer(input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         calcParser parser = new calcParser(tokens);
 
@@ -569,6 +571,9 @@ Hier muss man im Gegensatz zu den Listeners allerdings selbst für eine
 geeignete Traversierung des Parse-Trees sorgen. Dafür hat man mehr
 Freiheiten im Vergleich zum Einsatz von Listeners, insbesondere im
 Hinblick auf Rückgabewerte.
+
+**Erinnerung**: Das Visitor-Pattern wurde in Prog2 besprochen:
+https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/visitor.md.
 
 ``` antlr
 expr : e1=expr '*' e2=expr      # MULT
@@ -615,7 +620,8 @@ public class TestMyVisitor {
     }
 
     public static void main(String[] args) throws Exception {
-        calcLexer lexer = new calcLexer(CharStreams.fromStream(System.in));
+        CharStream input = CharStreams.fromString(IO.readln("expr?> "));
+        calcLexer lexer = new calcLexer(input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         calcParser parser = new calcParser(tokens);
 
@@ -628,6 +634,194 @@ public class TestMyVisitor {
 ```
 
 <p align="right"><a href="https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/blob/master/lecture/02-parsing/src/TestMyVisitor.java">Beispiel: TestMyVisitor.java und calc.g4</a></p>
+
+## Arbeiten mit Pattern Matching
+
+ANTLR generiert zu jeder Regel `rule` eine Klasse `ruleContext`. Diese
+Klassen sind im generierten Parser definiert und werden für den
+Parse-Tree genutzt. Seit Java 25 ist *Pattern Matching* über Klassen und
+Records so weit ausgebaut, dass man es als Alternative zum
+Visitor-Pattern oder zu den ANTLR-Listenern nutzen kann.
+
+``` java
+public static class PatternMatching {
+    static Integer eval(calcParser.ExprContext e) {
+        return switch (e) {
+            case calcParser.MULTContext m -> eval(m.e1) * eval(m.e2);
+            case calcParser.ADDContext a -> eval(a.e1) + eval(a.e2);
+            case calcParser.ZAHLContext n -> Integer.parseInt(n.DIGIT().getText());
+            default ->
+                throw new IllegalStateException("Unhandled expr: "
+                    + e.getClass().getSimpleName());
+        };
+    }
+}
+```
+
+Anschließend baut man das alles in eine manuelle Traversierung des
+Parse-Trees ein:
+
+``` java
+public class TestMyPM {
+    public static class PatternMatching {
+        ...
+    }
+
+    public static void main(String[] args) throws Exception {
+        CharStream input = CharStreams.fromString(IO.readln("expr?> "));
+        calcLexer lexer = new calcLexer(input);
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        calcParser parser = new calcParser(tokens);
+
+        calcParser.SContext tree = parser.s(); // Start-Regel
+
+        PM.eval(tree.expr());
+    }
+}
+```
+
+<p align="right"><a href="https://github.com/Compiler-CampusMinden/CB-Vorlesung-Bachelor/blob/master/lecture/02-parsing/src/TestMyPM.java">Beispiel: TestMyPM.java und calc.g4</a></p>
+
+## Vom Parse-Tree zum AST
+
+Der Parse-Tree spiegelt direkt die Strukturen der Grammatik wider, die
+beim Parsen gematcht haben. Normalerweise braucht man diesen Detailgrad
+später nicht mehr und baut den Parse-Tree zu einem abstrakteren AST
+(*Abstract Syntax Tree*) um.
+
+<picture><source media="(prefers-color-scheme: light)" srcset="images/screenshot_parsetree_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/screenshot_parsetree_dark.png"><img src="images/screenshot_parsetree.png" width="30%"></picture>
+
+Dieser Parse-Tree entstand mit einer einfachen, nachfolgend aufgeführten
+Expression-Grammatik und der Eingabe “2+3\*4;”.
+
+Man erkennt gut die Grammatik-Regeln:
+
+``` antlr
+grammar MyLang;
+
+start
+  : stmt* EOF
+  ;
+
+stmt
+  : id=ID '=' value=expr ';'    # Assign
+  | expr ';'                    # ExprStmt
+  ;
+
+expr
+  : lhs=expr '*' rhs=expr       # Mul
+  | lhs=expr '+' rhs=expr       # Add
+  | ID                          # Name
+  | NUM                         # Number
+  ;
+
+
+ID  : [a-zA-Z_] [a-zA-Z_0-9]* ;
+NUM : [0-9]+ ;
+
+WS  : [ \t\r\n]+ -> skip ;
+```
+
+Für das weitere Arbeiten ist aber nicht mehr relevant, ob da ein
+`EOF`-Token war oder nicht - der Parser würde eine Eingabe ohne dieses
+Token am Ende ja ablehnen. Auch ist die Stufe `expr: NUM;` nicht
+notwendig, und statt des Tokens möchte man eigentlich den Integerwert
+haben.
+
+Es bietet sich also an, einige wenige Typen zu definieren, mit denen man
+diesen Baum darstellen kann.
+
+``` java
+sealed interface Stmt permits Stmt.Assign, Stmt.ExprStmt {
+  record Assign(String id, Expr value) implements Stmt {}
+  record ExprStmt(Expr expr) implements Stmt {}
+}
+
+sealed interface Expr permits Expr.Mul, Expr.Add, Expr.Name, Expr.Number {
+  record Mul(Expr lhs, Expr rhs) implements Expr {}
+  record Add(Expr lhs, Expr rhs) implements Expr {}
+  record Name(String id) implements Expr {}
+  record Number(int value) implements Expr {}
+}
+```
+
+Statements sind syntaktische Strukturen, die ausgeführt werden und
+i.d.R. keinen Wert ergeben. In der obigen Grammatik gibt es zwei
+verschiedene Statements, die man auch später noch unterscheiden möchte:
+Zuweisungen und Ausdrücke (mit einem Semikolon abgeschlossen als
+eigenständiges Statement). Dies wird in der obigen Modellierung
+entsprechend berücksichtigt: Es gibt ein Interface für Statements und
+genau zwei Klassen, die dieses Interface implementieren. Bei einer
+Zuweisung werden später der Name der Variablen (linke Seite der
+Anweisung) und die Expression auf der rechten Seite der Anweisung
+benötigt, die restlichen Informationen aus dem Parse-Tree sind nach dem
+erfolgreichen Parsen nicht mehr interessant.
+
+Expressions sind syntaktische Strukturen, die ausgewertet werden können
+und dabei einen Wert ergeben. Auch hier wird wieder ein gemeinsames
+Interface definiert und je Expression-Variante eine konkrete
+Datenklasse. Auch hier werden wieder nur die wirklich notwendigen Daten
+übernommen. Man könnte sogar noch überlegen, ob man die beiden `Mul` und
+`Add` zu einer gemeinsamen Klasse zusammenfassen möchte, dann müsste man
+aber noch die Operation als weiteres Attribut anlegen, und später müsste
+eine zusätzliche Fallunterscheidung anhand der Operation erfolgen,
+während man mit der obigen Modellierung per `switch/case` auf den
+Klassen direkt die gesuchte Information erhält.
+
+``` java
+  static Stmt toAst(MyLangParser.StmtContext s) {
+    return switch (s) {
+      case MyLangParser.AssignContext a -> new Stmt.Assign(a.id.getText(), toAst(a.value));
+      case MyLangParser.ExprStmtContext e -> new Stmt.ExprStmt(toAst(e.expr()));
+      default -> throw new IllegalStateException();
+    };
+  }
+
+  static Expr toAst(MyLangParser.ExprContext e) {
+    return switch (e) {
+      case MyLangParser.MulContext m -> new Expr.Mul(toAst(m.lhs), toAst(m.rhs));
+      case MyLangParser.AddContext a -> new Expr.Add(toAst(a.lhs), toAst(a.rhs));
+      case MyLangParser.NameContext n -> new Expr.Name(n.ID().getText());
+      case MyLangParser.NumberContext n -> new Expr.Number(Integer.parseInt(n.NUM().getText()));
+      default -> throw new IllegalStateException();
+    };
+  }
+```
+
+Mit Hilfe der beiden oben gezeigten Methoden und dem folgenden Code kann
+der Parse-Tree traversiert werden. Dabei kommt das *Pattern Matching*
+auf Klassen zur Anwendung, welches in der Funktionalen Programmierung
+schon lange bekannt ist und nun endlich auch Einzug in die OOP-Welt
+hält.
+
+In jedem einzelnen Knoten im Parse-Tree entscheidet man, ob und welchen
+neuen Knoten für den AST man erzeugen möchte und übernimmt die
+entsprechenden Informationen.
+
+Hier noch der restliche “Starter-Code”:
+
+``` java
+public class AstBuilder {
+  static void main(String... args) {
+    CharStream input = CharStreams.fromString(IO.readln("expr?> "));
+    MyLangLexer lexer = new MyLangLexer(input);
+    CommonTokenStream tokens = new CommonTokenStream(lexer);
+    MyLangParser parser = new MyLangParser(tokens);
+
+    MyLangParser.StartContext tree = parser.start();
+
+    IO.println(toAst(tree));
+  }
+
+  static List<Stmt> toAst(MyLangParser.StartContext s) {
+    return s.stmt().stream()
+        .map(AstBuilder::toAst)
+        .collect(Collectors.toCollection(ArrayList::new));
+  }
+
+  ... // die beiden statischen Methoden von oben
+}
+```
 
 ## Eingebettete Aktionen und Attribute
 
@@ -671,8 +865,8 @@ Parser mit ANTLR generieren: Parser-Regeln werden mit
 - ANTLR erlaubt direkte Links-Rekursion
 - ANTLR erzeugt Parse-Tree
 - Benannte Alternativen und Regel-Elemente
-- Traversierung des Parse-Tree: Listener oder Visitoren, Zugriff auf
-  Kontextobjekte
+- Traversierung des Parse-Tree: Listener oder Visitoren oder *Pattern
+  Matching*, Zugriff auf Kontextobjekte
 
 ## 📖 Zum Nachlesen
 
@@ -779,4 +973,4 @@ Parser mit ANTLR generieren: Parser-Regeln werden mit
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 3d22565 (lecture: add another simple challenge (ANTLR), 2025-10-29)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 3b0df9b (lecture: add new slide parsetree to ast (ANTLR), 2025-10-30)<br></sub></sup></p></blockquote>

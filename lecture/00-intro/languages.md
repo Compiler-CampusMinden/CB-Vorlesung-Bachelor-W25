@@ -316,14 +316,14 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
 **Exceptions:**
 
+- [“Language
+  Prolog”](https://www.99-bottles-of-beer.net/language-prolog-965.html)
+  by M@ on 99-bottles-of-beer.net
 - Screenshot of [“Language
   Brainfuck”](https://99-bottles-of-beer.net/language-brainfuck-2542.html)
   by Michal Wojciech Tarnowski on 99-bottles-of-beer.net
 - [“Language C”](https://www.99-bottles-of-beer.net/language-c-116.html)
   by Bill Wein on 99-bottles-of-beer.net
-- [“Language
-  Prolog”](https://www.99-bottles-of-beer.net/language-prolog-965.html)
-  by M@ on 99-bottles-of-beer.net
 - [“Language
   Haskell”](https://www.99-bottles-of-beer.net/language-haskell-1070.html)
   by Iavor on 99-bottles-of-beer.net

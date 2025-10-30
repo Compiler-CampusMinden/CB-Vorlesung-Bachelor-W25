@@ -220,16 +220,28 @@ WHITESPACE  : [ \t\n]+ -> skip ;
           antlr 'org.antlr:antlr4:4.13.2'
       }
 
+  Der Eintrag in `plugins` sorgt dafür, dass Gradle beim Bauen des
+  Java-Projekts die ANTLR-Grammatiken übersetzt, der Eintrag in
+  `dependencies` lädt automatisch das Jar-File für ANTLR herunter und
+  bindet es entsprechend im CLASSPATH ein.
+
 - Alternativ das [ANTLR tool
   (JAR)](https://www.antlr.org/download/antlr-4.13.2-complete.jar)
-  herunterladen und in der IDE als Library hinzufügen (bitte nur als
-  Ausweichlösung - der Weg über das Build-Tool ist deutlich besser)
+  manuell herunterladen und in der IDE als Library hinzufügen (bitte nur
+  als Hilfslösung, der Weg über das Build-Tool ist deutlich besser)
 
 - Im Web ohne lokale Installation: [ANTLR Lab](http://lab.antlr.org/)
   (nur HTTP)
 
 (vgl.
 [github.com/antlr/antlr4/blob/master/doc/getting-started.md](https://github.com/antlr/antlr4/blob/master/doc/getting-started.md))
+
+**Tip**: Für IntelliJ gibt es ein sehr gutes
+[ANTLR-Plugin](https://plugins.jetbrains.com/plugin/7358-antlr-v4).
+Dieses erlaubt das interaktive Experimentieren mit ANTLR-Grammatiken,
+ohne dass man ANTLR selbst installiert haben muss oder Code geschrieben
+haben muss. Für die Arbeit mit Grammatiken ist dieses Plugin unbedingt
+empfehlenswert!
 
 **Hinweis**: Im Beispiel-Projekt
 [student-support-code-template](https://github.com/Compiler-CampusMinden/student-support-code-template)
@@ -268,7 +280,8 @@ die Fehlermeldungen sollten verschwinden.
 
       public class Main {
           public static void main(String[] args) throws Exception {
-              Lexer l = new HelloLexer(CharStreams.fromStream(System.in));
+              CharStream input = CharStreams.fromString(IO.readln("?> "));
+              Lexer l = new HelloLexer(input);
               Token t = l.nextToken();
               while (t.getType() != Token.EOF) {
                   System.out.println(t);
@@ -699,4 +712,4 @@ geschrieben
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 170475e (lecture: fix formatting (ANTLR), 2025-10-29)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 217fc81 (lecture: cleanup starter code for ANTLR, 2025-10-30)<br></sub></sup></p></blockquote>
