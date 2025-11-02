@@ -119,7 +119,7 @@ der Lösung im jeweiligen Praktikum in der Abgabewoche.
 
 - **Post Mortem**: Jede Person beschreibt individuell(!) die Bearbeitung
   des jeweiligen Kriteriums bzw. die Teilnahme an den
-  Edmonton/Minden-Meetings zurückblickend mit mind. 200 bis max. 400
+  Edmonton/Minden-Meetings zurückblickend mit mind. 150 bis max. 400
   Wörtern (Nutzlast; Überschriften und Links zählen nicht mit). Gehen
   Sie dabei aussagekräftig und nachvollziehbar auf folgende Punkte ein:
 
@@ -206,4 +206,4 @@ is licensed under [CC BY-SA
 See the [credits](CREDITS.md) for a detailed list of contributing
 projects.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 112f48b (orga: move first joint meeting to 05.11., 2025-10-20)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> b36310f (orga: reduce lower bound of post mortem to 150 words, 2025-11-02)<br></sub></sup></p></blockquote>
