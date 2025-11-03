@@ -77,7 +77,7 @@ der Lösung im jeweiligen Praktikum in der Abgabewoche.
 | 24\. - 28.11. | [AST-basierte Interpreter 1](lecture/06-interpretation/astdriven-part1.md) | [AST-basierte Interpreter 2](lecture/06-interpretation/astdriven-part2.md) | [B05](homework/sheet05.md) Semantische Analyse |  |
 | 01\. - 05.12. | C++ I: [Basics](lecture/99-languages/cpp0-basics.md) | [Pointer & Referenzen](lecture/99-languages/cpp1-pointer.md) |  | **Mo, 01.12., 18:00 - 19:00 Uhr (online): Edmonton/Minden: Minden Presentations** |
 | 08\. - 12.12. | C++ II: [Klassen](lecture/99-languages/cpp2-classes.md) \| [Big Three](lecture/99-languages/cpp3-big3.md) \| [Operatoren](lecture/99-languages/cpp4-operators.md) | [Vererbung & Polymorphie](lecture/99-languages/cpp5-inheritance.md) | [B06](homework/sheet06.md) Interpreter | **Mo, 08.12., 18:00 - 19:00 Uhr (online): Edmonton/Minden: Edmonton Presentations** |
-| 15\. - 19.12. |  | *Sprechstunde* | [B07](homework/sheet07.md) C++ |  |
+| 15\. - 19.12. |  | ~~Sprechstunde~~ *Mathe-3-Irgendwas* | [B07](homework/sheet07.md) C++ |  |
 | *22. - 26.12.* |  | *Weihnachtspause* |  |  |
 | *29.12. - 02.01.* |  | *Weihnachtspause* |  |  |
 | 05\. - 09.01. |  | *Sprechstunde* | *Freies Arbeiten ([B08](homework/sheet08.md))* |  |
@@ -206,4 +206,4 @@ is licensed under [CC BY-SA
 See the [credits](CREDITS.md) for a detailed list of contributing
 projects.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> b36310f (orga: reduce lower bound of post mortem to 150 words, 2025-11-02)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 15cf6a5 (orga: update plan on last thursday - its math-3 now, 2025-11-03)<br></sub></sup></p></blockquote>
