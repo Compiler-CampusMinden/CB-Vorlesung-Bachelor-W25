@@ -40,12 +40,12 @@ eines kleinen Compiler-Frontends für C++ ein.
 
 ## Kursformat
 
-| Vorlesung (2 SWS)            | Praktikum (2 SWS)                       |
-|:-----------------------------|:----------------------------------------|
-| Do, 15:30 - 17:00 Uhr (Zoom) | G1: Mi, 09:45 - 11:15 Uhr (Zoom)        |
-|                              | G2: Mi, 11:30 - 13:00 Uhr (Zoom)        |
-|                              | G3: Mi, 09:45 - 11:15 Uhr (Präsenz B40) |
-|                              | G4: Mi, 11:30 - 13:00 Uhr (Präsenz B40) |
+| Vorlesung (2 SWS)            | Praktikum (2 SWS)                        |
+|:-----------------------------|:-----------------------------------------|
+| Do, 15:30 - 17:00 Uhr (Zoom) | G1: Mi, 09:45 - 11:15 Uhr (Zoom)         |
+|                              | G2: Mi, 11:30 - 13:00 Uhr (Zoom)         |
+|                              | G3: Mi, 09:45 - 11:15 Uhr (Präsenz D320) |
+|                              | G4: Mi, 11:30 - 13:00 Uhr (Präsenz D320) |
 
 **Achtung**: Ab dem 23.10. fangen wir die Vorlesung eine Viertelstunde
 früher an als im Stundenplan eingetragen, um allen die Chance zu geben,
@@ -206,4 +206,4 @@ is licensed under [CC BY-SA
 See the [credits](CREDITS.md) for a detailed list of contributing
 projects.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 15cf6a5 (orga: update plan on last thursday - its math-3 now, 2025-11-03)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> a47884e (orga: lab will be in d320 now, 2025-11-04)<br></sub></sup></p></blockquote>
