@@ -255,11 +255,19 @@ Aus
 
 ``` python
 a     := 0
-    if    10 < 1
-       do
-a    :=     42      # Zuweisung des Wertes 42 an die Variable a
+    if    10 < 1                   do
+a    :=     42      # Kommentar wird ignoriert
 else do
         a :=      7
+if 1>0do
+    while c do
+    if 8 do
+c:=b+    "foo  ."
+end
+    b:=9+   4*3 -7
+            c:=b+    "bar  ."
+    end
+             end
   end
 ```
 
@@ -268,9 +276,18 @@ soll
 ``` python
 a := 0
 if 10 < 1 do
-    a := 42
+   a := 42
 else do
-    a := 7
+   a := 7
+   if 1 > 0 do
+      while c do
+         if 8 do
+            c := b + "foo  ."
+         end
+         b := 9 + 4 * 3 - 7
+         c := b + "bar  ."
+      end
+   end
 end
 ```
 
@@ -299,7 +316,8 @@ die Struktur Ihrer Grammatik widerspiegelt. Die einzelnen Zweige sind
 damit in der Regel aber auch viel zu tief verschachtelt.
 
 Überlegen Sie sich, welche Informationen/Knoten Sie für die formatierte
-Ausgabe wirklich benötigen - das ist Ihr Abstract-Syntex-Tree (*AST*).
+Ausgabe wirklich benötigen - das ist Ihr Abstract-Syntex-Tree (*AST*)
+für diesen Task.[^2]
 
 Programmieren Sie eine Transformation des Parse-Tree in die von Ihnen
 hier formulierten AST-Strukturen. Dies können Sie beispielsweise mit
@@ -345,8 +363,14 @@ implementieren.)
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 26afe8e (homework: finalize B03 (#375), 2025-10-03)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 185a3e7 (homework: amend example code (Sheet03), 2025-11-05)<br></sub></sup></p></blockquote>
 
 [^1]: Um den Text lesbar zu halten, wird hier oft nur von “Parser”
     gesprochen - gemeint ist aber die gesamte auf diesem Blatt zu
     erstellende Toolchain: Lexer - Parser - AST - Ausgabe.
+
+[^2]: In dieser Teilaufgabe geht es lediglich um das Pretty-Printing,
+    nicht um das semantische Prüfen oder sogar Interpretieren der
+    Programme. Die Aufgabe lautet also: Welche Strukturen benötigen Sie,
+    um das Pretty-Printing des erfolgreich geparsten Programms erledigen
+    zu können? Alle anderen Strukturen sind hier unnötiger Ballast …

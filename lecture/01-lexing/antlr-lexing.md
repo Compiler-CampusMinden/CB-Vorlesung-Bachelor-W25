@@ -241,7 +241,8 @@ WHITESPACE  : [ \t\n]+ -> skip ;
 Dieses erlaubt das interaktive Experimentieren mit ANTLR-Grammatiken,
 ohne dass man ANTLR selbst installiert haben muss oder Code geschrieben
 haben muss. Für die Arbeit mit Grammatiken ist dieses Plugin unbedingt
-empfehlenswert!
+empfehlenswert! (Für das normale Arbeiten sollten Sie aber die
+Gradle-Konfiguration nutzen!)
 
 **Hinweis**: Im Beispiel-Projekt
 [student-support-code-template](https://github.com/Compiler-CampusMinden/student-support-code-template)
@@ -260,11 +261,45 @@ daraus generierten ANTLR-Lexer und -Parser werden im Build-Ordner
 `build/generated-src/antlr/main/` abgelegt und stehen in der IDE damit
 automatisch zur Verfügung, ohne dass die generierten Dateien im
 versionierten Source-Tree auftauchen und diesen “verschmutzen”.
-*Wichtig*: So lange wie die generierten Dateien nicht erzeugt wurden,
+**Wichtig**: So lange wie die generierten Dateien nicht erzeugt wurden,
 zeigen die IDE für diese Klassen und Interfaces entsprechend Fehler an.
 Ein Übersetzen des Projekts oder ein explizites
 `./gradlew generateGrammarSource` generiert die fehlenden Dateien und
 die Fehlermeldungen sollten verschwinden.
+
+> [!IMPORTANT]
+>
+> **Hinweis**: Sorgen Sie dafür, dass Ihre IDE tatsächlich auch die
+> **Projekteinstellungen von Gradle übernommen** hat und auch **mit
+> Gradle baut**!
+>
+> 1.  Check, ob die **Projekteinstellungen** in IntelliJ passen:
+>
+>     1.  Menü `File > Project Structure > Project Settings > Project`
+>         sollte für Ihr Projekt als SDK ein “Java 25” zeigen:
+>
+>         <picture><source media="(prefers-color-scheme: light)" srcset="images/ij-projectsettings-sdk_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/ij-projectsettings-sdk_dark.png"><img src="images/ij-projectsettings-sdk.png"></picture>
+>
+>     2.  Menü `File > Project Structure > Project Settings > Libraries`
+>         sollte für Ihr Projekt Jar-Files für ANTLR4 zeigen:
+>
+>         <picture><source media="(prefers-color-scheme: light)" srcset="images/ij-projectsettings-libs_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/ij-projectsettings-libs_dark.png"><img src="images/ij-projectsettings-libs.png"></picture>
+>
+> 2.  Check, ob **IntelliJ mit Gradle baut**:
+>
+>     Menü
+>     `File > Settings > Build, Execution, Deployment > Build Tools > Gradle`
+>     sollte auf Gradle umgestellt sein:
+>
+>     <picture><source media="(prefers-color-scheme: light)" srcset="images/ij-setting-gradlebuild_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/ij-setting-gradlebuild_dark.png"><img src="images/ij-setting-gradlebuild.png"></picture>
+>
+>     Unter **“Build & Run” sollte “Gradle”** ausgewählt sein, die
+>     **“Distribution” sollte auf “Wrapper”** stehen, und als **“Gradle
+>     JVM”** sollte die für das Projekt verwendete JVM eingestellt sein,
+>     d.h. aktuell Java 25.
+>
+> Siehe auch
+> [Compiler-CampusMinden/student-support-code-template](https://github.com/Compiler-CampusMinden/student-support-code-template/blob/master/README.md).
 
 ### “Hello World” übersetzen und ausführen
 
@@ -712,4 +747,4 @@ geschrieben
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 217fc81 (lecture: cleanup starter code for ANTLR, 2025-10-30)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> b641e2a (lecture: add remarks on intellij and gradle (build settings) (ANTLR), 2025-11-05)<br></sub></sup></p></blockquote>
