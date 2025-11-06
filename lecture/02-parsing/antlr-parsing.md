@@ -436,6 +436,91 @@ Regel gibt, wo eine einzelne “0” erlaubt ist, bekommen wir einen Fehler.
 Sobald die Eingabe länger wird, greift wieder die Regel des längsten
 Matches und `NUM` “gewinnt”.
 
+### Vorrang-Regeln bei links-rekursiven Parser-Regeln
+
+Betrachten Sie die folgende typische ANTLR-Grammatik für Expressions:
+
+``` antlr
+program : expr EOF ;
+
+expr
+  : expr ('*'|'/') expr
+  | expr ('+'|'-') expr
+  | INT
+  ;
+```
+
+Wie oben dargestellt, ist die Regel `expr` *direkt links-rekursiv*,
+womit ANTLR4 aber umgehen kann.
+
+In der gezeigten Schreibweise wird implizit ein Vorrang unter den
+Alternativen dieser direkt links-rekursiven Regel `expr` definiert: Beim
+internen Auflösen der Linksrekursion erhalten die Regeln eine Präzedenz
+in der Reihenfolge ihrer Auflistung (von oben nach unten). Die weiter
+oben aufgelisteten Alternativen der Regel `expr` haben eine höhere
+Präzedenz als die weiter unten aufgelisteten Regeln, d.h. die
+Multiplikation/Division hat Vorrang vor der Addition/Subtraktion.
+Entsprechend wird die Eingabe `2+3*4` korrekt als “2+(3\*4)” geparst und
+es entsteht der korrekte Parse-Tree
+
+<picture><source media="(prefers-color-scheme: light)" srcset="images/screenshot_parsetree_correct_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/screenshot_parsetree_correct_dark.png"><img src="images/screenshot_parsetree_correct.png"></picture>
+
+Wenn man nun beispielsweise versucht, die Operatoren auszuklammern und
+in eine eigene Regel zu verlagern und damit die ANTLR-Grammatik
+vermeintlich zu verbessern, klappt das nicht mehr. Betrachten Sie die
+folgende leicht geänderte Grammatik:
+
+``` antlr
+program : expr_ EOF ;
+
+expr_
+  : expr_ operator expr_
+  | INT
+  ;
+operator
+  : ('*'|'/')
+  | ('+'|'-')
+  ;
+```
+
+Rein von der Grammatik her ist kein Unterschied in der erkannten Sprache
+zu sehen.
+
+Der Vorrang-Mechanismus in ANTLR funktioniert aber nun nicht mehr, da
+die Alternativen nicht mehr in der linksrekursiven Regel `expr`
+definiert sind. Die Eingabe `2+3*4` wird jetzt inkorrekt als als
+“(2+3)\*4” geparst:
+
+<picture><source media="(prefers-color-scheme: light)" srcset="images/screenshot_parsetree_incorrect_light.png"><source media="(prefers-color-scheme: dark)" srcset="images/screenshot_parsetree_incorrect_dark.png"><img src="images/screenshot_parsetree_incorrect.png"></picture>
+
+> [!CAUTION]
+>
+> **Präzedenz entsteht in ANTLR4 nur durch die Reihenfolge der
+> linksrekursiven Alternativen in *derselben* Regel (ggf. mit
+> `<assoc=right>` für Rechtsassoziativität).**
+
+> [!NOTE]
+>
+> Bitte daran denken, dass die Reihenfolge der linksrekursiven
+> Alternativen den Vorrang definiert.
+>
+> Betrachten Sie die folgende Änderung der Grammatik von oben:
+>
+> ``` antlr
+> expr
+>   : expr '*' expr
+>   | expr '/' expr
+>   | expr '+' expr
+>   | expr '-' expr
+>   | INT
+>   ;
+> ```
+>
+> Das funktioniert, hier wird den Alternativen implizt ein Vorrang
+> zugeordnet. Aber jetzt bekommt die Multiplikation Vorrang vor der
+> Division, und auch die Addition bekommt Vorrang vor der Subtraktion.
+> Ist das wirklich so gewollt?
+
 ## Kontext-Objekte für Parser-Regeln
 
 ``` antlr
@@ -978,4 +1063,4 @@ Parser mit ANTLR generieren: Parser-Regeln werden mit
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> a12edf0 (lecture: fix pattern matching example (ANTLR), 2025-10-30)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 427e0b3 (lecture: add further remark on precedence rules (ANTLR), 2025-11-05)<br></sub></sup></p></blockquote>
