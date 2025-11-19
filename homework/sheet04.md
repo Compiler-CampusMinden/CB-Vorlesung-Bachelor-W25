@@ -15,11 +15,10 @@ Erstellen Sie zunächst eine Grammatik für diese Sprache. Implementieren
 Sie dann basierend auf dieser Grammatik einen Lexer und einen *recursive
 descent* Parser (manuelle Implementierung, kein ANTLR). Überlegen Sie
 sich, welche Strukturen ein AST für diese Sprache haben sollte und
-implementieren Sie diese Strukturen in Java und schreiben Sie eine
+implementieren Sie diese Strukturen und schreiben Sie eine
 Transformation des Parse-Trees in diesen AST.
 
-Es ist empfehlenswert, die Implementierung in Java mehrstufig zu
-realisieren:
+Es ist empfehlenswert, die Implementierung mehrstufig zu realisieren:
 
 1.  Einlesen aus einer Datei mit Lisp-artigem Code
 2.  Lexen des eingelesenen Code
@@ -32,8 +31,16 @@ Ein Programm besteht aus einem oder mehreren Ausdrücken (*Expressions*).
 Die Ausdrücke haben eine spezielle Form: Sie sind sogenannte
 [S-Expressions](https://en.wikipedia.org/wiki/S-expression). Dies sind
 entweder Literale der Form `x` oder einfache listenartige Gebilde der
-Form `(. x y)`, wobei der `.` eine Operation (oder Funktion) darstellt
-und `x` und `y` selbst wieder S-Expressions sind.
+Form `(. x y)`, wobei der `.` eine Operation (oder Funktion oder ein
+Keyword) darstellt und `x` und `y` selbst wieder S-Expressions sind.
+
+> [!TIP]
+>
+> **Anmerkung**: Die Anzahl der S-Expressions in einem Klammer-Ausdruck
+> ist nicht näher definiert - `x` und `y` sind nur Beispiele. Es könnten
+> auch mehr oder weniger S-Expressions nach der
+> Operation/Funktion/Keyword auftauchen (vgl. nachfolgende
+> Sprachdefinition).
 
 Die einfachste Form sind dabei Literale mit konkreten Werten der drei
 Datentypen `Integer`, `String` und `Boolean`:
@@ -292,24 +299,37 @@ Zeigen Sie, dass die Grammatik LL(1) ist.
 
 1.  Erstellen Sie zunächst einige Programme in der Zielsprache. Diese
     sollten von einfachsten Ausdrücken bis hin zu komplexeren Programmen
-    reichen. Definieren Sie beispielsweise eine Funktion, die rekursiv
-    die Länge einer Liste berechnet.
+    reichen. Versuchen Sie beispielsweise eine Funktion zu definieren,
+    die rekursiv die Länge einer Liste berechnet.
 
     Definieren Sie neben gültigen Programmen auch solche, die in der
     syntaktischen Analyse zurückgewiesen werden sollten. Welche
     Fehlerkategorien könnte es hier geben?
 
-2.  Definieren Sie nun für die obige Sprache eine geeignete Grammatik.
+2.  Überlegen Sie:
+
+    - Was sind die grundsätzlichen syntaktischen Konstrukte der obigen
+      Sprache?
+    - Was muss man in Lexer/Parser prüfen und was kann man später
+      (semantische Analyse oder Interpreter) auch noch gut tun?
+    - Wie viel Semantik muss im Parser schon realisiert werden?
+    - Was brauchen Sie an Sprachumfang, um die Aufgaben auf diesem Blatt
+      zu lösen?
+
+    (Da wir noch nicht über die späteren Phasen im Compiler gesprochen
+    haben: Spekulieren Sie.)
+
+3.  Definieren Sie nun für die obige Sprache eine geeignete Grammatik.
 
 ### A4.3: Lexer (2P)
 
-1.  Definieren Sie in Java Strukturen, die Sie für die Repräsentation
-    der Token entsprechend Ihrer Grammatik benötigen.
+1.  Definieren Sie Strukturen, die Sie für die Repräsentation der Token
+    entsprechend Ihrer Grammatik benötigen.
 
 2.  Implementieren Sie dann analog zum Vorgehen in der Vorlesung einen
     Lexer, der den entsprechenden Teil Ihrer Grammatik abbildet. Diesen
-    Lexer sollen Sie manuell in Java implementieren, Sie dürfen also
-    nicht ANTLR oder andere Generatoren benutzen.
+    Lexer sollen Sie manuell implementieren, Sie dürfen also nicht ANTLR
+    oder andere Generatoren benutzen.
 
 Implementieren Sie dabei das Verarbeiten des Lisp-artigen Codes aus
 einem übergebenen String.
@@ -328,8 +348,8 @@ Recovery-Modus haben o.ä., d.h. nach der Fehlermeldung darf Ihr Lexer
 
 Implementieren Sie analog zum Vorgehen in der Vorlesung einen Parser mit
 *recursive descent*, der den entsprechenden Teil Ihrer Grammatik
-abbildet. Diesen Parser sollen Sie manuell in Java implementieren, Sie
-dürfen also nicht ANTLR oder andere Generatoren benutzen.
+abbildet. Diesen Parser sollen Sie manuell implementieren, Sie dürfen
+also nicht ANTLR oder andere Generatoren benutzen.
 
 Implementieren Sie dabei das Verarbeiten des Lisp-artigen Codes aus
 einem übergebenen String.
@@ -343,13 +363,15 @@ Recovery-Modus haben o.ä., d.h. nach der Fehlermeldung darf Ihr Parser
 ### A4.5: AST (1P)
 
 Definieren Sie einen AST für die Zielsprache. Welche Informationen aus
-dem Eingabeprogramm müssen repräsentiert werden?
+dem Eingabeprogramm müssen für ein Pretty-Printing des eingelesenen
+Programms repräsentiert werden?
 
-Programmieren Sie die entsprechenden Datenstrukturen in Java.
+Implementieren Sie die entsprechenden Datenstrukturen. Programmieren Sie
+außerdem eine Traversierung des Parse-Trees, die den AST erzeugt.
 
-Programmieren Sie außerdem eine Traversierung des Parse-Trees, die den
-AST erzeugt. Testen Sie dies mit Ihren in der ersten Aufgabe
-entwickelten Beispielprogrammen.
+Geben Sie den AST auf der Konsole aus (“Pretty Printing” für den AST).
+Testen Sie dies mit Ihren in der ersten Aufgabe entwickelten
+(syntaktisch korrekten) Beispielprogrammen.
 
 ### A4.6: Recherche und Diskussion (1P)
 
@@ -364,4 +386,4 @@ persönlichen Sicht für und gegen ANTLR?
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> f15e08b (homework: finalize B04 (#376), 2025-10-03)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 5b88ada (homework: remove Java as implementation language, 2025-11-19)<br></sub></sup></p></blockquote>

@@ -322,7 +322,7 @@ für diesen Task.[^2]
 Programmieren Sie eine Transformation des Parse-Tree in die von Ihnen
 hier formulierten AST-Strukturen. Dies können Sie beispielsweise mit
 einer passenden Traversierung (Visitor-Pattern oder über
-Pattern-Matching in Java 25) erreichen.
+Pattern-Matching auf Klassen) erreichen.
 
 Passen Sie den Pretty-Printer so an, dass er auch den AST ausgeben kann.
 (Alternativ können auch einen zweiten Pretty-Printer für den AST
@@ -363,7 +363,7 @@ implementieren.)
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 185a3e7 (homework: amend example code (Sheet03), 2025-11-05)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 5b88ada (homework: remove Java as implementation language, 2025-11-19)<br></sub></sup></p></blockquote>
 
 [^1]: Um den Text lesbar zu halten, wird hier oft nur von “Parser”
     gesprochen - gemeint ist aber die gesamte auf diesem Blatt zu

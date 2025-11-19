@@ -4,10 +4,9 @@
 
 Entwickeln Sie in Ihrem 3er-Team gemeinsam einen Interpreter für C++.
 
-Nutzen Sie als Implementierungssprache Java.[^1] Sie *können* ANTLR zur
-Erstellung Ihres Lexers und Parsers einsetzen, Sie können aber auch gern
-einen selbst implementierten LL-Parser mit *recursive descent*
-einsetzen.
+Sie *können* ANTLR zur Erstellung Ihres Lexers und Parsers einsetzen,
+Sie können aber auch gern einen selbst implementierten LL-Parser mit
+*recursive descent* einsetzen.
 
 Definieren Sie zunächst eine passende Grammatik und den AST, bevor Sie
 Lexer und Parser umsetzen. Achten Sie auf eine angemessene semantische
@@ -118,7 +117,4 @@ einsehbar sein muss.
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 69c2d0e (homework: finalize B08 (#380), 2025-10-04)<br></sub></sup></p></blockquote>
-
-[^1]: Nach **vorheriger Absprache** können Sie auch eine andere
-    Implementierungssprache verwenden.
+<blockquote><p><sup><sub><strong>Last modified:</strong> 5b88ada (homework: remove Java as implementation language, 2025-11-19)<br></sub></sup></p></blockquote>

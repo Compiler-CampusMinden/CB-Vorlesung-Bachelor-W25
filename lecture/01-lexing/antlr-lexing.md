@@ -195,6 +195,8 @@ WHITESPACE  : [ \t\n]+ -> skip ;
 
 - Lokal für die Nutzung in der Konsole:
 
+  - Es wird ein JDK benötigt. Installieren Sie am besten die aktuelle
+    LTS-Version.
   - Aktuelle Version herunterladen:
     [antlr.org](https://www.antlr.org/download.html), für Java als
     Zielsprache: [“Complete ANTLR 4.x Java binaries
@@ -747,4 +749,4 @@ geschrieben
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> b641e2a (lecture: add remarks on intellij and gradle (build settings) (ANTLR), 2025-11-05)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 5b88ada (homework: remove Java as implementation language, 2025-11-19)<br></sub></sup></p></blockquote>
