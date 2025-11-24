@@ -16,12 +16,22 @@ Korrigieren Sie die Codebasis von Blatt 04, falls notwendig. Ergänzen
 Sie sodann einen Tree-Walking-Interpreter und eine REPL für die
 Lisp-artige Sprache.
 
-Es ist empfehlenswert, den Interpreter dreistufig zu realisieren:
+Es ist empfehlenswert, den Interpreter mehrstufig zu realisieren:
 
-1.  Einlesen aus einer Datei mit Lisp-Code und Parsen der Inhalte
-2.  Aufbauen der Symboltabelle und Durchführung der semantischen Analyse
-3.  Ablaufen des Parse-Tree/AST und Auswerten der Ausdrücke
-    (Interpretation)
+1.  Einlesen von Lisp-Code, Parsen der Inhalte und Erzeugen des AST
+2.  Ablaufen des AST und dabei
+    - Durchführung der semantischen Analyse
+    - Auswerten der Ausdrücke (Interpretation)
+
+*Hinweis*: Wir wollen eine *REPL* (“Read-Eval-Print”-Loop) realisieren
+und in einer Schleife Lisp-Code von der Konsole einlesen, parsen und
+interpretieren und das Ergebnis wieder ausgeben. Sie erzeugen also für
+jede Eingabe immer wieder neu einen AST. Wenn wir die semantische
+Analyse als eigenen Pass zwischen Parsing und Interpretation realisieren
+würden, müssten wir immer sämtlichen bisher verarbeiteten Code
+mitführen, allerdings nur die gültigen Eingaben. Da dies recht komplex
+werden kann, realisieren wir auf diesem Blatt die semantische Analyse
+“*on-the-fly*” auf den Environments im Interpreter.
 
 ## Sprachdefinition
 
@@ -29,48 +39,53 @@ Siehe [Blatt 04](sheet04.md).
 
 ## Aufgaben
 
-### A6.1: Semantische Analyse (2P)
-
-1.  Erstellen Sie zunächst einige Programme in der Zielsprache. Diese
-    sollten von einfachsten Ausdrücken bis hin zu komplexeren Programmen
-    reichen. Definieren Sie beispielsweise eine Funktion, die rekursiv
-    die Länge einer Liste berechnet.
-
-    Definieren Sie neben gültigen Programmen auch solche, die in der
-    semantischen Analyse zurückgewiesen werden sollten. Welche
-    Fehlerkategorien könnte es hier geben?
-
-2.  Führen Sie die semantische Analyse durch: Sind alle Symbole bekannt,
-    passen die Scopes?
-
-### A6.2: Tree-Walking-Interpreter (3P)
-
-Bauen Sie einen Tree-Walking-Interpreter in Ihr Projekt ein.
-
-Realisieren Sie die eingebauten Funktionen `print` und `str` dabei als
-*native* Funktionen. Realisieren Sie `list`, `nth`, `head` und `tail`
-sowie `def`, `let`, `defn`, `do` und die Operatoren und die
-Kontrollstrukturen geeignet.
+### A6.1: AST und Syntactic Sugar (1P)
 
 Lösen Sie die als “*syntactic sugar*” bezeichneten Ausdrücke auf und
 transformieren Sie den AST entsprechend: `(+ 1 2 3 4)` soll zu
 `(+ (+ (+ 1 2) 3) 4)` umgeformt werden. Analog für die anderen
 Operatoren der Sprache (Vergleiche, Arithmetik).
 
-Achten Sie auf die Datentypen. Die Typen von Variablen etc. sind erst
-zur Laufzeit bekannt und müssen dann passen.
+### A6.2: Tree-Walking-Interpreter (4P)
 
-Lesen Sie den zu interpretierenden Code aus einer Datei ein.
+Bauen Sie einen Tree-Walking-Interpreter in Ihr Projekt ein.
+
+Realisieren Sie die eingebauten Funktionen `print` und `str` dabei als
+*native* Funktionen.
+
+Realisieren Sie `list`, `nth`, `head` und `tail` sowie `def`, `let`,
+`defn`, `do` und die Operatoren und die Kontrollstrukturen geeignet.
+
+Lesen Sie den zu interpretierenden Code aus einer Text-Datei ein.
 
 Testen Sie Ihren Interpreter mit Ihren Beispielprogrammen.
 
-### A6.3: Interaktiver Interpreter (3P)
+### A6.3: Semantische Analyse (3P)
+
+Führen Sie die semantische Analyse während der Interpretation durch:
+
+- Symbole dürfen im selben Scope nicht mehrfach definiert werden
+- Referenzierte Symbole müssen sich über den aktuellen Scope (oder
+  dessen Eltern-Scopes) auflösen lassen
+- Bei Funktionsaufrufen muss das als Funktionsname verwendete Symbol
+  tatsächlich eine Funktion sein
+- Achten Sie auf die Datentypen der Operanden beim Ausführen der
+  Operatoren
+
+### A6.4: Interaktiver Interpreter (1P)
 
 Bauen Sie eine *REPL* ein, d.h. geben Sie nach dem Start des
 Interpreters einen Prompt aus und verarbeiten Sie die Eingaben
-interaktiv. Wie müssen Sie hier mit der Symboltabelle umgehen?
+interaktiv.
 
-### A6.4: Auswirkungen der Grammatik auf den Interpreter (2P)
+Erlauben Sie das Einlesen eines Lisp-Programms aus einer Text-Datei beim
+Start des Interpreters. Dabei soll zunächst der eingelesene Code
+interpretiert werden und damit die Environments vorbelegt werden. Danach
+soll der Interpreter in die REPL gehen, d.h. der in der Konsole
+eingegebene Code wird dann im Kontext des vorher eingelesenen Programms
+interpretiert.
+
+### A6.5: Auswirkungen der Grammatik auf den Interpreter (1P)
 
 Vergleichen Sie ihre eigene Grammatik mit den folgenden beiden
 Grammatiken:
@@ -172,4 +187,4 @@ Grammatik-Variante (A bzw. B) nutzen würden.
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 04c7c82 (homework: embed lisp grammars (B06), 2025-11-19)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 375f4ef (homework: rework interpreter and improve description of semantic analysis (B06), 2025-11-24)<br></sub></sup></p></blockquote>
