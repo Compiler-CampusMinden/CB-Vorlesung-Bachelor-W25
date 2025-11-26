@@ -118,7 +118,7 @@ definiert werden. Eine aufgerufene Funktion muss im aktuellen Scope
 sichtbar sein, der Funktionsaufruf muss zur Definition passen. Die
 aufgerufene Funktion muss (im Gegensatz zum Zugriff auf Variablen) nicht
 vor dem ersten Aufruf definiert sein. Sie kann also später im selben
-Scope definiert werden.
+Scope definiert werden. Einer Funktion kann nichts zugewiesen werden.
 
 ## Aufgaben
 
@@ -197,17 +197,9 @@ erzeugt. Sie können dafür folgende Transformationen nutzen:
       • return: 'return' expr ';'
         → ReturnStmt(exprAST)
 
-    params: type ID (',' type ID)*
-      → paramsList = [ Param(PrimType(type_i), ID_i.text) ] in Quellreihenfolge
-
-    fncall: ID '(' args? ')'
-      → Call(ID.text, argsList)
-    args: expr (',' expr)*
-      → argsList = [ exprAST_i ] in Quellreihenfolge
-
     expr
-      • fncall
-        → Call wie oben
+      • fncall: ID '(' args? ')'
+        → Call(ID.text, argsList)
 
       • expr ('*' | '/') expr
         → Binary(leftAST, op=MUL|DIV, rightAST)
@@ -241,6 +233,12 @@ erzeugt. Sie können dafür folgende Transformationen nutzen:
       • 'string' → PrimType.STRING
       • 'bool'   → PrimType.BOOL
 
+    params: type ID (',' type ID)*
+      → paramsList = [ Param(PrimType(type_i), ID_i.text) ] in Quellreihenfolge
+
+    args: expr (',' expr)*
+      → argsList = [ exprAST_i ] in Quellreihenfolge
+
     Operator-Zuordnung
       '*' → MUL, '/' → DIV, '+' → PLUS, '-' → MINUS, '>' → GT, '<' → LT, '==' → EQ, '!=' → NEQ
 
@@ -261,7 +259,8 @@ Führen Sie die im ersten Lauf möglichen Prüfungen durch, beispielsweise
 ob eine Variable oder Funktion in einem Scope mehrfach definiert wird
 oder ob Variablen als Funktion genutzt (aufgerufen) werden. Für
 referenzierte Variablen muss geprüft werden, ob sie tatsächlich bereits
-definiert und im Scope sichtbar sind.
+definiert und im Scope sichtbar sind. Zuweisungen dürfen nur an
+Variablen erfolgen.
 
 Geben Sie erkannte Fehler auf der Konsole aus.
 
@@ -271,6 +270,17 @@ Implementieren Sie einen zweiten Lauf. Hier soll für Funktionsaufrufe
 geprüft werden, ob diese Funktionen bereits definiert und im Scope
 sichtbar sind.
 
+Damit wird so etwas möglich:[^1]
+
+``` c
+// einfacher Funktionsaufruf, ohne Vorwärtsdeklaration
+bar();
+
+void bar() {
+    print_char('b');
+}
+```
+
 Geben Sie erkannte Fehler auf der Konsole aus.
 
 ------------------------------------------------------------------------
@@ -279,4 +289,8 @@ Geben Sie erkannte Fehler auf der Konsole aus.
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> cc927fc (homework: reduce workload on Sheet05 (#402), 2025-11-19)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> b55d38f (homework: amend semantic analysis (B05), 2025-11-26)<br></sub></sup></p></blockquote>
+
+[^1]: Anmerkung: Das ist kein gültiges C, sondern dient nur dazu, um das
+    Vorgehen bei mehreren Passes über die Symboltabelle zu erkennen und
+    zu üben.
