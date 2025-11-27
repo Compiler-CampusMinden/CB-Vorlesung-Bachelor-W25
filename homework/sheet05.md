@@ -166,6 +166,10 @@ Definition nutzen:
 Programmieren Sie eine Traversierung des Parse-Trees, die den AST
 erzeugt. Sie können dafür folgende Transformationen nutzen:
 
+<details>
+
+<summary><strong>Transformationen</strong></summary>
+
     program: stmt+ EOF
       → Liste[Stmt] in Quellreihenfolge (kein eigener Program-Knoten)
 
@@ -246,6 +250,8 @@ erzeugt. Sie können dafür folgende Transformationen nutzen:
       • Tokens wie Klammern, Kommas, Semikolons, Schlüsselwörter erscheinen nicht im AST.
       • Präzedenz/Assoziativität kommt aus der Parse-Struktur; der AST ist normalisiert zu Binary(left, op, right).
 
+</details>
+
 Testen Sie Ihre Transformation mit Ihren in der vorigen Aufgabe
 erstellten Beispielprogrammen.
 
@@ -289,8 +295,8 @@ Geben Sie erkannte Fehler auf der Konsole aus.
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> b55d38f (homework: amend semantic analysis (B05), 2025-11-26)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 1243317 (homework: collapse transformation rules (B05), 2025-11-27)<br></sub></sup></p></blockquote>
 
-[^1]: Anmerkung: Das ist kein gültiges C, sondern dient nur dazu, um das
+[^1]: Anmerkung: Das ist kein gültiges C, sondern dient nur dazu, das
     Vorgehen bei mehreren Passes über die Symboltabelle zu erkennen und
     zu üben.

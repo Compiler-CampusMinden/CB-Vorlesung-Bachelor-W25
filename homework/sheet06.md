@@ -28,10 +28,12 @@ und in einer Schleife Lisp-Code von der Konsole einlesen, parsen und
 interpretieren und das Ergebnis wieder ausgeben. Sie erzeugen also für
 jede Eingabe immer wieder neu einen AST. Wenn wir die semantische
 Analyse als eigenen Pass zwischen Parsing und Interpretation realisieren
-würden, müssten wir immer sämtlichen bisher verarbeiteten Code
-mitführen, allerdings nur die gültigen Eingaben. Da dies recht komplex
-werden kann, realisieren wir auf diesem Blatt die semantische Analyse
-“*on-the-fly*” auf den Environments im Interpreter.
+würden, müssten wir immer sämtlichen bisher verarbeiteten Code mitführen
+(allerdings nur die gültigen, d.h. nicht verworfenen Eingaben) und
+zusammen mit der aktuellen Eingabe der semantischen Analyse unterwerfen.
+Da dies recht frickelig werden kann, realisieren wir auf diesem Blatt
+eine vereinfachte semantische Analyse “*on-the-fly*” auf den
+Environments im Interpreter.
 
 ## Sprachdefinition
 
@@ -62,7 +64,8 @@ Testen Sie Ihren Interpreter mit Ihren Beispielprogrammen.
 
 ### A6.3: Semantische Analyse (3P)
 
-Führen Sie die semantische Analyse während der Interpretation durch:
+Führen Sie eine vereinfachte semantische Analyse während der
+Interpretation durch:
 
 - Symbole dürfen im selben Scope nicht mehrfach definiert werden
 - Referenzierte Symbole müssen sich über den aktuellen Scope (oder
@@ -187,4 +190,4 @@ Grammatik-Variante (A bzw. B) nutzen würden.
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 375f4ef (homework: rework interpreter and improve description of semantic analysis (B06), 2025-11-24)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 22e3aff (homework: explain semantic analysis (B06), 2025-11-27)<br></sub></sup></p></blockquote>
