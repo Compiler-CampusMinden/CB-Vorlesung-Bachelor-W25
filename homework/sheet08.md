@@ -36,7 +36,7 @@ Unterstützen Sie mindestens folgende C++-Konzepte:
   - Deklaration `T x;` und Initialisierung `T x = expr;`
   - Einfache Zuweisung `=`
 - Arrays (eindimensional, minimal):
-  - Nur `T[]` für primitive Typen
+  - Nur `T x[INT]` für primitive Typen und Klassen
   - Operationen: Deklaration, Index‑Zugriff/‑Zuweisung
 - Ausdrücke:
   - Arithmetik: `+`, `-`, `*`, `/`, `%` (nur für `int`)
@@ -132,6 +132,21 @@ Darunter fallen auch (nicht vollständig):
 - Mehrdimensionale Arrays
 - Kein `break/continue` in Schleifen
 
+#### Hinweis “*most vexing parse*”
+
+In C++ entsteht durch die üblichen Syntax-Regeln das [“*most vexing
+parse*”-Problem](https://en.wikipedia.org/wiki/Most_vexing_parse), wo
+nach dem Muster `T ID ( ... ) ;` sowohl ein Funktionsprototyp als auch
+eine Variablendeklaration mit Konstruktor‑Syntax möglich wäre.
+
+Versuchen Sie, dieses Problem durch geschickte Definitionen in der
+Grammatik einzuschränken. Beispielsweise wurde oben bereits
+einschränkend definiert, dass eine Variablendeklaration entweder die
+Form `T x;` haben soll oder mit Initialisierung `T x = expr;`. Die in
+C++ ebenfalls übliche Form `T x(expr);` braucht nicht unterstützt
+werden. Für Konstruktoren erlauben Sie am besten nur `T x;` und
+`T x = T(arg);`.
+
 ### REPL-Modell
 
 #### Initialisierung
@@ -216,4 +231,4 @@ einsehbar sein muss.
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 9e35b71 (homework: rework minicxx definition (B08), 2025-11-28)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> d037d43 (homework: clarify arrays (B08), 2025-11-29)<br></sub></sup></p></blockquote>
