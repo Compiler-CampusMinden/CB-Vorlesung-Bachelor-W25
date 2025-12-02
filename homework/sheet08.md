@@ -64,10 +64,11 @@ Unterstützen Sie mindestens folgende C++-Konzepte:
   - Konstruktoren; aber keine Destruktoren und keine
     Initialisierungslisten
   - Methoden können als `virtual` deklariert werden
-  - Variablen vom Klassentyp sind Werte (feldweise Kopie)
+  - Variablen vom Klassentyp sind Werte (feldweise Kopie bei
+    Rückgabe/Zuweisung)
   - `class D : public B { public: /* Felder + Methoden */ }`: Vererbung
     mit nur einer Basisklasse
-  - Zuweisung `Base b = d;` (mit `class D : public B { ... }` und
+  - Zuweisung `Base b; b = d;` (mit `class D : public B { ... }` und
     `D d;`) führt zum Slicing
   - Polymorphe Nutzung erfolgt ausschließlich über Referenzen:
     `B& b = d; b.m();` ruft die überschriebene Methode in `D` auf (wenn
@@ -93,7 +94,10 @@ Java‑Semantik.
   Funktion als LValue)
 - Rückgaberegel: In non‑`void`‑Funktionen existiert auf allen Pfaden
   mindestens ein `return`
-- Keine impliziten Typkonversionen, keine Casts
+- Keine impliziten Typkonversionen außer im booleschen Kontext (in
+  `if`/`while`‑Bedingungen werden `int`/`char` wie in C++ implizit in
+  `bool` konvertiert, d.h. `0` wird als `false` und alles ungleich `0`
+  als `true` behandelt); keine Casts
 - Overload‑Auflösung: exakter Match Name und Arität und identische Typen
   inkl. `ref`‑Markierung; bei Mehrdeutigkeit Fehler
 - Funktionen/Methoden: Argumentanzahl muss zur Parameterliste passen
@@ -105,8 +109,9 @@ Java‑Semantik.
   - Keine Neubindung
   - Keine Referenzen als Felder/Globals oder Arrays
   - Keine `ref`‑Rückgaben (Rückgabe nur als Kopie)
-- Klassen/Methoden: Nicht‑virtuelle Methoden binden statisch; virtuelle
-  dynamisch
+- Klassen/Methoden:
+  - Nicht‑virtuelle Methoden binden statisch; virtuelle dynamisch bei
+    Verwendung von Referenzen
 - Fehlerbehandlung:
   - Lexer-, Parser-, Typ-Fehler beenden die Analyse mit klarer Meldung
   - Laufzeitfehler (z.B. Division durch 0, Zugriff auf nicht
@@ -145,7 +150,8 @@ einschränkend definiert, dass eine Variablendeklaration entweder die
 Form `T x;` haben soll oder mit Initialisierung `T x = expr;`. Die in
 C++ ebenfalls übliche Form `T x(expr);` braucht nicht unterstützt
 werden. Für Konstruktoren erlauben Sie am besten nur `T x;` und
-`T x = T(arg);`.
+`T x = T(arg);`. Dann kann `T ID ( ... ) ;` nur noch ein
+Funktionsprototyp sein …
 
 ### REPL-Modell
 
@@ -231,4 +237,4 @@ einsehbar sein muss.
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> d037d43 (homework: clarify arrays (B08), 2025-11-29)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 084578a (homework: clarify static vs. dynamic binding (B08), 2025-12-02)<br></sub></sup></p></blockquote>
