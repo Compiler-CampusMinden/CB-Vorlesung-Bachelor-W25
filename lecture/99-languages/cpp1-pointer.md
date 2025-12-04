@@ -799,8 +799,8 @@ int i=2;
 int j=9;
 
 int &r=i;    // Referenz: neuer Name fuer i
-r=10;        // aendert i: i==10
-r=j;         // aendert i: i==9
+r=10;        // aendert i: i=10
+r=j;         // aendert i: i=9
 
 int &s=r;    // aequivalent zu int &s = i;
 ```
@@ -1373,4 +1373,4 @@ zwischen den beiden Signaturen `bar foo(wuppie&,  bar)` und
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> ce939b8 (lecture: rework outcomes (09/CPP1), 2025-08-21)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> fb836d9 (lecture: fix typo in example (Cpp1), 2025-12-04)<br></sub></sup></p></blockquote>
