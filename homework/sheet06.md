@@ -35,6 +35,15 @@ Da dies recht frickelig werden kann, realisieren wir auf diesem Blatt
 eine vereinfachte semantische Analyse “*on-the-fly*” auf den
 Environments im Interpreter.
 
+**Hinweis**: Wenn Sie Blatt 04 nicht oder nicht erfolgreich bearbeitet
+haben sollten, können Sie dieses Blatt trotzdem bearbeiten. Erstellen
+Sie sich zunächst eine Grammatik für die beschriebene Sprache (oder
+nehmen eine der beiden unten angegebenen Grammatiken). Treten Sie dabei
+mental einen Schritt zurück und betrachten Sie das ganze Bild: Was wird
+*syntaktisch* wirklich an Strukturen benötigt? Danach lassen Sie sich
+mit ANTLR einen Lexer und Parser generieren und steigen ganz normal in
+die Bearbeitung dieses Blattes ein.
+
 ## Sprachdefinition
 
 Siehe [Blatt 04](sheet04.md).
@@ -190,4 +199,4 @@ Grammatik-Variante (A bzw. B) nutzen würden.
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 22e3aff (homework: explain semantic analysis (B06), 2025-11-27)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 806a400 (homework: add remarks on how to start from scratch (B06), 2025-12-08)<br></sub></sup></p></blockquote>
