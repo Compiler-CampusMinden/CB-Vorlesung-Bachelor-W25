@@ -118,7 +118,7 @@ expr    :  NUMBER
         |  TRUE
         |  FALSE
         |  ID
-        |  '(' (ID | OP)* expr* ')'
+        |  '(' (ID | OP) expr* ')'
         ;
 
 
@@ -199,4 +199,4 @@ Grammatik-Variante (A bzw. B) nutzen würden.
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 806a400 (homework: add remarks on how to start from scratch (B06), 2025-12-08)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 8060f7d (homework: fix typo in grammar a (B06), 2025-12-11)<br></sub></sup></p></blockquote>

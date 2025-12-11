@@ -356,4 +356,4 @@ s != "123";     // ???
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> b74914d (lecture: rework outcomes (09/CPP4), 2025-08-21)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 9591a98 (lecture: amend challenge (Cpp4), 2025-12-11)<br></sub></sup></p></blockquote>
